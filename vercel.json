@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "headers": [
+    { "source": "/(.*)\\.webp", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/(cv-.*)\\.pdf", "headers": [{ "key": "Content-Disposition", "value": "attachment" }] }
+  ]
+}

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laura Jaramillo · Estratega digital & Marketing Project Manager</title>
+<meta name="theme-color" content="#FBF6EF">
+<meta property="og:title" content="Laura Jaramillo · Estratega digital & Marketing Project Manager">
+<meta property="og:description" content="Convierto objetivos de negocio en planes que un equipo puede ejecutar. Social media, contenido, e-commerce y gestión de proyectos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Laura Jaramillo: estratega de marketing digital y Marketing Project Manager. Convierto objetivos de negocio en planes que un equipo puede ejecutar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EF; --ink:#2E2433; --ink2:#5C5060; --mute:#9A8F9C; --line:#2E2433;
+  --purple:#8A63D2; --lilac:#D9C9F7; --lilac2:#F0E8FC; --yellow:#FFE08A; --blue:#BCD5F8; --green:#C2E6BA; --coral:#FFC6B3; --pink:#F7C6D9; --skin:#F3C7A5; --hair:#2A1C18;
+  --f:"Plus Jakarta Sans",system-ui,sans-serif;
+  --pt:clamp(86px,12vh,120px); --pb:clamp(128px,16.5vh,160px); --px:clamp(28px,6.5vw,110px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--f);-webkit-font-smoothing:antialiased}
+body{font-size:16px;line-height:1.5;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--lilac)}
+svg{overflow:visible}
+.k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.k b{color:var(--purple)}
+
+/* ===== horizontal engine ===== */
+#hs{position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.track{position:absolute;top:0;left:0;height:100%;display:flex;will-change:transform}
+.panel{position:relative;flex:0 0 100vw;width:100vw;height:100vh;padding:var(--pt) var(--px) var(--pb)}
+.thread{position:absolute;left:0;bottom:44px;height:60px;pointer-events:none}
+.thread path{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.thread .base{stroke:rgba(21,18,23,.12);stroke-dasharray:3 9}
+
+/* ===== menu card ===== */
+.menu{position:fixed;top:14px;right:18px;z-index:60;background:#fff;border-radius:18px;padding:12px 18px 14px;width:230px;box-shadow:0 18px 40px -26px rgba(0,0,0,.35);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.menu a,.menu button.row{display:flex;justify-content:space-between;align-items:center;width:100%;padding:9px 0;font-size:18px;font-weight:600;border-bottom:1.5px solid #E7E4EA}
+.menu a .ar,.menu button.row .ar{transition:transform .25s}
+.menu a:hover .ar{transform:translateX(5px)}
+.menu button.row:hover .ar{transform:translateY(3px)}
+.menu .icons{display:flex;gap:8px;align-items:center;padding-top:11px}
+.menu .icons a.ib{width:30px;height:30px;padding:0;justify-content:center;border:1.6px solid var(--ink);display:grid;place-items:center;font-size:13px}
+.menu .mt{display:none;font-weight:800;font-size:14px;align-items:center;gap:8px;padding-right:4px}
+.menu.mini{width:auto;padding:10px 12px}
+.menu.mini>a,.menu.mini>button.row{display:none}
+.menu.mini .mt{display:flex}
+.menu.mini .icons{padding-top:0}
+.menu.mini:hover{width:230px;padding:12px 18px 14px}
+.menu.mini:hover>a,.menu.mini:hover>button.row{display:flex}
+.menu.mini:hover .mt{display:none}
+.menu.mini:hover .icons{padding-top:11px}
+html.dark .hud{color:#fff}html.dark .hud .bar{background:rgba(255,255,255,.2)}html.dark .hud .bar i{background:#fff}
+html.dark .hud .dots button{background:var(--ink);border-color:#fff}html.dark .hud .nav button{border-color:#fff;background:transparent;color:#fff}
+html.dark .brand{color:#fff}
+.ib{width:30px;height:30px;border:1.6px solid var(--ink);border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:800;transition:background .2s,color .2s,transform .2s}
+.ib:hover{background:var(--ink);color:#fff;transform:rotate(-6deg)}
+.ib svg{width:15px;height:15px}
+.lang{margin-left:auto;display:flex;border:1.6px solid var(--ink);border-radius:8px;overflow:hidden}
+.lang button{padding:4px 8px;font-size:12px;font-weight:800}
+.lang button.on{background:var(--ink);color:#fff}
+.brand{position:fixed;top:24px;left:var(--px);z-index:55;font-weight:800;font-size:18px;letter-spacing:-.02em;opacity:0;transform:translateY(-8px);transition:all .4s;display:flex;align-items:center;gap:10px}
+.brand.show{opacity:1;transform:none}
+.brand i{display:flex;gap:3px}.brand i span{width:10px;height:10px;border-radius:50%}
+
+/* ===== HUD ===== */
+.hud{position:fixed;left:var(--px);right:var(--px);bottom:10px;z-index:50;display:flex;align-items:center;gap:16px;font-size:13px;font-weight:700}
+.hud .tt{min-width:190px}
+.hud .bar{flex:1;height:2px;background:rgba(21,18,23,.12);border-radius:2px;position:relative}
+.hud .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);border-radius:2px;width:0}
+.hud .dots{position:absolute;inset:0}
+.hud .dots button{position:absolute;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--bg);border:1.6px solid var(--ink);transition:transform .2s,background .2s}
+.hud .dots button:hover,.hud .dots button.on{background:var(--purple);border-color:var(--purple);transform:scale(1.35)}
+.hud .nav{display:flex;gap:6px}
+.hud .nav button{width:34px;height:34px;border-radius:50%;border:1.6px solid var(--ink);font-size:15px;transition:all .2s;background:var(--bg)}
+.hud .nav button:hover{background:var(--ink);color:#fff}
+
+/* ===== walker ===== */
+.walker{position:fixed;left:calc(var(--px) + 6px);bottom:62px;width:44px;z-index:45;pointer-events:none;transition:transform .3s}
+.walker.flip{transform:scaleX(-1)}
+.walker .leg{transform-origin:50% 0;transform-box:fill-box}
+.walker.walking .leg.l{animation:legL .42s ease-in-out infinite alternate}
+.walker.walking .leg.r{animation:legL .42s ease-in-out infinite alternate-reverse}
+.walker.walking .hop{animation:hop .28s ease-in-out infinite alternate}
+@keyframes legL{from{transform:rotate(22deg)}to{transform:rotate(-22deg)}}
+@keyframes bob{to{transform:translateY(-3px)}}
+.walker .bubble{position:absolute;left:56px;top:-6px;background:#fff;border:1.6px solid var(--ink);border-radius:12px 12px 12px 2px;padding:4px 9px;font-size:12px;font-weight:700;white-space:nowrap;opacity:0;transition:opacity .3s}
+.walker.talk .bubble{opacity:1}
+.walker.flip .bubble{transform:scaleX(-1)}
+
+/* ===== cursor ===== */
+.cur{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--ink);pointer-events:none;z-index:300;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;display:grid;place-items:center}
+.cur b{font-size:11px;font-weight:800;color:#fff;opacity:0;transition:opacity .2s;letter-spacing:.04em}
+.cur.link{width:34px;height:34px;background:var(--lilac)}
+.cur.big{width:78px;height:78px;background:var(--purple)}
+.cur.big b{opacity:1}
+@media (hover:none){.cur{display:none}}
+
+/* ===== shared ===== */
+.h1{font-size:clamp(64px,11.5vw,190px);font-weight:700;letter-spacing:-.055em;line-height:.85}
+.h2{font-size:clamp(34px,min(4.6vw,7.4vh),76px);font-weight:700;letter-spacing:-.04em;line-height:.98}
+.h2 em{font-style:normal;color:var(--purple)}
+.lead{font-size:clamp(16px,min(1.35vw,2.3vh),21px);color:var(--ink2);line-height:1.5}
+.doodle,.flag,.stk-b .blob svg,.journey svg.path,.doc .paper svg{filter:url(#crayon2)}
+.doodle{stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.draw path,.draw circle,.draw line,.draw polyline,.draw rect,.draw ellipse{stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);transition:stroke-dashoffset 1.4s cubic-bezier(.6,.1,.2,1)}
+.panel.in .draw path,.panel.in .draw circle,.panel.in .draw line,.panel.in .draw polyline,.panel.in .draw rect,.panel.in .draw ellipse{stroke-dashoffset:0}
+.pop{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.panel.in .pop{opacity:1;transform:none}
+.panel.in .pop:nth-child(2){transition-delay:.08s}.panel.in .pop:nth-child(3){transition-delay:.16s}.panel.in .pop:nth-child(4){transition-delay:.24s}.panel.in .pop:nth-child(5){transition-delay:.32s}.panel.in .pop:nth-child(6){transition-delay:.4s}.panel.in .pop:nth-child(7){transition-delay:.48s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:99px;border:1.8px solid var(--ink);font-weight:700;font-size:15px;transition:transform .25s,background .25s,color .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:var(--purple);border-color:var(--purple)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.wig:hover{animation:wig .5s ease-in-out}
+@keyframes wig{25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+
+/* ===== P0 hero ===== */
+#hola{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding-top:clamp(70px,9vh,100px)}
+#hola .intro{position:relative;z-index:3}
+#hola .sub{display:flex;gap:28px;align-items:flex-start;margin-top:3.4vh}
+#hola .sub p{max-width:330px;font-size:clamp(15px,min(1.2vw,2.1vh),19px);color:var(--ink2)}
+.status{display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:99px;padding:7px 14px 7px 10px;font-size:13px;font-weight:700;margin-bottom:3vh}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--green);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(93,194,122,.6)}70%{box-shadow:0 0 0 9px rgba(93,194,122,0)}100%{box-shadow:0 0 0 0 rgba(93,194,122,0)}}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln span{display:inline-block;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.h1 .ln:nth-child(2) span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.rot{display:inline-grid;overflow:hidden;vertical-align:bottom;height:1.5em}
+.rot span{grid-area:1/1;color:var(--purple);font-weight:700;transform:translateY(110%);transition:transform .55s cubic-bezier(.2,.8,.2,1);white-space:nowrap}
+.rot span.on{transform:none}.rot span.out{transform:translateY(-110%)}
+.hero-art{position:relative;height:min(78vh,720px);align-self:end}
+.arcs{position:absolute;inset:0;z-index:0}
+.arcs .a{position:absolute;border-radius:50%;border-style:solid;border-color:transparent;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.arcs .a1{width:min(58vh,520px);height:min(58vh,520px);border-width:min(7vh,64px);border-top-color:var(--pink);border-left-color:var(--pink);left:2%;top:4%}
+.arcs .a2{width:min(44vh,400px);height:min(44vh,400px);border-width:min(6vh,54px);border-right-color:var(--blue);border-bottom-color:var(--blue);right:0;top:16%}
+.arcs .a3{width:min(30vh,270px);height:min(30vh,270px);border-width:min(4.6vh,42px);border-top-color:var(--yellow);border-right-color:var(--yellow);left:18%;bottom:6%}
+.avatar{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:96%;z-index:2;cursor:pointer}
+.avatar svg{height:100%;width:auto}
+.avatar .hairback{transform-origin:260px 540px;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(.8deg)}}
+.avatar .lids{opacity:0;animation:blink 5.5s infinite}
+@keyframes blink{0%,93%,100%{opacity:0}95%,97%{opacity:1}}
+.avatar .puL,.avatar .puR{transition:transform .12s linear}
+.avatar .m-open{opacity:0;transition:opacity .2s}.avatar:hover .m-open{opacity:1}.avatar .m-closed{transition:opacity .2s}.avatar:hover .m-closed{opacity:0}
+.earA,.earB{transform-box:fill-box;transform-origin:50% 100%}
+.earA{animation:twitch 4s ease-in-out infinite}.earB{animation:twitch 4s ease-in-out 1.3s infinite}
+@keyframes twitch{0%,86%,100%{transform:rotate(0)}90%{transform:rotate(-12deg)}94%{transform:rotate(6deg)}}
+.bunNose{transform-box:fill-box;transform-origin:center;animation:sniff 1.6s ease-in-out infinite}
+@keyframes sniff{0%,60%,100%{transform:none}70%{transform:translateY(-1px) scale(1.08)}80%{transform:none}90%{transform:translateY(-1px) scale(1.08)}}
+.avatar .bunwrap{transition:transform .3s}
+.avatar:hover .bunwrap{animation:hop .45s ease-in-out infinite alternate}
+@keyframes hop{to{transform:translateY(-12px)}}
+.avatar .ht{opacity:0;transform-box:fill-box;transform-origin:center}
+.avatar:hover .ht{animation:float 1.6s ease-out infinite}
+.avatar:hover .h2{animation-delay:.4s}.avatar:hover .h3{animation-delay:.8s}
+@keyframes float{0%{opacity:0;transform:translateY(20px) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translateY(-50px) scale(1.1) rotate(10deg)}}
+.say{position:absolute;left:2%;top:10%;z-index:4;background:#fff;border:2px solid var(--ink);border-radius:20px 20px 4px 20px;padding:10px 16px;font-weight:700;font-size:15px;opacity:0;transform:scale(.7) rotate(-6deg);transform-origin:100% 100%;transition:all .35s cubic-bezier(.3,1.6,.5,1)}
+.hero-art:hover .say{opacity:1;transform:rotate(-3deg)}
+.cue{position:absolute;left:calc(var(--px) + 64px);bottom:78px;display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;z-index:3}
+.cue .ar{display:inline-block;animation:nudge 1.4s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(10px)}}
+#scribble{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* ===== P1 roles ===== */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,26px);margin-top:4.5vh}
+.role{position:relative;background:#fff;border-radius:26px;padding:clamp(16px,2.2vh,30px) clamp(18px,1.8vw,30px);min-height:min(44vh,430px);display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.role:hover{transform:translateY(-10px) rotate(-.7deg);box-shadow:0 30px 50px -30px rgba(40,20,70,.35)}
+.role .ic{height:min(10.5vh,104px);margin-bottom:1.6vh}
+.role .ic svg{height:100%;width:auto}
+.role h3{font-size:clamp(22px,min(2vw,3.4vh),32px);letter-spacing:-.03em;line-height:1.05}
+.role p{color:var(--ink2);margin-top:1.2vh;font-size:clamp(14px,min(1.05vw,1.9vh),17px)}
+.role ul{list-style:none;margin-top:auto;padding-top:2vh;display:flex;flex-wrap:wrap;gap:6px}
+.role li{font-size:13px;font-weight:700;border-radius:99px;padding:5px 11px;background:var(--lilac2)}
+.role:nth-child(2) li{background:#FFF0C6}.role:nth-child(3) li{background:#DDEBFF}
+.role .tag{position:absolute;top:18px;right:18px;font-size:12px;font-weight:800;border-radius:99px;padding:4px 10px;border:1.6px solid var(--ink)}
+/* icon anims */
+.role .chk{stroke-dasharray:40;stroke-dashoffset:40;transition:stroke-dashoffset .4s}
+.role:hover .chk{stroke-dashoffset:0}.role:hover .chk2{transition-delay:.15s}.role:hover .chk3{transition-delay:.3s}
+.role .needle{transform-origin:60px 60px;transform-box:view-box;transition:transform 1.2s cubic-bezier(.3,1.5,.5,1)}
+.role:hover .needle{transform:rotate(320deg)}
+.role .pencil{transition:transform .2s}
+.role:hover .pencil{animation:scrib .25s linear infinite alternate}
+@keyframes scrib{from{transform:translate(-6px,2px) rotate(-4deg)}to{transform:translate(8px,-2px) rotate(3deg)}}
+.role .scr{stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1s}
+.role:hover .scr{stroke-dashoffset:0}
+
+/* ===== P2 loop ===== */
+#como-pienso{display:grid;grid-template-columns:.85fr 1.15fr;gap:3vw;align-items:center}
+.loop{position:relative;height:min(70vh,640px);aspect-ratio:1;justify-self:center}
+.loop svg{width:100%;height:100%}
+.node{cursor:pointer}
+.node circle.c{fill:#fff;stroke:var(--ink);stroke-width:2.4;transition:fill .3s,r .3s}
+.node text{font-family:var(--f);font-weight:800;font-size:20px;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.node .lb{font-size:17px;font-weight:700}
+.node.on circle.c{fill:var(--c)}
+.node:hover circle.c{fill:var(--c)}
+.loop .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50%;text-align:center}
+.loop .center .q{font-size:clamp(17px,min(1.5vw,2.6vh),24px);font-weight:700;letter-spacing:-.02em;line-height:1.2;min-height:3.6em}
+.loop .center .o{margin-top:1.4vh;font-size:clamp(13px,min(1vw,1.8vh),15px);color:var(--ink2)}
+.loop .center .o b{display:block;color:var(--purple);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.loop .center .fade{transition:opacity .3s}
+.ring{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 10;animation:spin 60s linear infinite;transform-origin:300px 300px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== P3 principles ===== */
+.princ{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,22px);margin-top:4vh}
+.pr{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:clamp(14px,2.2vh,24px) 4px;border-top:2px solid var(--ink);transition:transform .3s}
+.pr:hover{transform:translateX(6px)}
+.pr .ic{width:clamp(54px,7vh,70px);height:clamp(54px,7vh,70px);border-radius:18px;display:grid;place-items:center;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pr:hover .ic{transform:rotate(-10deg) scale(1.1)}
+.pr .ic svg{width:66%;height:66%}
+.pr h4{font-size:clamp(17px,min(1.4vw,2.5vh),22px);letter-spacing:-.02em;line-height:1.15}
+.pr p{color:var(--ink2);font-size:clamp(13.5px,min(1vw,1.85vh),16px);margin-top:6px}
+.ai{margin-top:3vh;display:flex;align-items:center;gap:14px;background:var(--pink);color:var(--ink);border-radius:18px;padding:14px 20px;font-size:clamp(14px,min(1.05vw,1.9vh),16px)}
+.ai .spark{flex:none;width:34px;height:34px;animation:spin 6s linear infinite}
+
+/* ===== P4 toolkit ===== */
+.kit{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.2vw,20px);margin-top:4vh;align-items:start}
+.doc{position:relative;cursor:default}
+.doc .paper{background:#fff;border:2px solid var(--ink);border-radius:6px 22px 6px 6px;aspect-ratio:3/3.5;max-height:30vh;margin:auto;padding:12% 12%;position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;box-shadow:6px 6px 0 var(--ink)}
+.doc:nth-child(odd) .paper{transform:rotate(-2deg)}.doc:nth-child(even) .paper{transform:rotate(2deg)}
+.doc:hover .paper{transform:rotate(0) translateY(-12px);box-shadow:10px 14px 0 var(--purple)}
+.doc .paper svg{width:100%;height:100%}
+.doc h5{font-size:clamp(14px,min(1.2vw,2.2vh),19px);margin-top:2vh;letter-spacing:-.02em;line-height:1.15}
+.doc p{font-size:clamp(12.5px,min(.92vw,1.7vh),14.5px);color:var(--ink2);margin-top:4px}
+.doc .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(.25);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.doc:hover .bar{transform:scaleX(1)}
+.doc .bar:nth-of-type(2){transition-delay:.08s}.doc .bar:nth-of-type(3){transition-delay:.16s}.doc .bar:nth-of-type(4){transition-delay:.24s}
+.doc .ln2{stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s .5s}
+.panel.in .doc .ln2{stroke-dashoffset:0}
+.doc:hover .ln2{animation:redraw 1s}
+@keyframes redraw{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+.doc .mv{transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+.doc:hover .mv{transform:translateX(34px)}
+.doc .cell{transition:fill .3s}
+.doc:hover .cell{fill:var(--yellow)}
+.doc:hover .cell.b{fill:var(--lilac)}
+.doc .stk{transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.doc:hover .stk{transform:rotate(-8deg) translateY(-4px)}
+.doc:hover .stk.s2{transform:rotate(7deg) translateY(-6px)}
+
+/* ===== P5 90 days ===== */
+.journey{position:relative;margin-top:4vh;height:min(46vh,430px)}
+.journey svg.path{position:absolute;inset:0;width:100%;height:100%}
+.stop{position:absolute;width:22%}
+.stop .flag{width:54px;height:64px;transition:transform .4s cubic-bezier(.3,1.6,.5,1);transform-origin:8px 62px}
+.stop:hover .flag{transform:rotate(-12deg) scale(1.12)}
+.stop .when{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-top:10px}
+.stop h4{font-size:clamp(20px,min(1.8vw,3vh),28px);letter-spacing:-.03em;margin-top:2px}
+.stop p{font-size:clamp(13px,min(.98vw,1.8vh),15.5px);color:var(--ink2);margin-top:6px}
+
+/* ===== cases ===== */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.case .num{font-size:clamp(56px,min(9vw,11vh),140px);font-weight:300;letter-spacing:-.06em;line-height:.8;color:var(--purple)}
+.case .meta{margin-top:1.6vh}
+.case h3{font-size:clamp(26px,min(3vw,4.8vh),50px);letter-spacing:-.04em;line-height:1.02;margin-top:1.4vh}
+.case .bl{margin-top:2vh;display:grid;gap:1.2vh}
+.case .bl div{display:grid;grid-template-columns:112px 1fr;gap:12px;font-size:clamp(13px,min(1.05vw,1.9vh),16.5px);line-height:1.42;color:var(--ink2);padding-top:1.1vh;border-top:1.5px solid rgba(21,18,23,.14)}
+.case .bl b{color:var(--ink);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.case .btn{margin-top:2.4vh}
+.frame{position:relative;border:10px solid #fff;outline:2px solid var(--ink);border-radius:6px;box-shadow:16px 16px 0 var(--c,var(--lilac));background:#fff;cursor:pointer;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;max-height:62vh;overflow:hidden}
+.frame:hover{transform:translate(-6px,-6px) rotate(-.6deg);box-shadow:24px 24px 0 var(--c,var(--lilac))}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.frame .imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;height:100%}
+.note{position:absolute;z-index:3;background:var(--yellow);padding:14px 16px 16px;width:min(230px,18vw);font-weight:700;font-size:clamp(13px,min(1vw,1.8vh),15px);line-height:1.3;transform:rotate(4deg);box-shadow:4px 6px 0 rgba(0,0,0,.12);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.note:hover{transform:rotate(-2deg) scale(1.05)}
+.note small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.note:before{content:"";position:absolute;top:-10px;left:50%;width:60px;height:20px;margin-left:-30px;background:rgba(255,255,255,.6);transform:rotate(-3deg)}
+.case-art{position:relative}
+
+/* ===== brands wall ===== */
+#marcas .wall{position:relative;height:min(58vh,560px);margin-top:3vh}
+.stk-b{position:absolute;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.stk-b .blob{width:clamp(84px,min(8vw,13vh),124px);height:clamp(84px,min(8vw,13vh),124px);border-radius:50%;border:2.4px solid var(--ink);display:grid;place-items:center;background:var(--c);transition:transform .35s cubic-bezier(.3,1.6,.5,1);animation:float 5s ease-in-out infinite}
+.stk-b .blob svg{width:58%;height:58%}
+.stk-b span{font-weight:800;font-size:clamp(13px,min(1vw,1.9vh),16px);background:#fff;padding:3px 10px;border-radius:99px;border:1.6px solid var(--ink);white-space:nowrap}
+.stk-b:hover .blob{transform:scale(1.12) rotate(-8deg)}
+@keyframes float{50%{translate:0 -8px}}
+
+/* ===== me ===== */
+#yo{display:grid;grid-template-columns:.8fr 1.2fr;gap:4vw;align-items:center}
+.me-art{position:relative;height:min(68vh,620px)}
+.me-art .bg{position:absolute;width:86%;aspect-ratio:1;border-radius:50%;background:var(--lilac2);left:7%;top:8%}
+.me-art svg{position:relative;height:100%;width:auto;display:block;margin:auto}
+.me-art .typing{animation:type .3s ease-in-out infinite alternate}
+@keyframes type{to{transform:translateY(-3px)}}
+.me-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6vh 2.4vw;margin-top:3.4vh}
+.me-grid h4{font-size:clamp(17px,min(1.4vw,2.4vh),21px);letter-spacing:-.02em}
+.me-grid p{font-size:clamp(13.5px,min(1vw,1.85vh),16px);color:var(--ink2);margin-top:6px}
+.jobs{list-style:none;margin-top:6px}
+.jobs li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(21,18,23,.2);font-size:clamp(13px,min(.98vw,1.8vh),15px)}
+.jobs li span{color:var(--mute);white-space:nowrap}
+
+/* ===== contact ===== */
+#hablemos{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3vw;align-items:center;background:#EBE0FC;color:var(--ink)}
+#hablemos .k{color:var(--mute)}
+.big{font-size:clamp(64px,min(9.5vw,18vh),180px);font-weight:700;letter-spacing:-.06em;line-height:.85}
+.big em{font-style:normal;color:var(--purple)}
+#hablemos .lead{color:var(--ink2);max-width:600px;margin-top:3vh}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:4vh;align-items:center}
+.cta .btn{border-color:var(--ink);font-size:17px;padding:18px 28px}
+.cta .btn.y{background:var(--ink);color:#fff;border-color:var(--ink)}.cta .btn.y:hover{background:var(--purple);border-color:var(--purple)}
+.cta .btn.w{background:#fff;color:var(--ink)}
+.cta .btn.w:hover{background:var(--ink);color:#fff}
+.cvl{display:inline-flex;border:1.6px solid var(--ink);border-radius:99px;overflow:hidden;margin-left:4px}
+.cvl button{padding:6px 12px;font-size:13px;font-weight:800;color:var(--ink)}
+.cvl button.on{background:var(--ink);color:#fff}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:4vh}
+.facts span{font-size:13px;font-weight:700;border:1.4px solid rgba(46,36,51,.25);border-radius:99px;padding:6px 12px;background:rgba(255,255,255,.5)}
+.bye{position:relative;height:min(64vh,580px);margin-right:3vw}
+.bye svg{height:100%;max-width:100%;width:auto;display:block;margin:auto}
+.bye .hand{transform-origin:400px 258px;transform-box:view-box;animation:wave .5s ease-in-out infinite alternate}
+
+/* ===== modal ===== */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(21,18,23,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:22px}
+.modal.open{display:flex;animation:fd .25s}
+@keyframes fd{from{opacity:0}}
+.mbox{background:var(--bg);border-radius:26px;width:min(1180px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.05fr .95fr;animation:pp .45s cubic-bezier(.2,.8,.2,1);position:relative}
+@keyframes pp{from{transform:translateY(30px) scale(.97)}}
+.mtx{padding:36px 36px 34px}
+.mtx h3{font-size:clamp(30px,3vw,46px);letter-spacing:-.04em;line-height:1;margin:10px 0 8px}
+.mtx .sub{color:var(--mute);font-weight:600}
+.mtx .sec{margin-top:20px}
+.mtx .sec b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
+.mtx .sec p,.mtx .sec li{color:var(--ink2);font-size:15.5px}
+.mtx .sec ul{padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1.6px solid var(--ink);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700;background:#fff}
+.chips span.m{background:var(--lilac2);border-color:var(--lilac2);color:var(--purple)}
+.mim{background:#fff;padding:22px;display:flex;flex-direction:column;gap:12px;max-height:92vh;overflow:auto;border-radius:0 26px 26px 0}
+.mim.two{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.mim img{border-radius:12px;border:1px solid #eee;cursor:zoom-in}
+.x{position:absolute;right:16px;top:16px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;font-size:18px;z-index:3}
+.lb .lbi{max-width:min(1300px,94vw);max-height:90vh;border-radius:14px}
+.toast{position:fixed;bottom:70px;left:50%;transform:translate(-50%,130px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;z-index:400;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.toast.show{transform:translate(-50%,0)}
+
+/* ===== present mode ===== */
+html.present .menu{transform:translateX(130%)}
+html.present .menu:hover{transform:none}
+.ptip{position:fixed;top:18px;left:50%;transform:translate(-50%,-120px);background:var(--yellow);padding:10px 16px;border-radius:12px;font-size:13px;font-weight:800;z-index:210;transition:transform .5s}
+.ptip.show{transform:translate(-50%,0)}
+
+/* ===== mobile: vertical ===== */
+@media (max-width:820px){
+  .stage{position:relative;height:auto;overflow:visible}
+  .track{position:relative;flex-direction:column;transform:none!important}
+  .panel{width:100%;flex:none;height:auto;min-height:auto;padding:90px 22px 70px}
+  .thread,.walker,.hud .dots{display:none}
+  .menu{width:auto;padding:8px 12px;top:10px;right:10px}
+  .menu>a,.menu>.row,.menu .mt,#presentBtn{display:none!important}.menu .icons{padding-top:0}.menu.mini:hover{width:auto;padding:8px 12px}
+  #hola .sub{flex-direction:column;gap:12px}#hola .sub p+p{display:none}.h1{font-size:19vw}
+  #hola,#como-pienso,.case,#yo,#hablemos{grid-template-columns:1fr}
+  .hero-art{height:58vh;margin-top:20px}
+  .cue{display:none}
+  .roles,.princ,.me-grid{grid-template-columns:1fr}
+  .kit{grid-template-columns:1fr 1fr}
+  .journey{height:auto}.journey svg.path{display:none}.stop{position:relative;width:auto!important;left:auto!important;top:auto!important;margin-bottom:26px}
+  #marcas .wall{height:auto;display:flex;flex-wrap:wrap;gap:22px;justify-content:center}.stk-b{position:relative;left:auto!important;top:auto!important}
+  .note{position:relative;width:auto;margin-top:16px;right:auto!important;left:auto!important;bottom:auto!important;top:auto!important}
+  .mbox{grid-template-columns:1fr}.mim{border-radius:0 0 26px 26px}
+  .bye{height:44vh}.loop{height:auto;width:100%}
+  html,body{overflow-x:hidden}.panel{overflow-x:clip}
+  .me-art{height:auto}.me-art svg{width:100%;height:auto;max-height:62vh}.bye{height:auto;margin:0}.bye svg{width:100%;height:auto;max-height:56vh}
+  .menu{left:auto;max-width:calc(100vw - 20px)}
+  .k{font-size:11px}
+  .brand{left:10px;top:10px;background:rgba(251,246,239,.94);padding:7px 12px;border-radius:99px;box-shadow:0 4px 14px -8px rgba(0,0,0,.25);font-size:15px}
+  .hud{bottom:10px;left:10px;right:10px;background:var(--bg);padding:6px 6px 6px 14px;border-radius:99px;box-shadow:0 6px 20px -10px rgba(0,0,0,.3)}.hud .tt{min-width:0}html.dark .hud{background:var(--ink)}
+  .big{font-size:16.5vw}
+}
+@media (max-height:780px) and (min-width:821px){.h2{font-size:clamp(30px,min(4.4vw,6.8vh),70px)}.role ul{padding-top:1.2vh}.role li{padding:4px 9px;font-size:12px}.princ{margin-top:3vh}.pr{padding:1.6vh 4px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.pop{opacity:1;transform:none}.draw *{stroke-dashoffset:0!important}}
+/* ilustración estática */
+.avatar *,.me-art *,.bye *,.avatar .hairback{animation:none!important}
+.avatar .earA,.avatar .earB,.bunNose,.earA,.earB{animation:none!important}
+.avatar{cursor:default}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="boil"><feTurbulence id="turb" type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+    
+<filter id="crayon" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" seed="9" result="g"/>
+<feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.55 1.18" result="gm"/>
+<feComposite in="d" in2="gm" operator="in"/></filter>
+<filter id="crayon2" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="2" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="2.4" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="1" seed="3" result="g"/>
+<feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.45 1.15" result="gm"/>
+<feComposite in="d" in2="gm" operator="in"/></filter>
+<clipPath id="ceL"><ellipse cx="150" cy="176" rx="15" ry="17"/></clipPath><clipPath id="ceR"><ellipse cx="207" cy="173" rx="15" ry="17"/></clipPath><clipPath id="hbclip"><path d="M176.0 46.0 C 158.7 45.3 141.0 50.3 128.0 58.0 C 115.0 65.7 104.7 78.3 98.0 92.0 C 91.3 105.7 90.3 124.3 88.0 140.0 C 85.7 155.7 86.3 171.7 84.0 186.0 C 81.7 200.3 74.7 213.3 74.0 226.0 C 73.3 238.7 81.3 249.7 80.0 262.0 C 78.7 274.3 67.0 287.3 66.0 300.0 C 65.0 312.7 75.3 325.0 74.0 338.0 C 72.7 351.0 58.7 365.3 58.0 378.0 C 57.3 390.7 69.7 402.7 70.0 414.0 C 70.3 425.3 46.7 439.7 60.0 446.0 C 73.3 452.3 123.3 451.0 150.0 452.0 C 176.7 453.0 200.0 455.7 220.0 452.0 C 240.0 448.3 260.3 439.7 270.0 430.0 C 279.7 420.3 278.3 406.3 278.0 394.0 C 277.7 381.7 267.3 368.7 268.0 356.0 C 268.7 343.3 281.7 330.3 282.0 318.0 C 282.3 305.7 270.3 294.0 270.0 282.0 C 269.7 270.0 280.3 258.7 280.0 246.0 C 279.7 233.3 269.7 220.3 268.0 206.0 C 266.3 191.7 271.0 176.3 270.0 160.0 C 269.0 143.7 268.3 124.3 262.0 108.0 C 255.7 91.7 246.3 72.3 232.0 62.0 C 217.7 51.7 193.3 46.7 176.0 46.0 Z"/></clipPath><symbol id="lj-base" viewBox="0 0 400 460"><g transform="translate(0 20)"><g class="lhb"><path d="M176.0 46.0 C 158.7 45.3 141.0 50.3 128.0 58.0 C 115.0 65.7 104.7 78.3 98.0 92.0 C 91.3 105.7 90.3 124.3 88.0 140.0 C 85.7 155.7 86.3 171.7 84.0 186.0 C 81.7 200.3 74.7 213.3 74.0 226.0 C 73.3 238.7 81.3 249.7 80.0 262.0 C 78.7 274.3 67.0 287.3 66.0 300.0 C 65.0 312.7 75.3 325.0 74.0 338.0 C 72.7 351.0 58.7 365.3 58.0 378.0 C 57.3 390.7 69.7 402.7 70.0 414.0 C 70.3 425.3 46.7 439.7 60.0 446.0 C 73.3 452.3 123.3 451.0 150.0 452.0 C 176.7 453.0 200.0 455.7 220.0 452.0 C 240.0 448.3 260.3 439.7 270.0 430.0 C 279.7 420.3 278.3 406.3 278.0 394.0 C 277.7 381.7 267.3 368.7 268.0 356.0 C 268.7 343.3 281.7 330.3 282.0 318.0 C 282.3 305.7 270.3 294.0 270.0 282.0 C 269.7 270.0 280.3 258.7 280.0 246.0 C 279.7 233.3 269.7 220.3 268.0 206.0 C 266.3 191.7 271.0 176.3 270.0 160.0 C 269.0 143.7 268.3 124.3 262.0 108.0 C 255.7 91.7 246.3 72.3 232.0 62.0 C 217.7 51.7 193.3 46.7 176.0 46.0 Z" fill="#2A1C18" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/><g clip-path="url(#hbclip)"><path d="M82.6 124.5 C 82.6 129.3 82.5 143.7 82.5 153.3 C 82.4 162.9 81.8 172.5 82.1 182.1 C 82.3 191.6 83.5 201.2 84.0 210.8 C 84.4 220.4 85.3 230.0 84.9 239.6 C 84.6 249.2 82.5 258.8 81.9 268.3 C 81.3 277.9 80.4 287.5 81.1 297.1 C 81.7 306.7 84.8 316.3 85.8 325.9 C 86.9 335.5 88.0 345.1 87.2 354.6 C 86.5 364.2 82.5 373.8 81.3 383.4 C 80.1 393.0 80.3 407.4 80.0 412.2" stroke="#5A4034" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M99.3 126.4 C 99.0 131.4 98.1 146.2 97.7 156.1 C 97.3 165.9 97.2 175.8 97.0 185.7 C 96.9 195.5 97.3 205.4 96.9 215.3 C 96.4 225.1 95.2 235.0 94.2 244.9 C 93.3 254.8 91.6 264.6 91.4 274.5 C 91.1 284.4 92.1 294.2 92.5 304.1 C 92.9 314.0 94.2 323.8 93.7 333.7 C 93.1 343.6 90.6 353.5 89.2 363.3 C 87.8 373.2 85.2 383.1 85.0 392.9 C 84.8 402.8 87.5 417.6 88.0 422.5" stroke="#3E2A22" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M110.6 123.7 C 110.4 128.8 109.3 144.1 109.1 154.2 C 108.9 164.4 109.2 174.6 109.3 184.7 C 109.5 194.9 110.5 205.1 110.0 215.2 C 109.5 225.4 107.4 235.6 106.3 245.8 C 105.2 255.9 103.0 266.1 103.1 276.3 C 103.1 286.4 105.7 296.6 106.7 306.8 C 107.7 316.9 109.9 327.1 109.1 337.3 C 108.3 347.5 104.0 357.6 102.0 367.8 C 100.0 378.0 96.7 388.1 97.0 398.3 C 97.4 408.5 102.9 423.7 104.1 428.8" stroke="#3E2A22" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M116.4 126.6 C 116.3 131.4 115.9 145.8 115.9 155.4 C 115.9 164.9 116.1 174.5 116.4 184.1 C 116.7 193.7 117.7 203.3 117.6 212.8 C 117.5 222.4 116.6 232.0 115.9 241.6 C 115.3 251.2 113.7 260.7 113.8 270.3 C 113.8 279.9 115.4 289.5 116.3 299.1 C 117.2 308.6 119.3 318.2 119.2 327.8 C 119.1 337.4 116.8 346.9 115.5 356.5 C 114.2 366.1 111.5 375.7 111.6 385.3 C 111.8 394.8 115.5 409.2 116.2 414.0" stroke="#5A4034" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M130.5 144.5 C 130.2 149.2 129.6 163.3 129.2 172.8 C 128.7 182.2 127.8 191.6 127.7 201.1 C 127.6 210.5 128.5 219.9 128.6 229.4 C 128.7 238.8 129.1 248.2 128.4 257.7 C 127.6 267.1 125.0 276.5 123.9 286.0 C 122.9 295.4 121.7 304.8 122.0 314.3 C 122.4 323.7 125.4 333.1 126.1 342.6 C 126.8 352.0 127.5 361.4 126.2 370.9 C 125.0 380.3 120.3 389.7 118.7 399.2 C 117.1 408.6 116.8 422.7 116.4 427.4" stroke="#3E2A22" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M145.7 136.9 C 145.7 141.7 145.6 156.1 145.8 165.7 C 146.0 175.3 146.8 184.9 146.9 194.5 C 146.9 204.1 146.5 213.7 146.0 223.3 C 145.5 232.9 144.0 242.5 144.0 252.1 C 144.0 261.7 145.1 271.3 146.0 280.9 C 146.9 290.5 149.2 300.1 149.3 309.7 C 149.4 319.3 147.6 328.9 146.5 338.5 C 145.3 348.1 142.3 357.7 142.3 367.3 C 142.2 376.9 144.7 386.5 146.2 396.1 C 147.8 405.7 150.8 420.1 151.7 424.9" stroke="#3E2A22" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M156.7 133.6 C 156.6 138.6 156.5 153.6 156.1 163.6 C 155.6 173.6 154.4 183.6 154.2 193.6 C 153.9 203.7 154.1 213.7 154.5 223.7 C 154.8 233.7 156.4 243.7 156.3 253.7 C 156.1 263.7 154.8 273.7 153.6 283.7 C 152.4 293.7 149.5 303.7 149.1 313.7 C 148.8 323.7 150.4 333.8 151.5 343.8 C 152.6 353.8 155.9 363.8 155.9 373.8 C 155.8 383.8 153.1 393.8 151.1 403.8 C 149.2 413.8 145.3 428.8 144.1 433.8" stroke="#5A4034" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M166.4 134.9 C 166.4 139.7 166.6 154.1 166.3 163.7 C 166.0 173.3 165.3 183.0 164.8 192.6 C 164.3 202.2 163.2 211.8 163.2 221.4 C 163.2 231.1 164.6 240.7 165.0 250.3 C 165.5 259.9 166.6 269.5 166.0 279.2 C 165.4 288.8 162.7 298.4 161.6 308.0 C 160.4 317.6 158.6 327.3 158.9 336.9 C 159.3 346.5 162.5 356.1 163.6 365.7 C 164.8 375.4 166.5 385.0 165.6 394.6 C 164.8 404.2 159.6 418.7 158.3 423.5" stroke="#3E2A22" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M179.3 142.7 C 179.1 147.4 178.4 161.5 178.1 170.9 C 177.8 180.3 178.0 189.7 177.8 199.1 C 177.5 208.5 177.4 217.9 176.9 227.3 C 176.3 236.7 174.9 246.1 174.2 255.5 C 173.6 264.9 173.1 274.3 173.1 283.7 C 173.2 293.1 174.5 302.5 174.6 311.9 C 174.6 321.3 174.4 330.7 173.5 340.1 C 172.6 349.5 170.0 358.9 169.1 368.3 C 168.2 377.7 167.8 387.1 168.2 396.5 C 168.6 405.9 170.9 420.0 171.4 424.7" stroke="#3E2A22" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M192.6 146.3 C 192.4 151.0 191.6 165.2 191.4 174.7 C 191.3 184.2 191.5 193.7 191.6 203.2 C 191.8 212.7 192.6 222.2 192.2 231.6 C 191.8 241.1 190.2 250.6 189.3 260.1 C 188.4 269.6 186.7 279.1 186.8 288.6 C 186.9 298.0 189.0 307.5 189.8 317.0 C 190.6 326.5 192.2 336.0 191.6 345.5 C 191.0 355.0 187.6 364.5 186.0 373.9 C 184.4 383.4 181.9 392.9 182.2 402.4 C 182.5 411.9 186.9 426.1 187.9 430.9" stroke="#5A4034" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M200.6 122.8 C 200.4 127.9 199.8 143.3 199.7 153.6 C 199.5 163.9 199.8 174.2 199.7 184.4 C 199.5 194.7 199.2 205.0 198.6 215.2 C 198.0 225.5 196.7 235.8 196.3 246.0 C 195.9 256.3 196.0 266.6 196.3 276.9 C 196.5 287.1 197.9 297.4 197.9 307.7 C 197.8 317.9 197.0 328.2 196.0 338.5 C 195.0 348.8 192.6 359.0 192.1 369.3 C 191.5 379.6 192.2 389.8 192.8 400.1 C 193.5 410.4 195.6 425.8 196.1 430.9" stroke="#3E2A22" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M217.2 149.8 C 217.2 154.3 217.2 167.7 217.5 176.7 C 217.8 185.6 218.6 194.6 219.0 203.5 C 219.4 212.5 219.9 221.5 219.8 230.4 C 219.6 239.4 218.3 248.3 218.1 257.3 C 217.9 266.2 217.8 275.2 218.6 284.2 C 219.3 293.1 221.9 302.1 222.7 311.0 C 223.5 320.0 223.9 329.0 223.2 337.9 C 222.6 346.9 219.6 355.8 219.0 364.8 C 218.4 373.7 218.5 382.7 219.7 391.7 C 220.9 400.6 225.3 414.1 226.4 418.5" stroke="#3E2A22" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M231.5 130.7 C 231.5 135.6 231.6 150.3 231.5 160.1 C 231.4 169.9 230.8 179.7 230.9 189.5 C 231.0 199.3 231.5 209.1 231.9 218.9 C 232.3 228.7 233.4 238.5 233.3 248.3 C 233.3 258.1 232.2 267.9 231.6 277.7 C 230.9 287.5 229.5 297.3 229.6 307.2 C 229.8 317.0 231.5 326.8 232.4 336.6 C 233.3 346.4 235.3 356.2 235.1 366.0 C 235.0 375.8 232.7 385.6 231.6 395.4 C 230.5 405.2 228.9 419.9 228.4 424.8" stroke="#5A4034" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M238.0 131.7 C 238.0 136.4 237.9 150.4 238.2 159.8 C 238.5 169.2 239.0 178.5 239.5 187.9 C 240.1 197.2 241.3 206.6 241.5 215.9 C 241.6 225.3 240.9 234.6 240.5 244.0 C 240.0 253.4 238.7 262.7 239.1 272.1 C 239.4 281.4 241.4 290.8 242.6 300.1 C 243.8 309.5 246.1 318.9 246.1 328.2 C 246.2 337.6 244.0 346.9 242.9 356.3 C 241.9 365.6 239.5 375.0 239.9 384.3 C 240.4 393.7 244.7 407.7 245.6 412.4" stroke="#3E2A22" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M254.6 145.9 C 254.5 150.5 254.2 164.4 254.1 173.6 C 253.9 182.8 254.2 192.0 253.8 201.2 C 253.4 210.4 252.2 219.7 251.6 228.9 C 251.0 238.1 250.1 247.3 250.2 256.5 C 250.2 265.8 251.8 275.0 252.1 284.2 C 252.5 293.4 253.1 302.6 252.4 311.8 C 251.6 321.1 248.8 330.3 247.7 339.5 C 246.6 348.7 245.3 357.9 245.8 367.2 C 246.2 376.4 249.3 385.6 250.2 394.8 C 251.1 404.0 250.8 417.8 250.9 422.5" stroke="#3E2A22" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M261.2 125.3 C 261.0 130.1 260.1 144.7 259.9 154.5 C 259.7 164.2 259.9 173.9 259.9 183.6 C 259.9 193.4 260.5 203.1 260.0 212.8 C 259.6 222.5 258.0 232.2 257.1 242.0 C 256.2 251.7 254.7 261.4 254.7 271.1 C 254.7 280.9 256.7 290.6 257.3 300.3 C 257.9 310.0 259.2 319.8 258.5 329.5 C 257.8 339.2 254.4 348.9 252.9 358.7 C 251.4 368.4 249.2 378.1 249.5 387.8 C 249.8 397.6 253.8 412.1 254.7 417.0" stroke="#5A4034" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M92.0 170.0 C 91.8 174.2 91.1 186.7 91.0 195.0 C 91.0 203.3 91.7 211.7 91.7 220.0 C 91.8 228.3 92.0 236.7 91.3 245.0 C 90.7 253.3 88.4 261.7 87.7 270.0 C 87.0 278.3 86.5 286.7 87.1 295.0 C 87.7 303.3 90.7 311.7 91.2 320.0 C 91.8 328.3 91.7 336.7 90.4 345.0 C 89.1 353.3 84.7 361.7 83.5 370.0 C 82.3 378.3 82.0 386.7 83.2 395.0 C 84.4 403.3 89.4 415.8 90.7 420.0" stroke="#E2B571" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/><path d="M94.0 180.0 C 93.8 183.8 93.1 195.3 93.0 203.0 C 93.0 210.7 93.7 218.3 93.7 226.0 C 93.8 233.7 94.0 241.3 93.3 249.0 C 92.7 256.7 90.4 264.3 89.7 272.0 C 89.0 279.7 88.5 287.3 89.1 295.0 C 89.7 302.7 92.7 310.3 93.2 318.0 C 93.8 325.7 93.7 333.3 92.4 341.0 C 91.1 348.7 86.7 356.3 85.5 364.0 C 84.3 371.7 84.0 379.3 85.2 387.0 C 86.4 394.7 91.4 406.2 92.7 410.0" stroke="#F3D9A4" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/><path d="M108.0 170.0 C 107.9 174.2 108.0 186.7 107.6 195.0 C 107.2 203.3 106.0 211.7 105.7 220.0 C 105.3 228.3 105.2 236.7 105.5 245.0 C 105.9 253.3 107.7 261.7 107.8 270.0 C 107.9 278.3 107.3 286.7 106.1 295.0 C 105.0 303.3 101.7 311.7 101.1 320.0 C 100.4 328.3 101.1 336.7 102.2 345.0 C 103.3 353.3 107.2 361.7 107.6 370.0 C 108.0 378.3 106.5 386.7 104.6 395.0 C 102.8 403.3 97.8 415.8 96.4 420.0" stroke="#E2B571" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/><path d="M110.0 180.0 C 109.9 183.8 110.0 195.3 109.6 203.0 C 109.2 210.7 108.0 218.3 107.7 226.0 C 107.3 233.7 107.2 241.3 107.5 249.0 C 107.9 256.7 109.7 264.3 109.8 272.0 C 109.9 279.7 109.3 287.3 108.1 295.0 C 107.0 302.7 103.7 310.3 103.1 318.0 C 102.4 325.7 103.1 333.3 104.2 341.0 C 105.3 348.7 109.2 356.3 109.6 364.0 C 110.0 371.7 108.5 379.3 106.6 387.0 C 104.8 394.7 99.8 406.2 98.4 410.0" stroke="#F3D9A4" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/><path d="M250.0 170.0 C 249.9 174.2 249.6 186.7 249.5 195.0 C 249.5 203.3 250.3 211.7 250.0 220.0 C 249.7 228.3 248.5 236.7 247.8 245.0 C 247.0 253.3 245.3 261.7 245.3 270.0 C 245.3 278.3 247.0 286.7 247.7 295.0 C 248.5 303.3 250.4 311.7 249.9 320.0 C 249.4 328.3 246.3 336.7 244.8 345.0 C 243.2 353.3 240.4 361.7 240.5 370.0 C 240.7 378.3 244.4 386.7 245.9 395.0 C 247.4 403.3 249.2 415.8 249.8 420.0" stroke="#E2B571" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/><path d="M252.0 180.0 C 251.9 183.8 251.6 195.3 251.5 203.0 C 251.5 210.7 252.3 218.3 252.0 226.0 C 251.7 233.7 250.5 241.3 249.8 249.0 C 249.0 256.7 247.3 264.3 247.3 272.0 C 247.3 279.7 249.0 287.3 249.7 295.0 C 250.5 302.7 252.4 310.3 251.9 318.0 C 251.4 325.7 248.3 333.3 246.8 341.0 C 245.2 348.7 242.4 356.3 242.5 364.0 C 242.7 371.7 246.4 379.3 247.9 387.0 C 249.4 394.7 251.2 406.2 251.8 410.0" stroke="#F3D9A4" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/><path d="M262.0 170.0 C 261.9 174.2 261.2 186.7 261.2 195.0 C 261.2 203.3 262.0 211.7 261.9 220.0 C 261.9 228.3 261.5 236.7 260.8 245.0 C 260.0 253.3 257.8 261.7 257.3 270.0 C 256.9 278.3 257.3 286.7 258.0 295.0 C 258.8 303.3 261.6 311.7 261.8 320.0 C 262.0 328.3 260.7 336.7 259.1 345.0 C 257.6 353.3 253.4 361.7 252.6 370.0 C 251.9 378.3 253.4 386.7 254.9 395.0 C 256.4 403.3 260.6 415.8 261.7 420.0" stroke="#E2B571" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/><path d="M264.0 180.0 C 263.9 183.8 263.2 195.3 263.2 203.0 C 263.2 210.7 264.0 218.3 263.9 226.0 C 263.9 233.7 263.5 241.3 262.8 249.0 C 262.0 256.7 259.8 264.3 259.3 272.0 C 258.9 279.7 259.3 287.3 260.0 295.0 C 260.8 302.7 263.6 310.3 263.8 318.0 C 264.0 325.7 262.7 333.3 261.1 341.0 C 259.6 348.7 255.4 356.3 254.6 364.0 C 253.9 371.7 255.4 379.3 256.9 387.0 C 258.4 394.7 262.6 406.2 263.7 410.0" stroke="#F3D9A4" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/></g></g></g><path d="M44 460 C 46 392 82 344 140 330 C 152 327 164 326 176 326 C 196 326 214 328 232 334 C 288 350 318 394 322 460 Z" fill="#D9C9F7" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<path d="M146 330 C 160 346 196 346 212 332" fill="none" stroke="#3A2620" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M150 334 C 162 352 196 352 208 336" fill="none" stroke="#B9A6E6" stroke-width="5" stroke-linecap="round"/>
+<g stroke="#C2AEEE" stroke-width="2" stroke-linecap="round" fill="none"><path d="M78 400 L 84 380 M96 420 L 102 398 M260 380 L 266 402 M280 410 L 286 430 M110 380 L 116 362"/></g><path d="M160 244 C 162 280 160 306 154 332 C 166 346 196 346 206 332 C 200 306 198 280 200 244 Z" fill="#F3C7A5" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<path d="M161 262 C 172 274 190 274 200 262 L 200 276 C 190 286 170 286 161 276 Z" fill="#E3A985" opacity=".7"/><g transform="translate(0 20)"><path d="M178 94 C 224 92 252 124 252 170 C 252 210 232 242 202 256 C 192 261 168 262 158 257 C 126 242 106 210 106 170 C 106 124 134 96 178 94 Z" fill="#F3C7A5" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<path d="M112 186 C 116 222 136 248 166 258" fill="none" stroke="#E3A985" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+<circle cx="134" cy="210" r="15" fill="#F4A3A3" opacity=".55"/><circle cx="226" cy="206" r="15" fill="#F4A3A3" opacity=".55"/>
+<path d="M126 206 l3 -3 M134 214 l3 -3 M220 202 l3 -3 M228 210 l3 -3" stroke="#fff" stroke-width="1.6" opacity=".6" stroke-linecap="round"/><path d="M178 48 C 130 48 100 84 98 132 C 97 150 100 166 106 178 C 110 152 118 128 136 112 C 150 100 166 96 178 98 C 192 96 210 100 224 112 C 242 128 252 152 256 178 C 264 164 268 148 266 128 C 262 82 228 48 178 48 Z" fill="#2A1C18" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<path d="M178 52 L 179 98" stroke="#120B09" stroke-width="2"/>
+<path d="M170.0 58.0 C 169.4 59.0 167.5 62.1 166.4 64.2 C 165.2 66.3 164.1 68.3 163.0 70.4 C 161.8 72.5 160.7 74.5 159.5 76.6 C 158.2 78.7 156.9 80.7 155.5 82.8 C 154.1 84.9 152.6 86.9 151.0 89.0 C 149.4 91.1 147.7 93.1 146.1 95.2 C 144.5 97.3 142.9 99.3 141.4 101.4 C 139.9 103.5 138.5 105.5 137.3 107.6 C 136.1 109.7 135.1 111.7 134.2 113.8 C 133.3 115.9 132.4 119.0 132.0 120.0 M160.0 62.0 C 159.3 63.5 157.1 67.9 155.8 70.8 C 154.4 73.7 153.1 76.7 151.8 79.6 C 150.4 82.5 149.1 85.5 147.7 88.4 C 146.2 91.3 144.7 94.3 143.1 97.2 C 141.5 100.1 139.8 103.1 138.0 106.0 C 136.2 108.9 134.3 111.9 132.5 114.8 C 130.7 117.7 128.9 120.7 127.2 123.6 C 125.5 126.5 123.9 129.5 122.5 132.4 C 121.1 135.3 119.9 138.3 118.8 141.2 C 117.7 144.1 116.5 148.5 116.0 150.0 M188.0 58.0 C 188.7 59.0 190.6 62.0 192.0 64.0 C 193.3 66.0 194.8 68.0 196.2 70.0 C 197.6 72.0 199.0 74.0 200.3 76.0 C 201.5 78.0 202.8 80.0 203.9 82.0 C 205.0 84.0 206.0 86.0 207.0 88.0 C 208.0 90.0 208.8 92.0 209.7 94.0 C 210.7 96.0 211.5 98.0 212.6 100.0 C 213.7 102.0 214.8 104.0 216.1 106.0 C 217.5 108.0 219.0 110.0 220.6 112.0 C 222.3 114.0 225.1 117.0 226.0 118.0 M198.0 62.0 C 198.8 63.5 201.3 67.9 203.0 70.8 C 204.7 73.7 206.5 76.7 208.2 79.6 C 209.9 82.5 211.6 85.5 213.3 88.4 C 214.9 91.3 216.4 94.3 217.9 97.2 C 219.4 100.1 220.7 103.1 222.0 106.0 C 223.3 108.9 224.5 111.9 225.7 114.8 C 227.0 117.7 228.2 120.7 229.6 123.6 C 231.0 126.5 232.4 129.5 234.1 132.4 C 235.8 135.3 237.6 138.3 239.6 141.2 C 241.6 144.1 244.9 148.5 246.0 150.0" stroke="#5A4034" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M114 172 C 100 166 94 182 98 194 C 102 206 110 208 116 204 Z" fill="#F3C7A5" stroke="#3A2620" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M108 180 C 104 184 104 192 108 198" stroke="#E3A985" stroke-width="2" fill="none"/>
+<circle cx="100" cy="184" r="2.2" fill="#E9E2D0" stroke="#3A2620" stroke-width="1"/>
+<path d="M104 206 C 92 210 92 228 104 230 C 114 230 116 214 108 208" fill="none" stroke="#E2B04A" stroke-width="4.2" stroke-linecap="round"/><path d="M104 206 C 92 210 92 228 104 230 C 114 230 116 214 108 208" fill="none" stroke="#3A2620" stroke-width="1.2" opacity=".5"/><path d="M150.0 100.0 C 145.7 101.0 136.7 108.3 132.0 116.0 C 127.3 123.7 124.5 134.3 122.0 146.0 C 119.5 157.7 119.0 172.3 117.0 186.0 C 115.0 199.7 112.2 214.0 110.0 228.0 C 107.8 242.0 104.3 256.0 104.0 270.0 C 103.7 284.0 108.7 298.3 108.0 312.0 C 107.3 325.7 99.0 344.3 100.0 352.0 C 101.0 359.7 110.3 363.7 114.0 358.0 C 117.7 352.3 120.7 332.0 122.0 318.0 C 123.3 304.0 121.0 288.7 122.0 274.0 C 123.0 259.3 126.0 244.3 128.0 230.0 C 130.0 215.7 132.0 201.3 134.0 188.0 C 136.0 174.7 136.0 163.0 140.0 150.0 C 144.0 137.0 156.3 118.3 158.0 110.0 C 159.7 101.7 154.3 99.0 150.0 100.0 Z" fill="#E2B571" stroke="#3A2620" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M140.0 116.0 C 139.5 119.9 138.0 131.6 136.9 139.4 C 135.8 147.2 134.5 155.0 133.3 162.8 C 132.1 170.6 130.7 178.4 129.5 186.2 C 128.4 194.0 127.3 201.8 126.4 209.6 C 125.5 217.4 125.0 225.2 124.3 233.0 C 123.6 240.8 123.2 248.6 122.4 256.4 C 121.6 264.2 120.7 272.0 119.4 279.8 C 118.1 287.6 116.4 295.4 114.7 303.2 C 113.0 311.0 110.8 318.8 109.2 326.6 C 107.6 334.4 105.8 346.1 105.1 350.0" stroke="#B98648" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M132.0 136.0 C 131.8 139.1 131.1 148.3 130.7 154.4 C 130.2 160.5 129.9 166.7 129.4 172.8 C 128.8 178.9 128.2 185.1 127.4 191.2 C 126.7 197.3 125.7 203.5 124.8 209.6 C 124.0 215.7 123.1 221.9 122.5 228.0 C 121.9 234.1 121.6 240.3 121.4 246.4 C 121.3 252.5 121.5 258.7 121.6 264.8 C 121.6 270.9 121.8 277.1 121.5 283.2 C 121.2 289.3 120.6 295.5 119.7 301.6 C 118.8 307.7 116.5 316.9 115.8 320.0" stroke="#F3D9A4" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M204.0 100.0 C 208.3 100.7 218.3 106.3 224.0 114.0 C 229.7 121.7 234.7 134.0 238.0 146.0 C 241.3 158.0 241.7 172.3 244.0 186.0 C 246.3 199.7 249.7 214.0 252.0 228.0 C 254.3 242.0 257.3 256.0 258.0 270.0 C 258.7 284.0 255.0 298.3 256.0 312.0 C 257.0 325.7 265.0 344.3 264.0 352.0 C 263.0 359.7 253.7 363.7 250.0 358.0 C 246.3 352.3 243.7 332.0 242.0 318.0 C 240.3 304.0 241.7 288.7 240.0 274.0 C 238.3 259.3 234.3 244.3 232.0 230.0 C 229.7 215.7 228.3 201.3 226.0 188.0 C 223.7 174.7 222.7 163.0 218.0 150.0 C 213.3 137.0 200.3 118.3 198.0 110.0 C 195.7 101.7 199.7 99.3 204.0 100.0 Z" fill="#E2B571" stroke="#3A2620" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M214.0 116.0 C 214.7 119.9 217.0 131.6 218.5 139.4 C 220.0 147.2 221.5 155.0 222.9 162.8 C 224.2 170.6 225.4 178.4 226.5 186.2 C 227.7 194.0 228.6 201.8 229.8 209.6 C 231.0 217.4 232.1 225.2 233.6 233.0 C 235.1 240.8 236.9 248.6 238.7 256.4 C 240.6 264.2 242.9 272.0 244.7 279.8 C 246.6 287.6 248.6 295.4 250.0 303.2 C 251.4 311.0 252.4 318.8 253.3 326.6 C 254.1 334.4 254.6 346.1 254.9 350.0" stroke="#B98648" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M222.0 136.0 C 222.5 139.1 224.0 148.3 224.8 154.4 C 225.7 160.5 226.4 166.7 227.2 172.8 C 227.9 178.9 228.6 185.1 229.5 191.2 C 230.4 197.3 231.5 203.5 232.7 209.6 C 233.9 215.7 235.4 221.9 236.7 228.0 C 238.1 234.1 239.5 240.3 240.6 246.4 C 241.6 252.5 242.5 258.7 243.0 264.8 C 243.6 270.9 243.6 277.1 243.9 283.2 C 244.2 289.3 244.2 295.5 244.7 301.6 C 245.3 307.7 247.0 316.9 247.4 320.0" stroke="#F3D9A4" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M130 148 C 138 138 154 135 166 140" stroke="#2A1A14" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M192 138 C 204 132 220 133 230 142" stroke="#2A1A14" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M182 196 C 188 202 189 208 182 211" stroke="#3A2620" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="176.5" cy="209" r="2.4" fill="#F1E7D2" stroke="#3A2620" stroke-width="1.1"/></g></symbol><symbol id="lj-eyes" viewBox="0 0 400 460"><g transform="translate(0 20)"><ellipse cx="150" cy="176" rx="15" ry="17" fill="#FFFDF8" stroke="#3A2620" stroke-width="2.6"/>
+<g clip-path="url(#ceL)"><g class="puL"><ellipse cx="154" cy="178" rx="9" ry="10.5" fill="#2A1A14"/><ellipse cx="154" cy="178" rx="9" ry="10.5" fill="none" stroke="#5B3524" stroke-width="2.4"/><circle cx="157" cy="174" r="3.2" fill="#fff"/><circle cx="151" cy="182" r="1.4" fill="#fff"/></g></g>
+<path d="M133 173 C 138 157 162 157 167 173" stroke="#3A2620" stroke-width="4.6" fill="none" stroke-linecap="round"/>
+<path d="M135 170 L 126 164" stroke="#3A2620" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M141 161 l -3 -5 M147 158.5 l -1.5 -5" stroke="#3A2620" stroke-width="2" stroke-linecap="round"/><ellipse cx="207" cy="173" rx="15" ry="17" fill="#FFFDF8" stroke="#3A2620" stroke-width="2.6"/>
+<g clip-path="url(#ceR)"><g class="puR"><ellipse cx="211" cy="175" rx="9" ry="10.5" fill="#2A1A14"/><ellipse cx="211" cy="175" rx="9" ry="10.5" fill="none" stroke="#5B3524" stroke-width="2.4"/><circle cx="214" cy="171" r="3.2" fill="#fff"/><circle cx="208" cy="179" r="1.4" fill="#fff"/></g></g>
+<path d="M190 170 C 195 154 219 154 224 170" stroke="#3A2620" stroke-width="4.6" fill="none" stroke-linecap="round"/>
+<path d="M222 167 L 231 161" stroke="#3A2620" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M216 158 l 3 -5 M210 155.5 l 1.5 -5" stroke="#3A2620" stroke-width="2" stroke-linecap="round"/></g></symbol><symbol id="lj-smile" viewBox="0 0 400 460"><g transform="translate(0 20)"><path d="M166 228 C 174 236 192 236 200 226 C 196 238 188 242 182 242 C 174 242 168 236 166 228 Z" fill="#E58C95" stroke="#3A2620" stroke-width="2.4" stroke-linejoin="round"/><path d="M164 227 C 166 229 168 230 170 230" stroke="#3A2620" stroke-width="2" fill="none" stroke-linecap="round"/></g></symbol><symbol id="bun" viewBox="0 0 200 200"><g class="bun">
+<g class="earB"><path d="M118 70 C 112 34 118 8 132 6 C 146 6 146 36 136 72 Z" fill="#FFFDF8" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/><path d="M124 64 C 122 38 126 20 132 18 C 138 20 138 40 132 64 Z" fill="#F7C4D2"/></g>
+<path d="M60 160 C 46 132 56 100 88 92 C 120 84 154 96 164 128 C 172 156 160 186 128 192 C 104 196 72 186 60 160 Z" fill="#FFFDF8" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<path d="M62 132 C 70 112 88 102 106 104 C 104 122 92 136 76 142 C 70 144 64 140 62 132 Z" fill="#B9B3BE" opacity=".95"/>
+<path d="M66 128 C 74 116 86 110 98 110" stroke="#9D96A3" stroke-width="2" fill="none" stroke-linecap="round"/>
+<circle cx="62" cy="168" r="11" fill="#FFFDF8" stroke="#3A2620" stroke-width="2.8"/>
+<g class="earA"><path d="M100 70 C 84 38 84 12 98 8 C 112 6 118 36 114 74 Z" fill="#FFFDF8" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/><path d="M104 66 C 94 42 94 22 100 18 C 106 18 110 40 110 64 Z" fill="#F7C4D2"/></g>
+<path d="M90 104 C 86 80 104 64 126 66 C 150 68 160 88 154 108 C 148 126 130 132 116 132 C 100 132 92 120 90 104 Z" fill="#FFFDF8" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+<g class="bunEyes"><ellipse cx="110" cy="98" rx="5.4" ry="6.6" fill="#2A1A14"/><ellipse cx="140" cy="97" rx="5.4" ry="6.6" fill="#2A1A14"/><circle cx="112" cy="95.5" r="1.9" fill="#fff"/><circle cx="142" cy="94.5" r="1.9" fill="#fff"/></g>
+<circle cx="102" cy="112" r="7" fill="#F7B2C0" opacity=".6"/><circle cx="150" cy="110" r="7" fill="#F7B2C0" opacity=".6"/>
+<g class="bunNose"><path d="M121 108 L 129 108 L 125 113 Z" fill="#F08FA6" stroke="#3A2620" stroke-width="1.6" stroke-linejoin="round"/><path d="M125 113 C 125 117 121 119 118 117 M125 113 C 125 117 129 119 132 117" stroke="#3A2620" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
+<path d="M112 112 L 94 108 M112 116 L 95 118 M138 112 L 158 108 M138 116 L 157 118" stroke="#3A2620" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
+<path d="M100 186 C 98 176 106 170 114 174 M134 188 C 134 178 142 174 148 180" stroke="#3A2620" stroke-width="2.6" fill="#FFFDF8" stroke-linecap="round"/>
+</g></symbol><symbol id="lj-hug" viewBox="0 0 400 460"><path d="M96 462 C 110 432 150 416 200 414 C 214 414 226 416 234 420" stroke="#3A2620" stroke-width="42" stroke-linecap="round" fill="none"/><path d="M96 462 C 110 432 150 416 200 414 C 214 414 226 416 234 420" stroke="#D9C9F7" stroke-width="36" stroke-linecap="round" fill="none"/>
+<path d="M226 400 C 244 394 262 398 270 408 C 276 416 272 428 262 428 C 248 430 236 428 226 424 Z" fill="#F3C7A5" stroke="#3A2620" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M248 404 C 254 408 255 416 252 422 M260 406 C 265 410 266 417 263 423" stroke="#3A2620" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol><symbol id="lj-wave" viewBox="0 0 400 460"><path d="M262 350 C 292 336 312 300 316 262" stroke="#3A2620" stroke-width="40" stroke-linecap="round" fill="none"/><path d="M262 350 C 292 336 312 300 316 262" stroke="#D9C9F7" stroke-width="34" stroke-linecap="round" fill="none"/>
+<g class="hand"><path d="M302 250 C 296 230 300 216 312 212 L 312 194 C 312 186 322 186 322 194 L 323 210 L 327 192 C 328 184 338 185 337 193 L 333 212 L 340 200 C 343 193 351 196 348 204 L 338 232 C 336 248 326 256 314 258 Z" fill="#F3C7A5" stroke="#3A2620" stroke-width="2.6" stroke-linejoin="round"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="cur" id="cur"><b id="curt">ver</b></div>
+<div class="toast" id="toast"></div>
+<div class="ptip" id="ptip" data-en="Presentation mode · ← → or space · Esc to exit">Modo presentación · ← → o espacio · Esc para salir</div>
+
+<a class="brand" id="brand" href="#" data-go="hola"><i><span style="background:var(--yellow)"></span><span style="background:var(--purple)"></span><span style="background:var(--blue)"></span></i>Laura Jaramillo</a>
+
+<aside class="menu" id="menu">
+  <a href="#" data-go="como-pienso"><span data-en="How I think">Cómo pienso</span><span class="ar">→</span></a>
+  <a href="#" data-go="caso-1"><span data-en="Cases">Casos</span><span class="ar">→</span></a>
+  <a href="#" data-go="yo"><span data-en="Me">Yo</span><span class="ar">→</span></a>
+  <button class="row cvbtn"><span data-en="Resume">Hoja de vida</span><span class="ar">↓</span></button>
+  <div class="icons">
+    <span class="mt"><svg width="18" height="14" viewBox="0 0 18 14"><path d="M1 2h16M1 7h16M1 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-en="Menu">Menú</span></span>
+    <a class="ib" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    <button class="ib" id="presentBtn" aria-label="Presentar" title="Modo presentación"><svg viewBox="0 0 16 16"><path d="M4 2.5 L13 8 L4 13.5 Z" fill="currentColor"/></svg></button>
+    <div class="lang"><button class="on" data-l="es">ES</button><button data-l="en">EN</button></div>
+  </div>
+</aside>
+
+<div id="hs"><div class="stage"><div class="track" id="track">
+
+<!-- ============ 0 HOLA ============ -->
+<section class="panel" id="hola" data-title="Hola" data-title-en="Hello">
+  <canvas id="scribble"></canvas>
+  <div class="intro">
+    <span class="status"><i></i><span data-en="Open to new roles and projects · Remote">Disponible para nuevos roles y proyectos · Remoto</span></span>
+    <h1 class="h1"><span class="ln"><span>Laura</span></span><span class="ln"><span>Jaramillo</span></span></h1>
+    <div class="sub">
+      <p><b data-en="Digital strategist & Marketing Project Manager.">Estratega digital y Marketing Project Manager.</b><br><span data-en="I turn business goals into">Convierto objetivos de negocio en</span><br>
+        <span class="rot" id="rot"><span class="on" data-en="plans a team can run.">planes que un equipo puede ejecutar.</span><span data-en="content that connects.">contenido que conecta.</span><span data-en="launches on time.">lanzamientos a tiempo.</span><span data-en="aligned teams.">equipos alineados.</span></span></p>
+      <p style="max-width:250px" data-en="This is an exhibition of how I think and work. Scroll and it moves sideways →">Esto es una exposición de cómo pienso y trabajo. Haz scroll y se mueve hacia el lado →</p>
+    </div>
+  </div>
+  <div class="hero-art" id="heroArt">
+    <div class="arcs" id="arcs"><span class="a a1"></span><span class="a a2"></span><span class="a a3"></span></div>
+    <div class="say" style="display:none" data-en="Hi! Let's build something together ✨">¡Hola! Construyamos algo juntos ✨</div>
+    <div class="avatar" id="avatar">
+      <svg viewBox="0 0 400 460" aria-label="Ilustración de Laura con su conejo"><g filter="url(#crayon)"><use href="#lj-base"/><use href="#lj-eyes"/><use href="#lj-smile"/><g transform="translate(142 232) scale(1.15)"><use href="#bun" width="200" height="200"/></g><use href="#lj-hug"/></g></svg>
+    </div>
+  </div>
+  <div class="cue"><span data-en="Exhibition this way">Exposición por aquí</span> <span class="ar">→</span></div>
+</section>
+
+<!-- ============ 1 ROLES ============ -->
+<section class="panel" id="donde-aporto" data-title="Dónde aporto" data-title-en="Where I add value">
+  <div class="k"><b>01</b> · <span data-en="Where I add value">Dónde aporto</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="One goal, <em>three hats</em>. I switch between them depending on what the team needs.">Un objetivo, <em>tres sombreros</em>. Me pongo el que el equipo necesite.</h2>
+  <div class="roles">
+    <article class="role pop">
+      <span class="tag" style="background:var(--lilac)">PM</span>
+      <div class="ic"><svg viewBox="0 0 120 120" class="doodle"><rect x="26" y="18" width="68" height="92" rx="8" fill="#fff"/><rect x="44" y="10" width="32" height="16" rx="5" fill="var(--lilac)"/><path class="chk chk1" d="M38 48 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path class="chk chk2" d="M38 70 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path class="chk chk3" d="M38 92 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path d="M64 50 h20 M64 72 h20 M64 94 h20"/></svg></div>
+      <h3 data-en="As a Project Manager">Como Project Manager</h3>
+      <p data-en="I take a goal, turn it into a plan with milestones and owners, follow up every day and protect the date and the quality.">Tomo un objetivo, lo vuelvo un plan con hitos y responsables, hago seguimiento diario y protejo la fecha y la calidad.</p>
+      <ul><li data-en="Timelines & milestones">Cronogramas e hitos</li><li>Stakeholders</li><li data-en="Deliverable QA">Calidad de entregables</li><li>KPIs</li><li>Scrum / Agile</li></ul>
+    </article>
+    <article class="role pop">
+      <span class="tag" style="background:var(--yellow)" data-en="Strategy">Estrategia</span>
+      <div class="ic"><svg viewBox="0 0 120 120" class="doodle"><circle cx="60" cy="60" r="44" fill="#fff"/><circle cx="60" cy="60" r="34" stroke-dasharray="2 7"/><g class="needle"><path d="M60 26 L68 60 L60 94 L52 60 Z" fill="var(--yellow)"/><path d="M60 26 L68 60 L52 60 Z" fill="var(--coral)"/></g><circle cx="60" cy="60" r="4" fill="var(--ink)"/></svg></div>
+      <h3 data-en="As a digital strategist">Como estratega digital</h3>
+      <p data-en="I define what to say, to whom, where and why: social, content, e-commerce and brand working as one system.">Defino qué decir, a quién, dónde y para qué: redes, contenido, e-commerce y marca funcionando como un solo sistema.</p>
+      <ul><li>Social media</li><li data-en="Content strategy">Estrategia de contenido</li><li>E-commerce</li><li>Branding</li></ul>
+    </article>
+    <article class="role pop">
+      <span class="tag" style="background:var(--blue)" data-en="Hands-on">Manos a la obra</span>
+      <div class="ic"><svg viewBox="0 0 160 120" class="doodle"><path class="scr" d="M14 96 C 30 70 44 104 60 80 C 74 60 86 98 104 74" stroke="var(--blue)" stroke-width="4"/><g class="pencil"><path d="M96 70 L132 22 L146 32 L110 80 L92 86 Z" fill="var(--yellow)"/><path d="M132 22 L146 32" stroke-width="6" stroke="var(--coral)"/><path d="M96 70 L110 80"/></g></svg></div>
+      <h3 data-en="Inside the creative team">Dentro del equipo creativo</h3>
+      <p data-en="I also get my hands dirty: I write copy and scripts, build pieces with AI and review every detail before it ships.">También me ensucio las manos: escribo copys y guiones, armo piezas con IA y reviso cada detalle antes de publicar.</p>
+      <ul><li>Copywriting</li><li>Storytelling</li><li data-en="Reels scripts">Guiones de Reels</li><li data-en="AI-made pieces">Piezas con IA</li><li>Community</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 2 COMO PIENSO ============ -->
+<section class="panel" id="como-pienso" data-title="Cómo pienso" data-title-en="How I think">
+  <div>
+    <div class="k"><b>02</b> · <span data-en="How I think">Cómo pienso</span></div>
+    <h2 class="h2 pop" style="margin-top:2vh" data-en="My system is a <em>loop</em>, not a list.">Mi sistema es un <em>ciclo</em>, no una lista.</h2>
+    <p class="lead pop" style="margin-top:2.6vh;max-width:470px" data-en="Every project goes through the same six questions. That's how I keep strategy, people and execution connected — and how I know what to do when something changes.">Todo proyecto pasa por las mismas seis preguntas. Así mantengo conectadas la estrategia, las personas y la ejecución, y así sé qué hacer cuando algo cambia.</p>
+    <p class="pop k" style="margin-top:3vh" data-en="Hover or click each step ↗">Pasa el cursor o haz clic en cada paso ↗</p>
+  </div>
+  <div class="loop pop" id="loop">
+    <svg viewBox="0 0 600 600"><circle class="ring" cx="300" cy="300" r="222"/><circle cx="300" cy="300" r="4" fill="var(--ink)"><animateMotion dur="12s" repeatCount="indefinite" path="M300 78 A222 222 0 1 1 299.9 78"/></circle><g id="nodes"></g></svg>
+    <div class="center"><div class="fade" id="lc"><div class="q" id="lq"></div><div class="o"><b data-en="What I deliver">Lo que entrego</b><span id="lo"></span></div></div></div>
+  </div>
+</section>
+
+<!-- ============ 3 PRINCIPIOS ============ -->
+<section class="panel" id="aporto" data-title="Lo que aporto" data-title-en="What I bring">
+  <div class="k"><b>03</b> · <span data-en="What I bring to a team">Lo que aporto a un equipo</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="Six things you can <em>count on</em> when I join.">Seis cosas con las que puedes <em>contar</em> cuando llego.</h2>
+  <div class="princ">
+    <div class="pr pop"><div class="ic" style="background:var(--yellow)"><svg viewBox="0 0 48 48" class="doodle"><path d="M24 6 C 14 6 9 14 10 21 C 11 27 16 29 17 34 L 31 34 C 32 29 37 27 38 21 C 39 14 34 6 24 6 Z" fill="#fff"/><path d="M18 39 h12 M20 43 h8"/></svg></div><div><h4 data-en="Clarity before speed">Claridad antes que velocidad</h4><p data-en="A plan everybody understands: what, who, when and how we'll measure it.">Un plan que todos entienden: qué, quién, cuándo y cómo lo vamos a medir.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--lilac)"><svg viewBox="0 0 48 48" class="doodle"><circle cx="12" cy="16" r="6" fill="#fff"/><circle cx="36" cy="16" r="6" fill="#fff"/><circle cx="24" cy="34" r="6" fill="#fff"/><path d="M17 19 L20 29 M31 19 L28 29 M18 16 h12"/></svg></div><div><h4 data-en="I align people, not just tasks">Alineo personas, no solo tareas</h4><p data-en="Creative, tech, sales and leadership pulling in the same direction.">Creativos, técnicos, comerciales y líderes remando hacia el mismo lado.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--green)"><svg viewBox="0 0 48 48" class="doodle"><rect x="7" y="10" width="34" height="31" rx="4" fill="#fff"/><path d="M7 18 h34 M15 6 v8 M33 6 v8"/><path d="M16 29 l5 5 l11 -10" stroke-width="3.4"/></svg></div><div><h4 data-en="I protect the date and the quality">Protejo la fecha y la calidad</h4><p data-en="Milestones, follow-up and reviews so nothing reaches the client half done.">Hitos, seguimiento y revisión para que nada llegue a medias al cliente.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--coral)"><svg viewBox="0 0 48 48" class="doodle"><path d="M6 32 L16 22 L24 30 L40 12" stroke-width="3.2"/><path d="M30 12 h10 v10"/></svg></div><div><h4 data-en="When the plan breaks, I decide">Cuando el plan se rompe, decido</h4><p data-en="I re-prioritize fast, re-align the team and keep the goal intact.">Repriorizo rápido, realineo al equipo y mantengo intacto el objetivo.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--blue)"><svg viewBox="0 0 48 48" class="doodle"><path d="M8 20 v10 h6 l14 9 V11 L14 20 Z" fill="#fff"/><path d="M34 18 c4 4 4 10 0 14 M38 13 c7 7 7 17 0 24"/></svg></div><div><h4 data-en="One brand, one voice">La marca habla con una sola voz</h4><p data-en="Tone, visual identity and positioning consistent across every channel.">Tono, identidad visual y posicionamiento coherentes en todos los canales.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--lilac2)"><svg viewBox="0 0 48 48" class="doodle"><path d="M8 8 v32 h32"/><path d="M14 32 L22 22 L28 27 L38 14" stroke="var(--purple)" stroke-width="3.4"/><circle cx="38" cy="14" r="2.6" fill="var(--purple)"/></svg></div><div><h4 data-en="Measure to learn">Mido para aprender</h4><p data-en="KPIs that tell us what to repeat, what to change and what to stop.">KPIs que nos dicen qué repetir, qué cambiar y qué dejar de hacer.</p></div></div>
+  </div>
+  <div class="ai pop"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 C 21 13 27 19 38 20 C 27 21 21 27 20 38 C 19 27 13 21 2 20 C 13 19 19 13 20 2 Z" fill="var(--yellow)"/></svg><span data-en="<b>AI in my workflow:</b> I research, ideate, draft and automate faster with Claude and Gemini. The judgment stays human — the time saved goes back to the team."><b>IA en mi flujo:</b> investigo, ideo, redacto y automatizo más rápido con Claude y Gemini. El criterio sigue siendo humano; el tiempo que ahorro vuelve al equipo.</span></div>
+</section>
+
+<!-- ============ 4 ENTREGABLES ============ -->
+<section class="panel" id="entregables" data-title="Lo que entrego" data-title-en="What I deliver">
+  <div class="k"><b>04</b> · <span data-en="My toolkit">Mi caja de herramientas</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="Strategy only counts when it lands on <em>paper</em>.">La estrategia solo cuenta cuando aterriza en <em>papel</em>.</h2>
+  <p class="lead pop" style="margin-top:1.6vh;max-width:640px" data-en="These are the documents I build so a team always knows where we are going and how we are doing.">Estos son los documentos que construyo para que un equipo siempre sepa para dónde vamos y cómo vamos.</p>
+  <div class="kit">
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h50" stroke-width="5"/><path class="ln2" d="M10 30 h80 M10 42 h70 M10 54 h76 M10 66 h56"/><rect x="10" y="80" width="34" height="18" rx="4" fill="var(--lilac)"/><rect x="50" y="80" width="40" height="18" rx="4" fill="var(--yellow)"/></svg></div><h5 data-en="Campaign brief">Brief de campaña</h5><p data-en="Goal, audience, message and success KPI.">Objetivo, audiencia, mensaje y KPI de éxito.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h40" stroke-width="5"/><path d="M10 26 v76" stroke-dasharray="2 4"/><rect class="bar" x="14" y="32" width="46" height="11" rx="3" fill="var(--purple)" stroke="none"/><rect class="bar" x="30" y="50" width="48" height="11" rx="3" fill="var(--lilac)" stroke="none"/><rect class="bar" x="46" y="68" width="40" height="11" rx="3" fill="var(--yellow)" stroke="none"/><rect class="bar" x="20" y="86" width="64" height="11" rx="3" fill="var(--green)" stroke="none"/></svg></div><h5 data-en="Timeline & milestones">Cronograma e hitos</h5><p data-en="Who does what and by when.">Quién hace qué y para cuándo.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h44" stroke-width="5"/><g><rect x="10" y="26" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="30" y="26" width="18" height="18" rx="3" fill="#fff"/><rect x="50" y="26" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="70" y="26" width="18" height="18" rx="3" fill="#fff"/><rect x="10" y="48" width="18" height="18" rx="3" fill="#fff"/><rect x="30" y="48" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="50" y="48" width="18" height="18" rx="3" fill="#fff"/><rect x="70" y="48" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="10" y="70" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="30" y="70" width="18" height="18" rx="3" fill="#fff"/><rect x="50" y="70" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="70" y="70" width="18" height="18" rx="3" fill="#fff"/></g></svg></div><h5 data-en="Editorial calendar">Calendario editorial</h5><p data-en="Pillars and formats, week by week.">Pilares y formatos, semana a semana.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h50" stroke-width="5"/><path d="M36 24 v80 M64 24 v80" stroke-dasharray="2 4"/><rect x="10" y="30" width="22" height="14" rx="3" fill="var(--yellow)"/><rect x="10" y="50" width="22" height="14" rx="3" fill="#fff"/><rect class="mv" x="40" y="30" width="22" height="14" rx="3" fill="var(--lilac)"/><rect x="68" y="30" width="22" height="14" rx="3" fill="var(--green)"/><rect x="68" y="50" width="22" height="14" rx="3" fill="var(--green)"/></svg></div><h5 data-en="Tracking board">Tablero de seguimiento</h5><p data-en="Status of every task, visible to all.">Estado de cada tarea, visible para todos.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h44" stroke-width="5"/><path d="M12 28 v68 h78"/><path class="ln2" d="M16 84 C 30 80 34 62 46 66 C 58 70 62 44 86 36" stroke="var(--purple)" stroke-width="3.2"/><circle cx="86" cy="36" r="3" fill="var(--purple)"/></svg></div><h5 data-en="KPI report">Reporte de KPIs</h5><p data-en="What happened, why, and what's next.">Qué pasó, por qué y qué sigue.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h50" stroke-width="5"/><g class="stk"><rect x="12" y="30" width="34" height="32" rx="2" fill="var(--yellow)"/><path d="M18 40 h20 M18 48 h14"/></g><g class="stk s2"><rect x="54" y="34" width="34" height="32" rx="2" fill="var(--lilac)"/><path d="M60 44 h20 M60 52 h14"/></g><g class="stk"><rect x="32" y="70" width="34" height="30" rx="2" fill="var(--green)"/><path d="M38 80 h20 M38 88 h12"/></g></svg></div><h5 data-en="Wrap-up & learnings">Cierre y aprendizajes</h5><p data-en="What we keep, change or drop next time.">Qué mantenemos, cambiamos o soltamos.</p></div>
+  </div>
+</section>
+
+<!-- ============ 5 90 DIAS ============ -->
+<section class="panel" id="primeros-90" data-title="Mis primeros 90 días" data-title-en="My first 90 days">
+  <div class="k"><b>05</b> · <span data-en="If I join your team">Si llego a tu equipo</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="My first <em>90 days</em>, step by step.">Mis primeros <em>90 días</em>, paso a paso.</h2>
+  <div class="journey">
+    <svg class="path draw" viewBox="0 0 1200 400" preserveAspectRatio="none"><path class="doodle" style="--len:1500;stroke-width:3" d="M20 300 C 160 300 200 240 300 236 C 420 232 450 180 580 176 C 720 172 740 120 870 118 C 1000 116 1050 70 1180 60"/></svg>
+    <div class="stop pop" style="left:1%;top:44%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--lilac)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Weeks 1–2">Semanas 1–2</div><h4 data-en="Listen">Escuchar</h4><p data-en="I meet stakeholders, understand goals, the current metrics and how decisions get approved.">Conozco a los stakeholders, los objetivos, las métricas actuales y cómo se aprueban las cosas.</p></div>
+    <div class="stop pop" style="left:26%;top:30%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Weeks 3–4">Semanas 3–4</div><h4 data-en="Organize">Ordenar</h4><p data-en="Quick diagnosis, priorities, timeline and editorial calendar agreed with the team.">Diagnóstico rápido, prioridades, cronograma y calendario acordados con el equipo.</p></div>
+    <div class="stop pop" style="left:51%;top:15%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--blue)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Month 2">Mes 2</div><h4 data-en="Execute">Ejecutar</h4><p data-en="First campaigns and deliverables live, with a weekly follow-up ritual.">Primeras campañas y entregables en marcha, con un ritual semanal de seguimiento.</p></div>
+    <div class="stop pop" style="left:76%;top:0%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--green)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Month 3">Mes 3</div><h4 data-en="Optimize">Optimizar</h4><p data-en="I read the KPIs with the team, share learnings and propose the next plan.">Leo los KPIs con el equipo, comparto aprendizajes y propongo el siguiente plan.</p></div>
+  </div>
+</section>
+
+<!-- ============ 6-8 CASOS ============ -->
+<section class="panel case" id="caso-1" data-title="Caso 01 · DAX Home" data-title-en="Case 01 · DAX Home" data-case="dax">
+  <div>
+    <div class="num pop">01</div>
+    <div class="k meta pop">DAX Home · DAX International · <span data-en="2024 – 2026">2024 – 2026</span></div>
+    <h3 class="pop" data-en="From showroom brand to a 360° digital ecosystem">De marca de showroom a ecosistema digital 360°</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="One consistent voice across social, web and email — plus a new franchise program to launch.">Una sola voz coherente en redes, web y email, y además lanzar un nuevo programa de franquicias.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="Voice and pillars first, then calendar, then channels. And the franchise launch as a project with owners and milestones.">Primero la voz y los pilares, después el calendario, después los canales. Y el lanzamiento de franquicias como un proyecto con responsables e hitos.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="+42% organic reach, +35% interactions, +28% organic clicks to the website.">+42% de alcance orgánico, +35% de interacciones y +28% de clics orgánicos al sitio.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="dax"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="frame opencase" data-case="dax" style="--c:var(--yellow);height:min(58vh,560px)"><img src="dax-web.webp" alt="DAX Home web"></div>
+    <div class="note" style="left:-6%;bottom:-6%"><small data-en="What it proves">Lo que demuestra</small><span data-en="Leadership: strategy, brand and a cross-team launch in one role.">Liderazgo: estrategia, marca y un lanzamiento entre áreas en un mismo rol.</span></div>
+  </div>
+</section>
+
+<section class="panel case" id="caso-2" data-title="Caso 02 · Globant" data-title-en="Case 02 · Globant" data-case="globant">
+  <div>
+    <div class="num pop">02</div>
+    <div class="k meta pop"><span data-en="Globant · client: Bancolombia">Globant · cliente: Bancolombia</span> · 2025</div>
+    <h3 class="pop" data-en="Changing the plan mid-campaign, without moving the date">Cambiar el plan a mitad de campaña, sin mover la fecha</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="In the Conavi Christmas campaign, people didn't understand the limited-edition cards were free or how to get them.">En la campaña navideña de Conavi la gente no entendía que las tarjetas de edición limitada eran gratis ni cómo obtenerlas.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="The date can't move, the message can. Re-align everyone around a clearer offer and a simpler path.">La fecha no se mueve, el mensaje sí. Realinear a todos alrededor de una oferta más clara y un camino más simple.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="New landing and information, multidisciplinary teams aligned and milestones delivered on time.">Nueva landing e información, equipos multidisciplinarios alineados e hitos entregados a tiempo.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="globant"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="frame opencase" data-case="globant" style="--c:var(--lilac);height:min(50vh,470px)"><img src="conavi-landing.webp" alt="Landing de la campaña" style="object-position:center"></div>
+    <div class="note" style="right:-3%;bottom:-10%;background:var(--lilac)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Calm under pressure: I re-prioritize and protect the deadline.">Calma bajo presión: repriorizo y protejo la fecha.</span></div>
+  </div>
+</section>
+
+<section class="panel case" id="caso-3" data-title="Caso 03 · Azzurry" data-title-en="Case 03 · Azzurry" data-case="azzurry">
+  <div>
+    <div class="num pop">03</div>
+    <div class="k meta pop">Tiendas Azzurry · Waco Digital Hub</div>
+    <h3 class="pop" data-en="Launches, promos and trends that lead to the cart">Lanzamientos, promos y tendencias que llevan al carrito</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="Stand out as an authorized retailer of original brands in a category full of offers.">Destacar como distribuidor de marcas originales en una categoría llena de ofertas.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="A calendar built around moments people already care about: launches, sales and football.">Un calendario construido sobre momentos que a la gente ya le importan: lanzamientos, rebajas y fútbol.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="+45% reach in promo campaigns and +28% in sales and website clicks.">+45% de alcance en campañas promocionales y +28% en ventas y clics al sitio.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="azzurry"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="frame opencase" data-case="azzurry" style="--c:var(--blue);height:min(60vh,580px)"><div class="imgs"><img src="ig-azzurry-grid.webp" alt="Feed Azzurry"><img src="ig-azzurry-perfil.webp" alt="Perfil Azzurry"></div></div>
+    <div class="note" style="left:-7%;top:8%;background:var(--green)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Visual direction with a commercial goal.">Dirección visual con objetivo comercial.</span></div>
+  </div>
+</section>
+
+<!-- ============ 9 MARCAS ============ -->
+<section class="panel" id="marcas" data-title="Marcas" data-title-en="Brands">
+  <div class="k"><b>06</b> · <span data-en="Brands I've worked with">Marcas con las que he trabajado</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh" data-en="Seven industries, <em>one way</em> of working.">Siete industrias, <em>una sola</em> forma de trabajar.</h2>
+  <p class="k pop" style="margin-top:1.4vh" data-en="Click a brand to see the work">Haz clic en una marca para ver el trabajo</p>
+  <div class="wall" id="wall"></div>
+</section>
+
+<!-- ============ 10 YO ============ -->
+<section class="panel" id="yo" data-title="Yo" data-title-en="Me">
+  <div class="me-art pop">
+    <div class="bg"></div>
+    <svg viewBox="0 0 400 520" aria-label="Laura trabajando">
+      <g filter="url(#crayon)">
+        <use href="#lj-base" width="400" height="460"/><use href="#lj-eyes" width="400" height="460"/><use href="#lj-smile" width="400" height="460"/>
+        <path d="M118 450 C 132 432 158 428 178 438 M282 450 C 268 432 242 428 222 438" stroke="#3A2620" stroke-width="3" fill="#F3C7A5" stroke-linecap="round"/>
+        <path d="M60 520 L 92 424 L 308 424 L 340 520 Z" fill="#EFE7FC" stroke="#3A2620" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="200" cy="472" r="14" fill="#F7C6D9" stroke="#3A2620" stroke-width="2.4"/><path d="M193 472 c-2 -4 3 -7 7 -3 c4 -4 9 -1 7 3 l-7 7 z" fill="#fff"/>
+        <use href="#bun" x="292" y="330" width="120" height="120"/>
+      </g>
+    </svg>
+  </div>
+  <div>
+    <div class="k"><b>07</b> · <span data-en="Me">Yo</span></div>
+    <h2 class="h2 pop" style="margin-top:2vh" data-en="Hi, I'm <em>Laura</em>.">Hola, soy <em>Laura</em>.</h2>
+    <div class="me-grid">
+      <div class="pop"><h4 data-en="Who">Quién</h4><p data-en="Digital marketing strategist and project manager from Medellín, Colombia. International Business graduate with a Specialization in Marketing Management. Almost 5 years in social, content and e-commerce.">Estratega de marketing digital y project manager de Medellín, Colombia. Profesional en Negocios Internacionales con Especialización en Mercadeo Gerencial. Casi 5 años en social media, contenido y e-commerce.</p></div>
+      <div class="pop"><h4 data-en="How I work with others">Cómo trabajo con otros</h4><p data-en="Discipline, adaptability and calm under pressure. I communicate clearly and take every project from idea to execution. I've worked remotely with teams from the US, Spain, France, Italy, Argentina and LATAM.">Disciplina, adaptación y calma bajo presión. Comunico con claridad y llevo cada proyecto de la idea a la ejecución. He trabajado en remoto con equipos de EE. UU., España, Francia, Italia, Argentina y LATAM.</p></div>
+      <div class="pop"><h4 data-en="Where I've been">Dónde he estado</h4><ul class="jobs"><li><b>Globant</b><span>Content & Social PM</span></li><li><b>DAX International</b><span>Social Media Specialist</span></li><li><b>Waco Digital Hub</b><span>Social Strategist & Copywriter</span></li><li><b>Madecentro · TuHome</b><span>Content Creation Leader</span></li></ul></div>
+      <div class="pop"><h4 data-en="Always learning">Siempre aprendiendo</h4><p data-en="AI with Gemini (Google) · AI for Business & Marketing · Scrum & Agile · IT Project Management · Design Thinking. Tools: Meta Business Suite, Meta Ads, Google Ads, Shopify, Canva, CapCut, Figma, Claude.">IA con Gemini (Google) · IA para negocios y mercadeo · Scrum y metodologías ágiles · IT Project Management · Design Thinking. Herramientas: Meta Business Suite, Meta Ads, Google Ads, Shopify, Canva, CapCut, Figma, Claude.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 HABLEMOS ============ -->
+<section class="panel" id="hablemos" data-title="Hablemos" data-title-en="Let's talk">
+  <div>
+    <div class="k"><b>08</b> · <span data-en="Let's talk">Hablemos</span></div>
+    <div class="big pop" style="margin-top:2vh" data-en="Shall we <em>talk?</em>">¿Habla<em>mos?</em></div>
+    <p class="lead pop" data-en="If you need someone who turns goals into plans and plans into results — in your team or on a specific project — let's start with a conversation.">Si necesitas a alguien que convierta objetivos en planes y planes en resultados, dentro de tu equipo o en un proyecto puntual, empecemos por una conversación.</p>
+    <div class="cta pop">
+      <button class="btn y cvbtn"><span data-en="Download resume">Descargar hoja de vida</span> <span class="ar">↓</span></button>
+      <a class="btn w" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener"><span data-en="Go to my LinkedIn">Ir a mi LinkedIn</span> <span class="ar">↗</span></a>
+      <span class="cvl" id="cvl"><button class="on" data-cv="es">ES</button><button data-cv="en">EN</button></span>
+    </div>
+    <div class="facts pop"><span data-en="Remote">Remoto</span><span>UTC−5</span><span data-en="Spanish native · English B2">Español nativo · Inglés B2</span><span data-en="Available now">Disponible ya</span></div>
+  </div>
+  <div class="bye pop">
+    <div style="position:absolute;width:80%;aspect-ratio:1;border-radius:50%;background:var(--pink);left:10%;top:12%"></div>
+    <svg style="position:relative" viewBox="0 0 400 460" aria-hidden="true"><g filter="url(#crayon)"><use href="#lj-base"/><use href="#lj-eyes"/><use href="#lj-smile"/><use href="#lj-wave"/><use href="#bun" x="30" y="320" width="150" height="150"/></g></svg>
+  </div>
+</section>
+
+</div>
+<svg class="thread" id="thread"><path class="base" id="thB"/><path id="thP"/></svg>
+</div></div>
+
+<div class="walker" id="walker"><span class="bubble" id="wb"></span><svg viewBox="0 0 186 338" style="filter:url(#crayon2)"><g class="hop"><use href="#bun"/></g></svg></div>
+
+<div class="hud" id="hud"><span class="tt" id="hudT"></span><div class="bar"><i id="hudP"></i><div class="dots" id="dots"></div></div><div class="nav"><button id="hPrev" aria-label="Anterior">←</button><button id="hNext" aria-label="Siguiente">→</button></div></div>
+
+<div class="modal" id="modal"><div class="mbox"><button class="x" data-close>✕</button><div class="mtx" id="mtx"></div><div class="mim" id="mim"></div></div></div>
+<div class="modal lb" id="lb"><img class="lbi" id="lbi" alt=""></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const H=document.documentElement;
+let LANG='es';try{if(localStorage.getItem('lj-lang')==='en')LANG='en'}catch(e){}
+const t=(o)=>typeof o==='string'?o:o[LANG];
+
+/* ================= DATA ================= */
+const LOOP=[
+ {n:{es:'Entender',en:'Understand'},c:'var(--yellow)',q:{es:'¿Qué necesita el negocio y cómo sabremos que funcionó?',en:'What does the business need, and how will we know it worked?'},o:{es:'Brief claro y un KPI de éxito.',en:'A clear brief and one success KPI.'}},
+ {n:{es:'Priorizar',en:'Prioritize'},c:'var(--coral)',q:{es:'¿Qué mueve la aguja primero y qué puede esperar?',en:'What moves the needle first, and what can wait?'},o:{es:'Lista de prioridades acordada.',en:'An agreed priority list.'}},
+ {n:{es:'Planear',en:'Plan'},c:'var(--lilac)',q:{es:'¿Quién hace qué, para cuándo y con qué recursos?',en:'Who does what, by when, with what resources?'},o:{es:'Cronograma, hitos y responsables.',en:'Timeline, milestones and owners.'}},
+ {n:{es:'Alinear',en:'Align'},c:'var(--blue)',q:{es:'¿Todos entienden el plan y cómo se aprueba?',en:'Does everyone understand the plan and how it gets approved?'},o:{es:'Stakeholders y equipo en la misma página.',en:'Stakeholders and team on the same page.'}},
+ {n:{es:'Ejecutar',en:'Execute'},c:'var(--green)',q:{es:'¿Vamos a tiempo y con la calidad que la marca merece?',en:'Are we on time, with the quality the brand deserves?'},o:{es:'Entregables revisados y seguimiento semanal.',en:'Reviewed deliverables and weekly follow-up.'}},
+ {n:{es:'Medir',en:'Measure'},c:'var(--purple)',q:{es:'¿Qué repetimos, qué cambiamos y qué dejamos de hacer?',en:'What do we repeat, change or stop?'},o:{es:'Reporte de KPIs y aprendizajes.',en:'KPI report and learnings.'}},
+];
+const CASES={
+ dax:{title:{es:'De marca de showroom a ecosistema digital 360°',en:'From showroom brand to a 360° digital ecosystem'},sub:{es:'DAX Home · DAX International · Social Media Specialist · 2024–2026',en:'DAX Home · DAX International · Social Media Specialist · 2024–2026'},
+  reto:{es:'Una marca de remodelación del hogar (pisos, cocina y baño) que necesitaba una sola voz coherente en redes, web, email y lanzamientos, y además llevar al mercado un nuevo programa de franquicias.',en:'A home-improvement brand (tile, kitchen & bath) that needed one consistent voice across social, web, email and launches — and a new franchise program to take to market.'},
+  pense:{es:'Si la voz no está clara, cada canal dice algo distinto. Así que el orden fue: identidad y tono → pilares de contenido → calendario → canales. Las franquicias las traté como un proyecto aparte, con responsables, hitos y un solo tablero.',en:'If the voice isn’t clear, every channel says something different. So the order was: identity and tone → content pillars → calendar → channels. I treated the franchise launch as its own project, with owners, milestones and one board.'},
+  hice:{es:['Lideré la estrategia 360° de social media, contenido y branding.','Cuidé identidad visual, tono de voz y posicionamiento en todos los canales.','Gestioné campañas de principio a fin con el equipo creativo y los stakeholders.','Creé contenido para redes, e-commerce, blog, catálogos y email.','Gestioné el lanzamiento de franquicias: equipos creativo, técnico, comercial y de showroom, más investigación de mercado B2B.'],en:['Led the 360° social, content and branding strategy.','Protected visual identity, tone of voice and positioning across channels.','Ran campaigns end to end with the creative team and stakeholders.','Created content for social, e-commerce, blog, catalogs and email.','Managed the franchise launch: creative, tech, sales and showroom teams, plus B2B market research.']},
+  res:{es:['+42% alcance orgánico','+35% interacciones','+28% clics orgánicos al sitio'],en:['+42% organic reach','+35% interactions','+28% organic clicks to website']},
+  prueba:{es:'Liderazgo, visión de marca y gestión de un lanzamiento entre varias áreas.',en:'Leadership, brand vision and managing a cross-team launch.'},
+  img:['dax-web','ig-dax-grid','dax-email','dax-blog','dax-franq-post','dax-franq-showroom']},
+ globant:{title:{es:'Cambiar el plan a mitad de campaña, sin mover la fecha',en:'Changing the plan mid-campaign, without moving the date'},sub:{es:'Globant · cliente: Bancolombia · Content & Social Project Manager',en:'Globant · client: Bancolombia · Content & Social Project Manager'},
+  reto:{es:'En la campaña navideña de Conavi, la estrategia de entrega de las tarjetas de edición limitada no funcionaba: la gente no entendía que eran gratis ni cómo adquirirlas. Y una campaña de temporada no da margen para aplazar.',en:'In the Conavi Christmas campaign, the delivery strategy for the limited-edition cards wasn’t working: people didn’t understand they were free or how to get them. And a seasonal campaign leaves no room to postpone.'},
+  pense:{es:'La fecha no se podía mover; el mensaje y el camino, sí. Lo importante era decidir rápido, reunir a las personas correctas y que todos supieran qué cambiaba y quién se hacía cargo.',en:'The date couldn’t move; the message and the path could. The key was deciding fast, getting the right people together and making sure everyone knew what changed and who owned it.'},
+  hice:{es:['Alineé a stakeholders con los equipos creativos, técnicos y de producción alrededor del nuevo plan.','Coordiné una nueva landing y nueva información para que la oferta fuera clara y obtener la tarjeta fuera fácil.','Hice seguimiento de cronogramas, calidad de entregables y KPIs hasta el lanzamiento.'],en:['Aligned stakeholders with creative, tech and production teams around the new plan.','Coordinated a new landing and new information so the offer was clear and getting the card was easy.','Tracked timelines, deliverable quality and KPIs through launch.']},
+  res:{es:['Mensaje más claro','Hitos entregados a tiempo','Equipos multidisciplinarios alineados'],en:['Clearer message','Milestones delivered on time','Multidisciplinary teams aligned']},
+  prueba:{es:'Gestión bajo presión, toma de decisiones y coordinación de stakeholders.',en:'Managing under pressure, decision-making and stakeholder coordination.'},
+  img:['conavi-landing','conavi-equipo']},
+ azzurry:{title:{es:'Lanzamientos, promos y tendencias que llevan al carrito',en:'Launches, promos and trends that lead to the cart'},sub:{es:'Tiendas Azzurry · Estrategia en Meta y TikTok · Waco Digital Hub',en:'Tiendas Azzurry · Meta & TikTok strategy · Waco Digital Hub'},
+  reto:{es:'Una tienda de calzado y accesorios de marcas originales que necesitaba destacar en una categoría saturada de ofertas y llevar tráfico a su e-commerce.',en:'A footwear and accessories store selling original brands that needed to stand out in a category full of offers and drive traffic to its e-commerce.'},
+  pense:{es:'La gente no busca “una tienda”, busca el lanzamiento, la promo o el momento. Así que el calendario se armó alrededor de esos momentos, y cada pieza tenía un objetivo comercial claro.',en:'People don’t look for “a store”, they look for the launch, the deal or the moment. So the calendar was built around those moments, and every piece had a clear commercial goal.'},
+  hice:{es:['Lideré la estrategia en Meta y TikTok.','Creé contenido, copys y guiones para campañas orgánicas y de pauta.','Armé un calendario con lanzamientos, rebajas (Summer Sale, hasta 50%) y momentos como el fútbol.'],en:['Led the Meta and TikTok strategy.','Created content, copy and scripts for organic and paid campaigns.','Built a calendar around launches, sales (Summer Sale, up to 50%) and moments like football.']},
+  res:{es:['+45% alcance en campañas promocionales','+28% en ventas y clics al sitio'],en:['+45% reach in promo campaigns','+28% sales and website clicks']},
+  prueba:{es:'Dirección visual y de contenido con objetivo comercial.',en:'Visual and content direction with a commercial goal.'},
+  img:['ig-azzurry-grid','ig-azzurry-perfil']}
+};
+const IC={
+ tile:'<path d="M8 8 h14 v14 h-14 z M26 8 h14 v14 h-14 z M8 26 h14 v14 h-14 z M26 26 h14 v14 h-14 z"/>',
+ spark:'<path d="M24 6 C 25 17 31 23 42 24 C 31 25 25 31 24 42 C 23 31 17 25 6 24 C 17 23 23 17 24 6 Z" fill="#fff"/>',
+ shoe:'<path d="M6 30 C 6 22 10 16 14 16 C 18 22 24 24 30 25 C 38 26 42 28 42 33 L 42 36 L 6 36 Z" fill="#fff"/><path d="M6 32 h36 M18 20 l3 -3 M22 23 l3 -3"/>',
+ heart:'<path d="M24 40 C 10 30 6 22 8 16 C 10 10 18 8 24 15 C 30 8 38 10 40 16 C 42 22 38 30 24 40 Z" fill="#fff"/><path d="M14 22 h6 l3 -5 l4 10 l3 -5 h5"/>',
+ moon:'<path d="M30 8 C 20 10 14 18 15 27 C 16 36 25 42 34 40 C 26 36 22 28 24 20 C 25 15 28 11 30 8 Z" fill="#fff"/><path d="M34 12 h6 l-6 7 h6"/>',
+ bolt:'<path d="M27 5 L 11 27 L 23 27 L 19 43 L 37 19 L 25 19 Z" fill="#fff"/>',
+ plane:'<path d="M6 26 L 42 12 L 30 40 L 24 30 Z" fill="#fff"/><path d="M24 30 L 42 12"/>',
+ nodes:'<circle cx="12" cy="14" r="5" fill="#fff"/><circle cx="36" cy="14" r="5" fill="#fff"/><circle cx="24" cy="36" r="5" fill="#fff"/><path d="M16 17 L 21 32 M32 17 L 27 32 M17 14 h14"/>',
+ sofa:'<path d="M8 22 C 8 16 12 14 16 14 h16 C 36 14 40 16 40 22 v4 h-32 z" fill="#fff"/><path d="M5 24 h6 v10 h26 v-10 h6 v12 h-38 z M10 36 v4 M38 36 v4"/>',
+ lamp:'<path d="M14 8 h20 l6 14 h-32 z" fill="#fff"/><path d="M24 22 v16 M16 40 h16"/>',
+ bag:'<path d="M10 18 h28 l-3 24 h-22 z" fill="#fff"/><path d="M18 18 c0 -8 12 -8 12 0"/><path d="M24 36 c-6 -4 -4 -10 0 -12 c4 2 6 8 0 12 z M24 36 v-8"/>',
+};
+const BRANDS=[
+ {id:'dax',name:'DAX Home',ic:'tile',c:'var(--yellow)',x:4,y:6,cats:{es:'Social · Branding · E-commerce · PM',en:'Social · Branding · E-commerce · PM'},case:'dax'},
+ {id:'laskin',name:'Laskin',ic:'spark',c:'var(--lilac)',x:22,y:46,cats:{es:'Social · Contenido',en:'Social · Content'},
+  sector:{es:'Dermatología y medicina estética',en:'Dermatology & aesthetic medicine'},
+  d:{es:'Estrategias de contenido para redes, copys, guiones y conceptos creativos para campañas orgánicas y de pauta. Participé en la campaña de aniversario con contenido enfocado en promoción y conversión.',en:'Social content strategy, copy, scripts and creative concepts for organic and paid campaigns. I worked on the anniversary campaign with content focused on promotion and conversion.'},
+  m:{es:['+30% en ventas en la campaña de aniversario'],en:['+30% sales in the anniversary campaign']},img:['ig-laskin-grid','ig-laskin-perfil'],links:[['Instagram','https://www.instagram.com/laskincolombia/'],['Web','https://laskin.com.co/']]},
+ {id:'azzurry',name:'Azzurry',ic:'shoe',c:'var(--blue)',x:38,y:4,cats:{es:'Social · E-commerce',en:'Social · E-commerce'},case:'azzurry'},
+ {id:'riascos',name:'Dr. Alfonso Riascos',ic:'heart',c:'#F7C6D0',x:52,y:50,cats:{es:'Contenido · Copy',en:'Content · Copy'},
+  sector:{es:'Cirugía plástica, estética y reconstructiva',en:'Plastic, aesthetic & reconstructive surgery'},
+  d:{es:'Guiones, copys y carruseles para comunicar su experiencia sin recurrir al clásico “antes y después”. Contenido educativo que transmite credibilidad y cercanía.',en:'Scripts, copy and carousels to communicate his expertise without the classic “before & after”. Educational content that builds credibility and closeness.'},
+  m:{es:['Crecimiento de la comunidad','Más alcance e interacción'],en:['Community growth','More reach and engagement']},img:['ig-riascos-grid','ig-riascos-perfil'],links:[['Instagram','https://www.instagram.com/drriascos/']]},
+ {id:'holacalm',name:'Hola Calm',ic:'moon',c:'#BFD4FF',x:68,y:8,cats:{es:'Lanzamiento · Contenido',en:'Launch · Content'},
+  sector:{es:'Colchones y descanso · lanzamiento en Colombia',en:'Mattresses & sleep · Colombia launch'},
+  d:{es:'Participé en el lanzamiento digital de la marca en Colombia: guiones para Reels, copys y contenido promocional e inspiracional para darla a conocer.',en:'Part of the brand’s digital launch in Colombia: Reels scripts, copy and promotional + inspirational content to build awareness.'},
+  m:{es:['Entrada positiva al mercado colombiano','Más alcance, vistas y clics al sitio'],en:['Positive market entry in Colombia','More reach, views and website clicks']},img:['ig-holacalm-grid','ig-holacalm-perfil'],links:[['Instagram','https://www.instagram.com/holacalmco/']]},
+ {id:'vatia',name:'Vatia Energía',ic:'bolt',c:'#E6F59A',x:84,y:44,cats:{es:'Contenido · B2B',en:'Content · B2B'},
+  sector:{es:'Energía para hogares y empresas',en:'Energy for homes and businesses'},
+  d:{es:'Convertí información técnica del sector energético en contenido claro y atractivo: copys, piezas educativas y casos de éxito para hogares y empresas.',en:'Turned technical energy-sector information into clear, engaging content: copy, educational pieces and success stories for homes and businesses.'},
+  m:{es:['Más interés de empresas','Más alcance e interacción'],en:['More interest from businesses','More reach and engagement']},img:['ig-vatia-grid','ig-vatia-perfil'],links:[['Instagram','https://www.instagram.com/vatia_energia/']]},
+ {id:'globant',name:'Globant',ic:'nodes',c:'#C9F0D5',x:10,y:78,cats:{es:'Project Management',en:'Project Management'},case:'globant'},
+ {id:'park5',name:'Park 5',ic:'plane',c:'#D6F0C2',x:30,y:80,cats:{es:'Social · Contenido',en:'Social · Content'},
+  sector:{es:'Parqueadero junto al aeropuerto de Cali',en:'Airport parking in Cali'},
+  d:{es:'Contenido para redes de un servicio local: tarifas, cómo llegar, beneficios y momentos de temporada, con un tono cercano y directo.',en:'Social content for a local service: pricing, how to get there, benefits and seasonal moments, with a close, direct tone.'},
+  m:{es:['Contenido pensado para conversión local'],en:['Content built for local conversion']},img:['ig-park5-grid','ig-park5-perfil'],links:[['Instagram','https://www.instagram.com/park5parqueadero/']]},
+ {id:'tuhome',name:'TuHome',ic:'sofa',c:'#FFD9C7',x:62,y:80,cats:{es:'E-commerce · SEO · Amazon',en:'E-commerce · SEO · Amazon'},
+  sector:{es:'Mobiliario y decoración · Madecentro',en:'Furniture & décor · Madecentro'},
+  d:{es:'Lideré la creación de contenido y la optimización SEO de productos para mejorar el posicionamiento orgánico, atraer tráfico calificado e impulsar la conversión, también en Amazon.',en:'Led content creation and product SEO to improve organic ranking, attract qualified traffic and drive conversion, including on Amazon.'},
+  m:{es:['Más ventas, valoraciones y reseñas','Más visibilidad en marketplaces'],en:['More sales, ratings and reviews','More marketplace visibility']},img:['tuhome-web','tuhome-producto'],links:[['Web','https://www.tuhomefurniture.com']]},
+ {id:'fm',name:'FM Furniture',ic:'lamp',c:'#FFE7A3',x:78,y:82,cats:{es:'E-commerce · SEO',en:'E-commerce · SEO'},
+  sector:{es:'Mobiliario y decoración',en:'Furniture & décor'},
+  d:{es:'Estrategia de contenido para e-commerce y marketplaces: SEO de productos y blog para atraer tráfico orgánico y acompañar la compra.',en:'Content strategy for e-commerce and marketplaces: product SEO and blog content to attract organic traffic and support the purchase.'},
+  m:{es:['Más tráfico orgánico','Más visibilidad y conversión'],en:['More organic traffic','More visibility and conversion']},img:['fm-web','fm-blog'],links:[['Web','https://www.fm-furniture.com']]},
+ {id:'miplante',name:'Miplante',ic:'bag',c:'#CDEBFF',x:93,y:12,cats:{es:'Marketplace · SEO',en:'Marketplace · SEO'},
+  sector:{es:'Marketplace con pago en la factura de servicios',en:'Marketplace paid through the utility bill'},
+  d:{es:'Estrategia de contenido basada en SEO, investigación de palabras clave y contenido educativo, integrando el sitio con las redes para ganar visibilidad.',en:'SEO-based content strategy, keyword research and educational content, connecting the website with social to gain visibility.'},
+  m:{es:['Web y redes integradas','Más visibilidad y tráfico orgánico'],en:['Web and social integrated','More visibility and organic traffic']},img:['miplante-web','miplante-redes'],links:[]},
+];
+
+/* ================= i18n ================= */
+function setLang(l){
+  LANG=l;H.lang=l;
+  $$('[data-en]').forEach(el=>{if(el.dataset.es===undefined)el.dataset.es=el.innerHTML;el.innerHTML=l==='en'?el.dataset.en:el.dataset.es});
+  $$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  cvLang=l;$$('#cvl button').forEach(b=>b.classList.toggle('on',b.dataset.cv===cvLang));
+  buildLoop();buildWall();buildDots();setLoop(loopI);hud();
+  try{localStorage.setItem('lj-lang',l)}catch(e){}
+}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+/* ================= horizontal engine ================= */
+const track=$('#track'),hs=$('#hs'),PANELS=$$('.panel');
+let maxX=0,cur=0,tgt=0,vel=0,mobile=false;
+function layout(){
+  mobile=innerWidth<=820;
+  if(mobile){hs.style.height='';track.style.transform='';return}
+  const w=track.scrollWidth;maxX=w-innerWidth;hs.style.height=(maxX+innerHeight)+'px';
+  buildThread(w);
+}
+function buildThread(w){
+  const th=$('#thread');th.setAttribute('width',w);th.style.width=w+'px';th.setAttribute('viewBox',`0 0 ${w} 60`);
+  let d='M0 30';const seg=180;for(let x=seg;x<=w;x+=seg){const y=(Math.round(x/seg)%2)?12:48;d+=` Q ${x-seg/2} ${y} ${x} 30`}
+  $('#thB').setAttribute('d',d);const p=$('#thP');p.setAttribute('d',d);
+  const L=p.getTotalLength();p.style.strokeDasharray=L;p.dataset.len=L;
+}
+addEventListener('resize',()=>{layout();measureDraw()});
+addEventListener('wheel',e=>{if(mobile||$('.modal.open'))return;if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();scrollBy(0,e.deltaX)}},{passive:false});
+function panelX(i){return PANELS[i].offsetLeft}
+function goTo(i){i=Math.max(0,Math.min(PANELS.length-1,i));
+  if(mobile){PANELS[i].scrollIntoView({behavior:'smooth'});return}
+  scrollTo({top:Math.min(panelX(i),maxX),behavior:'smooth'})}
+function idx(){if(mobile){let k=0;PANELS.forEach((p,i)=>{if(p.getBoundingClientRect().top<innerHeight*.5)k=i});return k}
+  return Math.min(PANELS.length-1,Math.round(cur/innerWidth))}
+let lastI=-1,walkT=0;
+function frame(){
+  if(!mobile){tgt=Math.min(scrollY,maxX);const prev=cur;cur+=(tgt-cur)*.1;if(Math.abs(tgt-cur)<.3)cur=tgt;vel=cur-prev;
+    track.style.transform=`translate3d(${-cur}px,0,0)`;
+    const p=$('#thP');if(p.dataset.len){const L=+p.dataset.len;p.style.strokeDashoffset=L-(L*((cur+innerWidth*.5)/(maxX+innerWidth)))}
+    const w=$('#walker');if(Math.abs(vel)>.6){w.classList.add('walking');w.classList.toggle('flip',vel<0);walkT=performance.now()}else if(performance.now()-walkT>150)w.classList.remove('walking');
+    PANELS.forEach(pn=>{const r=pn.offsetLeft-cur;if(r<innerWidth*.72&&r>-innerWidth*.9)pn.classList.add('in')});
+    $('#arcs').style.transform=`translateX(${cur*.25}px)`;
+  }else{PANELS.forEach(pn=>{if(pn.getBoundingClientRect().top<innerHeight*.8)pn.classList.add('in')})}
+  const i=idx();if(i!==lastI){lastI=i;hud();talk(i)}
+  const past=(mobile?scrollY:cur)>innerWidth*.4;$('#brand').classList.toggle('show',past);$('#menu').classList.toggle('mini',past);
+  requestAnimationFrame(frame);
+}
+
+/* ================= HUD ================= */
+function buildDots(){$('#dots').innerHTML=PANELS.map((p,i)=>`<button style="left:${i/(PANELS.length-1)*100}%" data-i="${i}" title="${LANG==='en'?p.dataset.titleEn:p.dataset.title}"></button>`).join('');$$('#dots button').forEach(b=>b.onclick=()=>goTo(+b.dataset.i))}
+function hud(){const i=Math.max(0,lastI),p=PANELS[i];$('#hudT').textContent=`${String(i+1).padStart(2,'0')} / ${PANELS.length} · ${LANG==='en'?p.dataset.titleEn:p.dataset.title}`;
+  $('#hudP').style.width=(i/(PANELS.length-1)*100)+'%';$$('#dots button').forEach((b,k)=>b.classList.toggle('on',k===i))}
+$('#hPrev').onclick=()=>goTo(idx()-1);$('#hNext').onclick=()=>goTo(idx()+1);
+$$('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goTo(PANELS.findIndex(p=>p.id===a.dataset.go))}));
+
+/* walker speech */
+const TALK={es:['','¡Vamos!','Este es mi sistema','Esto aporto','Mis documentos favoritos','Así arranco','Caso 1','Caso 2','Caso 3','¡Hola, marcas!','Esa soy yo','¿Hablamos?'],en:['','Let’s go!','This is my system','What I bring','My favorite docs','How I start','Case 1','Case 2','Case 3','Hi, brands!','That’s me','Shall we talk?']};
+let tTO;function talk(i){const w=$('#walker'),s=TALK[LANG][i];if(!s){w.classList.remove('talk');return}$('#wb').textContent=s;w.classList.add('talk');clearTimeout(tTO);tTO=setTimeout(()=>w.classList.remove('talk'),2200)}
+
+/* ================= keys & present ================= */
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){$$('.modal.open').forEach(m=>m.classList.remove('open'));if(H.classList.contains('present'))present(false);return}
+  if($('.modal.open'))return;
+  if(['ArrowRight','PageDown'].includes(e.key)||(e.key===' '&&H.classList.contains('present'))||(e.key==='ArrowDown'&&H.classList.contains('present'))){e.preventDefault();goTo(idx()+1)}
+  if(['ArrowLeft','PageUp'].includes(e.key)||(e.key==='ArrowUp'&&H.classList.contains('present'))){e.preventDefault();goTo(idx()-1)}
+});
+function present(on){H.classList.toggle('present',on);
+  if(on){$('#ptip').classList.add('show');setTimeout(()=>$('#ptip').classList.remove('show'),3200);try{H.requestFullscreen&&H.requestFullscreen().catch(()=>{})}catch(e){}setTimeout(()=>goTo(idx()),300)}
+  else{try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}}}
+$('#presentBtn').onclick=()=>present(!H.classList.contains('present'));
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)H.classList.remove('present');setTimeout(()=>{layout();goTo(lastI)},200)});
+
+/* ================= hero ================= */
+(function(){let i=0;setInterval(()=>{const s=$$('#rot span');s[i].classList.remove('on');s[i].classList.add('out');const p=s[i];setTimeout(()=>p.classList.remove('out'),600);i=(i+1)%s.length;s[i].classList.add('on')},2400)})();
+/* eyes follow */
+addEventListener('pointermove',e=>{
+  const sv=$('#avatar svg');if(!sv)return;const r=sv.getBoundingClientRect();if(!r.width)return;
+  ['#avatar .puL','#avatar .puR'].forEach(q=>{const el=$(q);if(!el)return;const w=el.parentNode.previousElementSibling.getBoundingClientRect();const ex=w.left+w.width/2,ey=w.top+w.height/2;const a=Math.atan2(e.clientY-ey,e.clientX-ex);const d=Math.min(7,Math.hypot(e.clientX-ex,e.clientY-ey)/40);el.setAttribute('transform',`translate(${(Math.cos(a)*d*.6).toFixed(2)} ${(Math.sin(a)*d*.6).toFixed(2)})`)});
+  const ax=(e.clientX/innerWidth-.5),ay=(e.clientY/innerHeight-.5);
+  $('.a1').style.transform=`translate(${ax*-26}px,${ay*-18}px) rotate(${ax*14}deg)`;$('.a2').style.transform=`translate(${ax*22}px,${ay*16}px) rotate(${ax*-18}deg)`;$('.a3').style.transform=`translate(${ax*-14}px,${ay*20}px) rotate(${ay*22}deg)`;
+});
+/* scribble trail */
+(function(){const c=$('#scribble'),x=c.getContext('2d');let pts=[];
+  function rs(){const r=c.parentElement.getBoundingClientRect();c.width=r.width*devicePixelRatio;c.height=r.height*devicePixelRatio;x.scale(devicePixelRatio,devicePixelRatio)}rs();addEventListener('resize',rs);
+  $('#hola').addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();pts.push({x:e.clientX-r.left,y:e.clientY-r.top,t:performance.now()})});
+  (function loop(){const now=performance.now();pts=pts.filter(p=>now-p.t<900);x.clearRect(0,0,c.width,c.height);x.lineCap='round';x.lineJoin='round';
+    for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];const k=1-(now-b.t)/900;x.strokeStyle=`rgba(122,79,214,${k*.55})`;x.lineWidth=2+k*5;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+    requestAnimationFrame(loop)})();
+})();
+/* boil: hand-drawn wobble */
+setInterval(()=>{const tb=$('#turb');tb&&tb.setAttribute('seed',1+Math.floor(Math.random()*4))},140);
+
+/* ================= loop ================= */
+let loopI=0,loopAuto=true;
+function buildLoop(){
+  const g=$('#nodes');const R=222,C=300;
+  g.innerHTML=LOOP.map((n,i)=>{const a=-Math.PI/2+i*(Math.PI*2/LOOP.length);const x=C+R*Math.cos(a),y=C+R*Math.sin(a);
+    const lx=C+(R+66)*Math.cos(a),ly=C+(R+66)*Math.sin(a);
+    return `<g class="node" data-i="${i}" style="--c:${n.c}"><circle class="c" cx="${x}" cy="${y}" r="36"/><text x="${x}" y="${y}">${String(i+1).padStart(2,'0')}</text><text class="lb" x="${lx}" y="${ly}">${t(n.n)}</text></g>`}).join('');
+  $$('.node').forEach(n=>{n.addEventListener('mouseenter',()=>{loopAuto=false;setLoop(+n.dataset.i)});n.addEventListener('click',()=>{loopAuto=false;setLoop(+n.dataset.i)})});
+}
+function setLoop(i){loopI=i;$$('.node').forEach((n,k)=>n.classList.toggle('on',k===i));const lc=$('#lc');lc.style.opacity=0;setTimeout(()=>{$('#lq').textContent=t(LOOP[i].q);$('#lo').textContent=t(LOOP[i].o);lc.style.opacity=1},180)}
+setInterval(()=>{if(loopAuto)setLoop((loopI+1)%LOOP.length)},3200);
+$('#loop').addEventListener('mouseleave',()=>loopAuto=true);
+
+/* ================= wall ================= */
+function buildWall(){
+  $('#wall').innerHTML=BRANDS.map((b,i)=>`<div class="stk-b" data-id="${b.id}" style="left:${b.x*.9}%;top:${b.y*.82}%;--c:${b.c}"><div class="blob" style="animation-delay:${-i*.7}s"><svg viewBox="0 0 48 48" class="doodle" style="stroke-width:2.6">${IC[b.ic]}</svg></div><span>${b.name}</span></div>`).join('');
+  $$('.stk-b').forEach(s=>{
+    s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();const dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);s.style.transform=`translate(${dx*.25}px,${dy*.25}px)`});
+    s.addEventListener('mouseleave',()=>s.style.transform='');
+    s.addEventListener('click',()=>{const b=BRANDS.find(x=>x.id===s.dataset.id);b.case?openCase(b.case):openBrand(b)});
+  });
+}
+
+/* ================= modals ================= */
+function imgs(list,two){const m=$('#mim');m.className='mim'+(two?' two':'');m.innerHTML=list.map(i=>`<img src="${i}.webp" alt="" loading="lazy">`).join('');m.querySelectorAll('img').forEach(im=>im.onclick=()=>{$('#lbi').src=im.src;$('#lb').classList.add('open')})}
+function openCase(k){const c=CASES[k];
+  $('#mtx').innerHTML=`<span class="k"><b>${LANG==='en'?'Case':'Caso'}</b></span><h3>${t(c.title)}</h3><div class="sub">${t(c.sub)}</div>
+  <div class="sec"><b>${LANG==='en'?'Challenge':'El reto'}</b><p>${t(c.reto)}</p></div>
+  <div class="sec"><b>${LANG==='en'?'How I thought about it':'Cómo lo pensé'}</b><p>${t(c.pense)}</p></div>
+  <div class="sec"><b>${LANG==='en'?'What I did':'Lo que hice'}</b><ul>${t(c.hice).map(x=>`<li>${x}</li>`).join('')}</ul></div>
+  <div class="sec"><b>${LANG==='en'?'Result':'Resultado'}</b><div class="chips">${t(c.res).map(x=>`<span class="m">${x}</span>`).join('')}</div></div>
+  <div class="sec"><b>${LANG==='en'?'What it proves':'Lo que demuestra'}</b><p>${t(c.prueba)}</p></div>`;
+  imgs(c.img,k==='azzurry');$('#modal').classList.add('open')}
+function openBrand(b){
+  $('#mtx').innerHTML=`<span class="k"><b>${t(b.cats)}</b></span><h3>${b.name}</h3><div class="sub">${t(b.sector)}</div>
+  <div class="sec"><p>${t(b.d)}</p></div><div class="sec"><b>${LANG==='en'?'Result':'Resultado'}</b><div class="chips">${t(b.m).map(x=>`<span class="m">${x}</span>`).join('')}</div></div>
+  ${b.links.length?`<div class="sec chips">${b.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener"><span>${n} ↗</span></a>`).join('')}</div>`:''}`;
+  imgs(b.img,b.img[0].startsWith('ig-'));$('#modal').classList.add('open')}
+$$('.opencase').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.case)));
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]'))m.classList.remove('open')}));
+$('#lb').addEventListener('click',()=>$('#lb').classList.remove('open'));
+
+/* ================= cursor ================= */
+(function(){const c=$('#cur'),tx=$('#curt');let x=-50,y=-50,cx=-50,cy=-50;
+  addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;const big=e.target.closest('.frame,.stk-b,.mim img');const ln=e.target.closest('a,button,.node,.avatar,.role,.doc,.pr');
+    c.classList.toggle('big',!!big);c.classList.toggle('link',!big&&!!ln);if(big)tx.textContent=e.target.closest('.mim img')?(LANG==='en'?'zoom':'ampliar'):(LANG==='en'?'open':'abrir')});
+  (function l(){cx+=(x-cx)*.25;cy+=(y-cy)*.25;c.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(l)})()})();
+
+/* ================= stroke lengths ================= */
+function measureDraw(){$$('.draw path').forEach(p=>{try{p.style.setProperty('--len',Math.ceil(p.getTotalLength()+2))}catch(e){}})}
+
+/* ================= CV ================= */
+let cvLang='es',DL=null;
+(async()=>{try{if(window.claude&&claude.use)DL=await claude.use('downloads')}catch(e){}})();
+$$('#cvl button').forEach(b=>b.onclick=()=>{cvLang=b.dataset.cv;$$('#cvl button').forEach(x=>x.classList.toggle('on',x===b))});
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2600)}
+$$('.cvbtn').forEach(b=>b.addEventListener('click',async()=>{
+  const l=b.closest('#hablemos')?cvLang:LANG;const name=`CV-Laura-Jaramillo-${l.toUpperCase()}.pdf`;
+  try{const blob=await(await fetch(`cv-laura-jaramillo-${l}.pdf`)).blob();
+    if(DL){await DL.save({filename:name,data:blob});toast(LANG==='en'?'Resume ready':'Hoja de vida lista')}
+    else{const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove()}
+  }catch(e){if(e&&e.code==='declined')return;toast(LANG==='en'?'Download not available here — find my resume on LinkedIn':'Descarga no disponible aquí: encuentra mi hoja de vida en LinkedIn')}
+}));
+
+/* ================= init ================= */
+buildLoop();buildWall();buildDots();setLoop(0);
+if(LANG==='en')setLang('en');
+document.fonts&&document.fonts.ready.then(()=>{layout();measureDraw()});
+layout();measureDraw();requestAnimationFrame(frame);
+</script>
+</body>
+</html>
