@@ -29,19 +29,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- NAV ---------- */
 .nav{position:fixed;inset:16px 16px auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(251,245,236,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(29,27,26,.08);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .nav.hide{transform:translateY(-130%)}
-.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo{font-weight:800;font-size:19px;white-space:nowrap;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
 .logo i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--coral);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(.65)}}
 .nav ul{display:flex;gap:4px;list-style:none}
 .nav ul a{display:block;padding:10px 16px;border-radius:999px;font-weight:500;font-size:15px;transition:background .25s}
 .nav ul a:hover{background:var(--amarillo)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:600;font-size:15px;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:600;font-size:15px;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
 .btn:hover{transform:translateY(-2px) rotate(-1.5deg);background:var(--coral)}
 .btn .ar{transition:transform .3s}
 .btn:hover .ar{transform:translateX(4px)}
 .btn.light{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink)}
 .btn.light:hover{background:var(--amarillo)}
 
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;border:1.5px solid var(--ink);margin-left:auto}
+.lang button{padding:7px 12px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.04em;transition:background .25s,color .25s}
+.lang button.on{background:var(--ink);color:var(--cream)}
+.lang button:not(.on):hover{background:var(--amarillo)}
 /* ---------- HERO ---------- */
 .hero{min-height:100vh;padding:130px 4vw 40px;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
 .eyebrow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:15px;font-weight:500;color:var(--soft);margin-bottom:2vh}
@@ -290,7 +294,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .p-top,.p-body,.p-foot{padding-left:22px;padding-right:22px}
   .p-hero,.p-gal{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}
   .p-gal{columns:1}
-  .st{font-size:13px;padding:9px 14px}
+  .st{font-size:13px;padding:9px 14px;position:relative;left:auto!important;top:auto!important;box-shadow:0 4px 0 var(--ink)}
+  .stickers{position:relative;inset:auto;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .nav{padding-left:16px}
+  .nav .btn{padding:11px 16px}
+  .lang button{padding:6px 9px}
   .st-hint{display:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -304,32 +312,33 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 <nav class="nav" id="nav">
   <a href="#top" class="logo"><i></i>Laura J.</a>
   <ul>
-    <li><a href="#trabajo">Trabajo</a></li>
-    <li><a href="#servicios">Qué hago</a></li>
-    <li><a href="#proceso">Cómo pienso</a></li>
-    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#trabajo" data-en='Work'>Trabajo</a></li>
+    <li><a href="#servicios" data-en='What I do'>Qué hago</a></li>
+    <li><a href="#proceso" data-en='How I think'>Cómo pienso</a></li>
+    <li><a href="#sobre" data-en='About me'>Sobre mí</a></li>
   </ul>
-  <a href="#hablemos" class="btn">Hablemos <span class="ar">→</span></a>
+  <div class="lang" id="lang" role="group" aria-label="Idioma / Language"><button data-l="es">ES</button><button data-l="en">EN</button></div>
+  <a href="#hablemos" class="btn" data-en='Let’s talk <span class="ar">→</span>'>Hablemos <span class="ar">→</span></a>
 </nav>
 
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="stickers" id="stickers"></div>
-  <div class="st-hint">← arrástrame</div>
+  <div class="st-hint" data-en='← drag me'>← arrástrame</div>
   <div class="badge" aria-hidden="true">
     <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-      <text font-size="19" font-weight="600" letter-spacing="3.2" fill="#1D1B1A"><textPath href="#c" textLength="486" lengthAdjust="spacing">DISPONIBLE ✦ REMOTO ✦ DISPONIBLE ✦ REMOTO ✦</textPath></text></svg>
+      <text font-size="19" font-weight="600" letter-spacing="3.2" fill="#1D1B1A"><textPath href="#c" textLength="486" lengthAdjust="spacing" data-en='AVAILABLE ✦ REMOTE ✦ AVAILABLE ✦ REMOTE ✦'>DISPONIBLE ✦ REMOTO ✦ DISPONIBLE ✦ REMOTO ✦</textPath></text></svg>
     <div class="core">✦</div>
   </div>
-  <div class="eyebrow"><span><b>Portafolio 2026</b> — Estrategia digital, contenido y proyectos</span><span>Medellín, Colombia · <b>Trabajo remoto para el mundo</b></span></div>
+  <div class="eyebrow"><span data-en='<b>Portfolio 2026</b> — Digital strategy, content and projects'><b>Portafolio 2026</b> — Estrategia digital, contenido y proyectos</span><span data-en='Medellín, Colombia · <b>Working remotely, worldwide</b>'>Medellín, Colombia · <b>Trabajo remoto para el mundo</b></span></div>
   <h1 class="word" aria-label="Laura Jaramillo">
     <span class="ln" data-split>Laura</span>
     <span class="ln ln2" data-split>Jaramillo</span>
   </h1>
   <div class="hero-foot">
-    <p>Estratega digital y <em>Marketing Project Manager</em>. Convierto objetivos de negocio en planes que un equipo puede ejecutar, y en contenido que la gente sí quiere ver.</p>
+    <p data-en='Digital strategist and <em>Marketing Project Manager</em>. I turn business goals into plans a team can execute, and into content people actually want to see.'>Estratega digital y <em>Marketing Project Manager</em>. Convierto objetivos de negocio en planes que un equipo puede ejecutar, y en contenido que la gente sí quiere ver.</p>
     <div class="hero-cta">
-      <a href="#trabajo" class="btn">Ver mi trabajo <span class="ar">↓</span></a>
+      <a href="#trabajo" class="btn" data-en='See my work <span class="ar">↓</span>'>Ver mi trabajo <span class="ar">↓</span></a>
       <a href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener" class="btn light">LinkedIn <span class="ar">↗</span></a>
     </div>
   </div>
@@ -343,18 +352,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <!-- STATEMENT -->
 <section class="statement">
-  <div class="lbl">Hola, soy Laura</div>
-  <p class="big" id="stmt">Llevo casi cinco años entre redes sociales, contenido y e‑commerce. Pienso la [estrategia|c1], las [personas|c2] y la [ejecución|c3] como un solo sistema, y lo que más disfruto es cuando el plan se rompe y hay que decidir rápido sin perder la calidad.</p>
+  <div class="lbl" data-en='Hi, I’m Laura'>Hola, soy Laura</div>
+  <p class="big" id="stmt" data-en='I’ve spent almost five years across social media, content and e‑commerce. I think of [strategy|c1], [people|c2] and [execution|c3] as one system, and what I enjoy most is when the plan breaks and we have to decide fast without losing quality.'>Llevo casi cinco años entre redes sociales, contenido y e‑commerce. Pienso la [estrategia|c1], las [personas|c2] y la [ejecución|c3] como un solo sistema, y lo que más disfruto es cuando el plan se rompe y hay que decidir rápido sin perder la calidad.</p>
 </section>
 
 <!-- WORK -->
 <section class="work" id="trabajo">
   <div class="work-head">
-    <h2 class="h2">Trabajo<sup>(11)</sup></h2>
+    <h2 class="h2" data-en='Work<sup>(11)</sup>'>Trabajo<sup>(11)</sup></h2>
     <div class="filters" id="filters">
-      <button class="chip on" data-f="all">Todo</button>
+      <button class="chip on" data-f="all" data-en='All'>Todo</button>
       <button class="chip" data-f="social">Social media</button>
-      <button class="chip" data-f="content">Contenido & copy</button>
+      <button class="chip" data-f="content" data-en='Content & copy'>Contenido & copy</button>
       <button class="chip" data-f="pm">Project management</button>
       <button class="chip" data-f="ecom">E‑commerce</button>
     </div>
@@ -369,59 +378,59 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <!-- SERVICES -->
 <section class="svc" id="servicios">
-  <div class="lbl">Dónde aporto</div>
-  <h2 class="h2">Qué hago</h2>
+  <div class="lbl" data-en='Where I add value'>Dónde aporto</div>
+  <h2 class="h2" data-en='What I do'>Qué hago</h2>
   <div class="svc-grid">
     <article class="sv" style="background:var(--rosa)">
       <svg class="shape" viewBox="0 0 100 100"><path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39Z" fill="#FFFDF8"/></svg>
-      <div><span class="n">01</span><h3>Como Project Manager</h3><p>Llevo los proyectos de principio a fin: cronogramas, hitos, stakeholders y calidad de cada entregable.</p></div>
-      <ul><li>Cronogramas e hitos</li><li>Stakeholders</li><li>KPIs</li><li>Scrum / Agile</li></ul>
+      <div><span class="n">01</span><h3 data-en='As a Project Manager'>Como Project Manager</h3><p data-en='I run projects end to end: timelines, milestones, stakeholders and the quality of every deliverable.'>Llevo los proyectos de principio a fin: cronogramas, hitos, stakeholders y calidad de cada entregable.</p></div>
+      <ul><li data-en='Timelines &amp; milestones'>Cronogramas e hitos</li><li>Stakeholders</li><li>KPIs</li><li>Scrum / Agile</li></ul>
     </article>
     <article class="sv" style="background:var(--lila)">
       <svg class="shape" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#FFFDF8"/><circle cx="50" cy="50" r="22" fill="#CDB8F5"/></svg>
-      <div><span class="n">02</span><h3>Como estratega digital</h3><p>Redes, contenido, e‑commerce y branding pensados como un solo sistema, con una voz de marca coherente.</p></div>
-      <ul><li>Estrategia 360°</li><li>Calendario editorial</li><li>E‑commerce</li><li>Branding</li></ul>
+      <div><span class="n">02</span><h3 data-en='As a digital strategist'>Como estratega digital</h3><p data-en='Social, content, e‑commerce and branding thought of as one system, with a consistent brand voice.'>Redes, contenido, e‑commerce y branding pensados como un solo sistema, con una voz de marca coherente.</p></div>
+      <ul><li data-en='360° strategy'>Estrategia 360°</li><li data-en='Editorial calendar'>Calendario editorial</li><li>E‑commerce</li><li>Branding</li></ul>
     </article>
     <article class="sv" style="background:var(--amarillo)">
       <svg class="shape" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" rx="26" fill="#FFFDF8"/></svg>
-      <div><span class="n">03</span><h3>Dentro del equipo creativo</h3><p>Escribo, ideo y aterrizo: del concepto al guion, del copy a la pieza lista para publicar.</p></div>
-      <ul><li>Copywriting</li><li>Storytelling</li><li>Guiones de Reels</li><li>Piezas con IA</li><li>Comunidad</li></ul>
+      <div><span class="n">03</span><h3 data-en='Inside the creative team'>Dentro del equipo creativo</h3><p data-en='I write, ideate and land ideas: from concept to script, from copy to a piece ready to publish.'>Escribo, ideo y aterrizo: del concepto al guion, del copy a la pieza lista para publicar.</p></div>
+      <ul><li>Copywriting</li><li>Storytelling</li><li data-en='Reels scripts'>Guiones de Reels</li><li data-en='AI‑assisted pieces'>Piezas con IA</li><li data-en='Community'>Comunidad</li></ul>
     </article>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="proc" id="proceso">
-  <div class="lbl">Cómo pienso</div>
-  <h2 class="h2">Seis preguntas,<br>cada proyecto</h2>
+  <div class="lbl" data-en='How I think'>Cómo pienso</div>
+  <h2 class="h2" data-en='Six questions,<br>every project'>Seis preguntas,<br>cada proyecto</h2>
   <div class="steps" id="steps">
-    <div class="step" style="--c:var(--rosa)"><span class="k">1</span><div><h4>Entender</h4><p>¿Qué necesita de verdad el negocio y para quién?</p></div></div>
-    <div class="step" style="--c:var(--amarillo)"><span class="k">2</span><div><h4>Priorizar</h4><p>¿Qué mueve la aguja primero y qué puede esperar?</p></div></div>
-    <div class="step" style="--c:var(--verde)"><span class="k">3</span><div><h4>Planear</h4><p>¿Quién hace qué, cuándo y con qué recursos?</p></div></div>
-    <div class="step" style="--c:var(--azul)"><span class="k">4</span><div><h4>Alinear</h4><p>¿Todos entienden el mismo objetivo y la misma fecha?</p></div></div>
-    <div class="step" style="--c:var(--lila)"><span class="k">5</span><div><h4>Ejecutar</h4><p>¿Qué cambió y qué decidimos para no perder la fecha?</p></div></div>
-    <div class="step" style="--c:var(--rosa)"><span class="k">6</span><div><h4>Medir</h4><p>¿Qué aprendimos y qué hacemos distinto la próxima vez?</p></div></div>
+    <div class="step" style="--c:var(--rosa)"><span class="k">1</span><div data-en='<h4>Understand</h4><p>What does the business really need, and for whom?</p>'><h4>Entender</h4><p>¿Qué necesita de verdad el negocio y para quién?</p></div></div>
+    <div class="step" style="--c:var(--amarillo)"><span class="k">2</span><div data-en='<h4>Prioritize</h4><p>What moves the needle first, and what can wait?</p>'><h4>Priorizar</h4><p>¿Qué mueve la aguja primero y qué puede esperar?</p></div></div>
+    <div class="step" style="--c:var(--verde)"><span class="k">3</span><div data-en='<h4>Plan</h4><p>Who does what, when, and with which resources?</p>'><h4>Planear</h4><p>¿Quién hace qué, cuándo y con qué recursos?</p></div></div>
+    <div class="step" style="--c:var(--azul)"><span class="k">4</span><div data-en='<h4>Align</h4><p>Does everyone share the same goal and the same date?</p>'><h4>Alinear</h4><p>¿Todos entienden el mismo objetivo y la misma fecha?</p></div></div>
+    <div class="step" style="--c:var(--lila)"><span class="k">5</span><div data-en='<h4>Execute</h4><p>What changed, and what do we decide to keep the date?</p>'><h4>Ejecutar</h4><p>¿Qué cambió y qué decidimos para no perder la fecha?</p></div></div>
+    <div class="step" style="--c:var(--rosa)"><span class="k">6</span><div data-en='<h4>Measure</h4><p>What did we learn, and what will we do differently next time?</p>'><h4>Medir</h4><p>¿Qué aprendimos y qué hacemos distinto la próxima vez?</p></div></div>
   </div>
 
   <div class="principles">
     <ul class="plist">
-      <li><small>01</small>Claridad antes que velocidad</li>
-      <li><small>02</small>Personas alineadas, no solo tareas</li>
-      <li><small>03</small>Protejo fechas y calidad</li>
-      <li><small>04</small>Decido cuando el plan se rompe</li>
-      <li><small>05</small>Una sola voz de marca</li>
-      <li><small>06</small>Medir para aprender</li>
+      <li data-en='<small>01</small>Clarity before speed'><small>01</small>Claridad antes que velocidad</li>
+      <li data-en='<small>02</small>Aligned people, not just tasks'><small>02</small>Personas alineadas, no solo tareas</li>
+      <li data-en='<small>03</small>I protect dates and quality'><small>03</small>Protejo fechas y calidad</li>
+      <li data-en='<small>04</small>I decide when the plan breaks'><small>04</small>Decido cuando el plan se rompe</li>
+      <li data-en='<small>05</small>One brand voice'><small>05</small>Una sola voz de marca</li>
+      <li data-en='<small>06</small>Measure to learn'><small>06</small>Medir para aprender</li>
     </ul>
     <div class="ai">
-      <div class="lbl" style="margin-bottom:16px">IA en mi flujo</div>
-      <h3>Criterio humano, velocidad de IA.</h3>
-      <p>Uso Claude y Gemini para investigar, idear, redactar y automatizar. La decisión final y el tono de la marca siempre pasan por mí.</p>
-      <div class="lbl" style="margin:30px 0 0">Mis primeros 90 días</div>
+      <div class="lbl" style="margin-bottom:16px" data-en='AI in my workflow'>IA en mi flujo</div>
+      <h3 data-en='Human judgment, AI speed.'>Criterio humano, velocidad de IA.</h3>
+      <p data-en='I use Claude and Gemini to research, ideate, write and automate. The final call and the brand’s tone always go through me.'>Uso Claude y Gemini para investigar, idear, redactar y automatizar. La decisión final y el tono de la marca siempre pasan por mí.</p>
+      <div class="lbl" style="margin:30px 0 0" data-en='My first 90 days'>Mis primeros 90 días</div>
       <div class="days">
-        <div><b>Sem 1–2</b><span>Escuchar</span></div>
-        <div><b>Sem 3–4</b><span>Ordenar</span></div>
-        <div><b>Mes 2</b><span>Ejecutar</span></div>
-        <div><b>Mes 3</b><span>Optimizar</span></div>
+        <div data-en='<b>Wk 1–2</b><span>Listen</span>'><b>Sem 1–2</b><span>Escuchar</span></div>
+        <div data-en='<b>Wk 3–4</b><span>Organize</span>'><b>Sem 3–4</b><span>Ordenar</span></div>
+        <div data-en='<b>Month 2</b><span>Execute</span>'><b>Mes 2</b><span>Ejecutar</span></div>
+        <div data-en='<b>Month 3</b><span>Optimize</span>'><b>Mes 3</b><span>Optimizar</span></div>
       </div>
     </div>
   </div>
@@ -442,17 +451,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </svg>
   </div>
   <div>
-    <div class="lbl">Sobre mí</div>
-    <p class="big">Soy de Medellín y he trabajado en remoto con equipos de Estados Unidos, España, Francia, Italia, Argentina y LATAM. Me muevo cómoda entre la estrategia y el detalle: puedo armar el plan y también escribir el copy.</p>
+    <div class="lbl" data-en='About me'>Sobre mí</div>
+    <p class="big" data-en='I’m from Medellín and I’ve worked remotely with teams in the United States, Spain, France, Italy, Argentina and across LATAM. I move comfortably between strategy and detail: I can build the plan and also write the copy.'>Soy de Medellín y he trabajado en remoto con equipos de Estados Unidos, España, Francia, Italia, Argentina y LATAM. Me muevo cómoda entre la estrategia y el detalle: puedo armar el plan y también escribir el copy.</p>
     <div class="facts">
-      <div><b>Formación</b><span>Negocios Internacionales · Esp. Mercadeo Gerencial</span></div>
-      <div><b>Idiomas</b><span>Español nativo · Inglés B2</span></div>
-      <div><b>Disponibilidad</b><span>Inmediata · UTC−5</span></div>
+      <div data-en='<b>Education</b><span>International Business · Specialization in Marketing Management</span>'><b>Formación</b><span>Negocios Internacionales · Esp. Mercadeo Gerencial</span></div>
+      <div data-en='<b>Languages</b><span>Spanish (native) · English (B2)</span>'><b>Idiomas</b><span>Español nativo · Inglés B2</span></div>
+      <div data-en='<b>Availability</b><span>Immediate · UTC−5</span>'><b>Disponibilidad</b><span>Inmediata · UTC−5</span></div>
     </div>
     <div class="timeline">
       <div class="row"><b>Globant</b><span>Content &amp; Social PM</span><em>2025 — 2026</em></div>
       <div class="row"><b>DAX International</b><span>Social Media Specialist</span><em>2024 — 2026</em></div>
-      <div class="row"><b>Waco Digital Hub</b><span>Social Strategist &amp; Copywriter</span><em>Agencia</em></div>
+      <div class="row"><b>Waco Digital Hub</b><span>Social Strategist &amp; Copywriter</span><em data-en='Agency'>Agencia</em></div>
       <div class="row"><b>Madecentro · TuHome</b><span>Content Creation Leader</span><em>E‑commerce</em></div>
     </div>
     <div class="tools">
@@ -463,20 +472,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <!-- CONTACT -->
 <footer class="contact" id="hablemos">
-  <div class="lbl">Contacto</div>
-  <div class="ask">¿Habla<wbr>mos<span class="q">?</span></div>
+  <div class="lbl" data-en='Contact'>Contacto</div>
+  <div class="ask" data-en='Let’s<wbr> talk<span class="q">!</span>'>¿Habla<wbr>mos<span class="q">?</span></div>
   <div class="contact-row">
-    <p>Si tu equipo necesita convertir objetivos en planes, y planes en contenido que funcione, me encantaría escucharte. De forma continua o en un proyecto puntual.</p>
+    <p data-en='If your team needs to turn goals into plans, and plans into content that works, I’d love to hear from you. Ongoing or for a specific project.'>Si tu equipo necesita convertir objetivos en planes, y planes en contenido que funcione, me encantaría escucharte. De forma continua o en un proyecto puntual.</p>
     <div>
       <div class="actions">
-        <a class="btn" href="/cv-laura-jaramillo-es.pdf" download>Hoja de vida ES <span class="ar">↓</span></a>
-        <a class="btn" href="/cv-laura-jaramillo-en.pdf" download>Resume EN <span class="ar">↓</span></a>
+        <a class="btn" href="/cv-laura-jaramillo-es.pdf" download data-en='CV in Spanish <span class="ar">↓</span>'>Hoja de vida ES <span class="ar">↓</span></a>
+        <a class="btn" href="/cv-laura-jaramillo-en.pdf" download data-en='Resume in English <span class="ar">↓</span>'>Resume EN <span class="ar">↓</span></a>
         <a class="btn light" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener">LinkedIn <span class="ar">↗</span></a>
       </div>
-      <div class="mail">o escríbeme: <a href="mailto:laurajaramilloz21@gmail.com">laurajaramilloz21@gmail.com</a></div>
+      <div class="mail" data-en='or email me: <a href="mailto:laurajaramilloz21@gmail.com">laurajaramilloz21@gmail.com</a>'>o escríbeme: <a href="mailto:laurajaramilloz21@gmail.com">laurajaramilloz21@gmail.com</a></div>
     </div>
   </div>
-  <div class="foot"><span>© 2026 Laura Jaramillo</span><span>Hecho con cariño en Medellín ✦</span></div>
+  <div class="foot"><span>© 2026 Laura Jaramillo</span><span data-en='Made with care in Medellín ✦'>Hecho con cariño en Medellín ✦</span></div>
   <div class="giant" id="giant">Laura Jaramillo</div>
 </footer>
 
@@ -485,7 +494,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="veil" data-close></div>
   <div class="panel" role="dialog" aria-modal="true" id="panel"></div>
 </div>
-<div class="cur" id="cur">Ver</div>
+<div class="cur" id="cur" data-en='View'>Ver</div>
 
 <script>
 const CASES=[
@@ -579,6 +588,24 @@ const CASES=[
   gal:['img/fm-web.webp','img/fm-blog.webp'],link:['fm-furniture.com','https://www.fm-furniture.com']}
 ];
 
+const EN={
+ dax:{ind:'Home · kitchen, bath & surfaces',lead:'I helped DAX go from showroom to a 360° digital ecosystem: one voice across social, web, blog and email, plus the launch of its franchise program.',role:['Organic social strategy','E‑commerce, blog & email content','Branding','Creative coordination','Franchising'],reto:'Turn a showroom brand into a consistent digital presence across several countries, and launch a franchise program without losing the brand voice.',hice:'I planned social content and storytelling, wrote for web, blog, catalogs and email, and coordinated the creative team and stakeholders (sales, technical and showrooms) for the franchise launch.',res:'A brand that is more recognizable, educational and commercial at once, with more conversation on social and more organic traffic to the website. The franchise launched on web and social on schedule.'},
+ conavi:{ind:'Banking · Conavi Christmas campaign',tag:'Christmas ✦',lead:'I coordinated the digital project for Conavi’s Christmas campaign on Bancolombia’s site, across creative, technical and production teams.',role:['Project management','Stakeholders','Timeline & KPIs','Landing page'],reto:'Mid‑campaign, the delivery strategy for the limited‑edition cards wasn’t working and had to change without moving the date.',hice:'I aligned stakeholders and teams to rethink the message and build a new landing page with clearer information, tracking deliverables and the timeline every day.',res:'People understood the card was free and could get it more easily. Teams aligned and milestones delivered on time.'},
+ azzurry:{ind:'Original‑brand sneakers & accessories',tag:'World Cup ⚽',lead:'I led the Meta and TikTok strategy to position Azzurry as the place for original brands.',role:['Meta + TikTok','Launch calendar','Scripts & copy','Organic & paid'],reto:'Stand out as an original‑brand retailer in a category flooded with promotions.',hice:'I built a calendar around launches, sale seasons and football, with content, copy, scripts and organic and paid campaigns.',res:'More brand awareness, connection with new customers and more traffic to the online store.'},
+ laskin:{ind:'Dermatology & skincare',tag:'Anniversary',lead:'Content strategy for a dermatology brand that presents itself as “experts caring for your skin”.',role:['Content strategy','Copy & scripts','Creative concepts','Organic & paid'],reto:'Talk about clinical treatments in a warm, approachable way, and turn the anniversary campaign into sales.',hice:'I developed copy, scripts and concepts for organic and paid campaigns aligned with business goals.',res:'An anniversary campaign with strong commercial performance and more brand visibility.'},
+ calm:{ind:'Mattresses & sleep',tag:'Launch',lead:'I took part in Hola Calm’s digital launch in Colombia: a mattress‑in‑a‑box brand entering a new market.',role:['Reels scripts','Copywriting','Promotional content','Inspirational content'],reto:'Enter the Colombian market and build awareness from scratch.',hice:'I wrote Reels scripts, copy and promotional and inspirational content to introduce the brand.',res:'Recognition from the early stages and growing interest in its products in Colombia.'},
+ riascos:{ind:'Plastic, aesthetic & reconstructive surgery',tag:'No before/after',lead:'Content for a surgeon who wanted to communicate his expertise without the classic before‑and‑after.',role:['Scripts','Copy','Carousels','Editorial line'],reto:'Convey credibility and closeness without the format the whole category uses.',hice:'I developed scripts, copy and carousels aligned with the doctor’s vision.',res:'More credibility and closeness with the audience, and a growing community.'},
+ vatia:{ind:'Energy for homes & businesses',lead:'I turned technical energy‑sector information into clear, engaging social content.',role:['Copywriting','Educational pieces','Success stories','B2B'],reto:'Make a technical topic understandable for homes and businesses at the same time.',hice:'I wrote copy, informational and educational pieces, and success stories for both audiences.',res:'A brand closer to households and the B2B market, with more interest in its solutions.'},
+ park5:{ind:'Airport parking with shuttle',lead:'Social content for Park 5, the parking lot with shuttles that bills itself as the best price at the airport.',role:['Reels','Copywriting','Informational pieces'],reto:'Explain a practical service (rates, shuttles, how to get there) in a simple, friendly way.',hice:'Social content: Reels with spokespeople, informational pieces and seasonal campaigns.',res:'Clearer communication of the service and a brand with more personality.'},
+ miplante:{ind:'Marketplace paid through your utility bill',lead:'Content strategy for a marketplace where you buy and pay in installments through your utility bill.',role:['SEO','Educational content','Web + social'],reto:'Explain a new way of buying and gain organic ranking.',hice:'Keyword research, educational content and connecting the website with social media.',res:'More organic presence and wider reach among new users.'},
+ tuhome:{ind:'Furniture & décor',lead:'I led content creation and product listing optimization to grow in e‑commerce and marketplaces.',role:['E‑commerce content','Product SEO','Copywriting','Marketplaces'],reto:'Gain visibility on marketplaces like Amazon with a large catalog.',hice:'I optimized product listings with a copy and SEO strategy to attract qualified traffic.',res:'More marketplace visibility and growth in sales, ratings and reviews.'},
+ fm:{ind:'Furniture & décor',lead:'Content for e‑commerce and marketplaces, with a blog built to support the buying journey.',role:['Product SEO','Blog','E‑commerce'],reto:'Strengthen the digital channel and attract organic traffic.',hice:'I combined product optimization with purchase‑oriented blog content.',res:'More visibility on search engines and platforms, and more organic visits.'}
+};
+let LANG='es';
+try{const q=new URLSearchParams(location.search).get('lang');const st=localStorage.getItem('lj-lang');LANG=q||st||((navigator.language||'').toLowerCase().startsWith('es')?'es':'en');if(LANG!=='en')LANG='es'}catch(e){}
+const T=(c,k)=>(LANG==='en'&&EN[c.id]&&EN[c.id][k])||c[k];
+const UI={es:{reto:'El reto',hice:'Qué hice',res:'Resultado',next:'Siguiente',close:'Cerrar',site:'Sitio de',content:'Contenido de'},en:{reto:'The challenge',hice:'What I did',res:'Outcome',next:'Next',close:'Close',site:'Website of',content:'Content by'}};
+
 /* split hero words */
 document.querySelectorAll('[data-split]').forEach((el,li)=>{
   const t=el.textContent;el.textContent='';
@@ -586,9 +613,9 @@ document.querySelectorAll('[data-split]').forEach((el,li)=>{
 });
 
 /* stickers */
-const ST=[['Social media','var(--rosa)',-8,55,28],['IA ✦','var(--paper)',12,71,25],['Project Manager','var(--lila)',-4,59,40],['Contenido','var(--amarillo)',6,3,52],['Growth','var(--verde)',9,9,61],['Copy & storytelling','var(--azul)',-6,2,70]];
+const ST=[['Social media','var(--rosa)',-8,55,28,'Social media'],['IA ✦','var(--paper)',12,71,25,'AI ✦'],['Project Manager','var(--lila)',-4,59,40,'Project Manager'],['Contenido','var(--amarillo)',6,3,52,'Content'],['Growth','var(--verde)',9,9,61,'Growth'],['Copy & storytelling','var(--azul)',-6,2,70,'Copy & storytelling']];
 const sb=document.getElementById('stickers');
-ST.forEach(([t,c,r,x,y],i)=>{const d=document.createElement('div');d.className='st';d.textContent=t;d.style.background=c;d.style.setProperty('--rot',r+'deg');d.style.transform=`rotate(${r}deg)`;d.style.left=x+'%';d.style.top=y+'%';d.style.animationDelay=(1.3+i*.12)+'s';sb.appendChild(d);drag(d)});
+ST.forEach(([t,c,r,x,y,en],i)=>{const d=document.createElement('div');d.className='st';d.textContent=t;d.dataset.en=en;d.style.background=c;d.style.setProperty('--rot',r+'deg');d.style.transform=`rotate(${r}deg)`;d.style.left=x+'%';d.style.top=y+'%';d.style.animationDelay=(1.3+i*.12)+'s';sb.appendChild(d);drag(d)});
 function drag(el){let sx,sy,ox,oy;el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);sx=e.clientX;sy=e.clientY;ox=el.offsetLeft;oy=el.offsetTop;el.style.zIndex=5;el.style.animation='none';el.style.transform=`rotate(${parseFloat(el.style.getPropertyValue('--rot'))*-1}deg) scale(1.08)`;
   const mv=ev=>{el.style.left=ox+ev.clientX-sx+'px';el.style.top=oy+ev.clientY-sy+'px'};
   const up=()=>{el.style.transform=`rotate(${el.style.getPropertyValue('--rot')})`;el.removeEventListener('pointermove',mv);el.removeEventListener('pointerup',up)};
@@ -600,55 +627,58 @@ const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=(i*7+3)%(i+1);[
 function fill(id,list){const t=document.getElementById(id);const h=list.map(n=>`<img src="hd/${n}.webp" alt="" loading="lazy"${n.includes('web')?' class="wd"':''}>`).join('');t.innerHTML=h+h}
 fill('t1',['dax-01','holacalm-09','laskin-01','riascos-05','daxweb-05','azzurry-12','park5-01','holacalm-11','riascos-08','dax-12']);
 fill('t2',['laskin-07','holacalm-01','riascos-10','azzurry-01','daxweb-01','holacalm-04','riascos-01','holacalm-07','laskin-01','daxweb-07']);
-const IND=['Hogar','Dermatología','Moda deportiva','Descanso','Energía','Salud','Banca','Movilidad','Marketplaces'];
-const it=IND.map(w=>`<span>${w}</span><span class="s">✦</span>`).join('');document.getElementById('t3').innerHTML=it+it;
+const IND={es:['Hogar','Dermatología','Moda deportiva','Descanso','Energía','Salud','Banca','Movilidad','Marketplaces'],en:['Home','Dermatology','Sportswear','Sleep','Energy','Health','Banking','Mobility','Marketplaces']};
+function renderInd(){const it=IND[LANG].map(w=>`<span>${w}</span><span class="s">✦</span>`).join('');document.getElementById('t3').innerHTML=it+it}
 
 /* statement words */
-const stmt=document.getElementById('stmt');
-stmt.innerHTML=stmt.textContent.split(/(\[[^\]]+\])|\s+/).filter(Boolean).map(w=>{
+const stmt=document.getElementById('stmt');const STMT={es:stmt.textContent,en:stmt.dataset.en};stmt.removeAttribute('data-en');let words=[];
+function renderStmt(){stmt.innerHTML=STMT[LANG].split(/(\[[^\]]+\])|\s+/).filter(Boolean).map(w=>{
   const m=w.match(/^\[(.+)\|(c\d)\]$/);return m?`<span class="w hl ${m[2]}">${m[1]}</span>`:`<span class="w">${w}</span>`}).join(' ');
-const words=[...stmt.querySelectorAll('.w')];
+  words=[...stmt.querySelectorAll('.w')]}
 function paint(){const r=stmt.getBoundingClientRect();const vh=innerHeight;const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<n))}
 
 /* cards */
-const grid=document.getElementById('grid');
-grid.innerHTML=CASES.map((c,i)=>{
+const grid=document.getElementById('grid');let cards=[];
+function renderCards(){grid.innerHTML=CASES.map((c,i)=>{
   const m=c.media;
   if(m.type==='stack'||m.type==='post'){
-    const web=m.web?`<div class="webbg"><div class="bar"><i></i><i></i><i></i></div><img src="${m.web}" alt="Sitio de ${c.name}" loading="lazy"></div>`:'';
-    const ph=m.phone?`<div class="phone full"><img src="${m.phone}" alt="Contenido de ${c.name}" loading="lazy"></div>`:'';
+    const web=m.web?`<div class="webbg"><div class="bar"><i></i><i></i><i></i></div><img src="${m.web}" alt="${UI[LANG].site} ${c.name}" loading="lazy"></div>`:'';
+    const ph=m.phone?`<div class="phone full"><img src="${m.phone}" alt="${UI[LANG].content} ${c.name}" loading="lazy"></div>`:'';
     const cs=m.type==='post'?`<img class="post solo" src="${m.cards[0]}" alt="" loading="lazy">`:(m.cards||[]).map((x,k)=>`<img class="post p${k+1}" src="${x}" alt="" loading="lazy">`).join('');
     return `<article class="card${c.wide?' wide':''}" data-i="${i}" data-f="${c.f.join(' ')}" tabindex="0">
-    <div class="media${m.web?' hasweb':''}" style="background:${c.c}"><span class="tag">${c.tag}</span>${web}${ph}${cs}</div>
-    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${c.ind}</p></div></article>`}
-  const inner=m.type==='phone'?`<div class="phone"><div class="scr"><img src="${m.src}" alt="Perfil de Instagram de ${c.name}" loading="lazy">${c.gal[0].includes('grid')?`<img src="${c.gal[0]}" alt="" loading="lazy">`:''}</div></div>${m.second?`<div class="phone second"><div class="scr"><img src="${m.second}" alt="" loading="lazy"></div></div>`:''}`
-   :`<div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="${m.src}" alt="Sitio de ${c.name}" loading="lazy"></div>`;
+    <div class="media${m.web?' hasweb':''}" style="background:${c.c}"><span class="tag">${T(c,'tag')}</span>${web}${ph}${cs}</div>
+    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${T(c,'ind')}</p></div></article>`}
+  const inner=m.type==='phone'?`<div class="phone"><div class="scr"><img src="${m.src}" alt="Instagram ${c.name}" loading="lazy">${c.gal[0].includes('grid')?`<img src="${c.gal[0]}" alt="" loading="lazy">`:''}</div></div>${m.second?`<div class="phone second"><div class="scr"><img src="${m.second}" alt="" loading="lazy"></div></div>`:''}`
+   :`<div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="${m.src}" alt="${UI[LANG].site} ${c.name}" loading="lazy"></div>`;
   return `<article class="card${c.wide?' wide':''}" data-i="${i}" data-f="${c.f.join(' ')}" tabindex="0">
-    <div class="media" style="background:${c.c}"><span class="tag">${c.tag}</span>${inner}</div>
-    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${c.ind}</p></div></article>`}).join('');
-const cards=[...grid.querySelectorAll('.card')];
+    <div class="media" style="background:${c.c}"><span class="tag">${T(c,'tag')}</span>${inner}</div>
+    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${T(c,'ind')}</p></div></article>`}).join('');
+cards=[...grid.querySelectorAll('.card')];
+const f=(document.querySelector('.chip.on')||{}).dataset?.f||'all';
+cards.forEach((c,i)=>{if(f!=='all'&&!c.dataset.f.includes(f))c.classList.add('hidden');c.style.transitionDelay=(i%3)*.08+'s';if(typeof io!=='undefined')io.observe(c)})}
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
   document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;
   cards.forEach(c=>{const show=f==='all'||c.dataset.f.includes(f);c.classList.toggle('hidden',!show);if(show){c.classList.remove('in');requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('in')))}})});
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-cards.forEach((c,i)=>{c.style.transitionDelay=(i%3)*.08+'s';io.observe(c)});
+
 document.querySelectorAll('.step').forEach((s,i)=>{s.style.transitionDelay=i*.07+'s';io.observe(s)});
 
 /* modal */
 const modal=document.getElementById('modal'),panel=document.getElementById('panel');let cur=-1;
-function openCase(i){cur=i;const c=CASES[i];const nx=CASES[(i+1)%CASES.length];
+function openCase(i,keep){cur=i;const c=CASES[i];const nx=CASES[(i+1)%CASES.length];
   const heroImgs=c.hero||(c.media.type==='phone'?[c.media.src,c.gal[0]]:[c.gal[0]]);const galImgs=c.hero?c.gal:c.gal.slice(1);
-  panel.innerHTML=`<button class="close" data-close aria-label="Cerrar">✕</button>
-  <div class="p-top"><div class="kicker">${c.ind}</div><h2>${c.name}</h2><p class="lead">${c.lead}</p>
-   <div class="p-tags">${c.role.map(r=>`<span>${r}</span>`).join('')}</div></div>
+  const u=UI[LANG];
+  panel.innerHTML=`<button class="close" data-close aria-label="${u.close}">✕</button>
+  <div class="p-top"><div class="kicker">${T(c,'ind')}</div><h2>${c.name}</h2><p class="lead">${T(c,'lead')}</p>
+   <div class="p-tags">${T(c,'role').map(r=>`<span>${r}</span>`).join('')}</div></div>
   <div class="p-hero" style="background:${c.c}">${heroImgs.map(s=>`<img src="${s}" alt="">`).join('')}</div>
-  <div class="p-body"><div><h5>El reto</h5><p>${c.reto}</p></div><div><h5>Qué hice</h5><p>${c.hice}</p></div><div><h5>Resultado</h5><p>${c.res}</p></div></div>
+  <div class="p-body"><div><h5>${u.reto}</h5><p>${T(c,'reto')}</p></div><div><h5>${u.hice}</h5><p>${T(c,'hice')}</p></div><div><h5>${u.res}</h5><p>${T(c,'res')}</p></div></div>
   ${galImgs.length?`<div class="p-gal">${galImgs.map(s=>`<img src="${s}" alt="" loading="lazy">`).join('')}</div>`:''}
   <div class="p-foot">${c.link?`<a class="btn light" href="${c.link[1]}" target="_blank" rel="noopener">${c.link[0]} <span class="ar">↗</span></a>`:'<span></span>'}
-   <button class="next" data-next>Siguiente: ${nx.name} <span>→</span></button></div>`;
-  panel.scrollTop=0;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+   <button class="next" data-next>${u.next}: ${nx.name} <span>→</span></button></div>`;
+  if(!keep)panel.scrollTop=0;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
 function closeCase(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
 grid.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openCase(+c.dataset.i)});
 grid.addEventListener('keydown',e=>{if(e.key==='Enter'){const c=e.target.closest('.card');if(c)openCase(+c.dataset.i)}});
@@ -671,6 +701,18 @@ const g=document.getElementById('giant');g.innerHTML=[...g.textContent].map(ch=>
 let ly=0;const nav=document.getElementById('nav');const blobs=document.querySelectorAll('#blobs > *');
 addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('hide',y>ly&&y>300);ly=y;paint();
   blobs.forEach((b,i)=>{b.style.transform=`translateY(${Math.sin(y/300+i)*10}px)`})},{passive:true});
+/* language */
+const langBox=document.getElementById('lang');
+function applyLang(l){LANG=l;try{localStorage.setItem('lj-lang',l)}catch(e){}
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-en]').forEach(el=>{if(el.dataset.es===undefined)el.dataset.es=el.classList.contains('st')?el.textContent:el.innerHTML;
+    const v=l==='en'?el.dataset.en:el.dataset.es;if(el.classList.contains('st'))el.textContent=v;else el.innerHTML=v});
+  langBox.querySelectorAll('button').forEach(b=>{b.classList.toggle('on',b.dataset.l===l);b.setAttribute('aria-pressed',b.dataset.l===l)});
+  renderStmt();renderInd();renderCards();cards.forEach(c=>c.classList.add('in'));paint();
+  if(modal.classList.contains('open'))openCase(cur,true)}
+langBox.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.dataset.l!==LANG)applyLang(b.dataset.l)});
+renderStmt();renderInd();renderCards();
+if(LANG==='en')applyLang('en');else langBox.querySelector('[data-l="es"]').classList.add('on');
 paint();
 </script>
 </body>
