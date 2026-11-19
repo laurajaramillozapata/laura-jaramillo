@@ -433,6 +433,15 @@ html.present .menu:hover{transform:none}
   .st{font-size:13px;padding:8px 13px}
 }
 /* sin ilustración */
+.stackw .web{width:70%;top:auto;left:auto;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.stackw .web img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.stackw .web .bar em{font-style:normal;font-size:11px;font-weight:700;margin-left:8px;color:var(--ink2)}
+.stackw .w1{left:4%;top:6%;rotate:-5deg;z-index:1}
+.stackw .w2{right:4%;top:22%;rotate:4deg;z-index:2}
+.stackw .w3{left:12%;bottom:6%;rotate:-1deg;z-index:3}
+.stackw:hover .w1{transform:translate(-14px,-10px) rotate(-3deg)}
+.stackw:hover .w2{transform:translate(14px,-6px) rotate(3deg)}
+.stackw:hover .w3{transform:translateY(8px)}
 .mtx .camps{list-style:none;padding:0!important;display:grid;gap:10px}
 .mtx .camps li{background:#fff;border-radius:14px;padding:12px 14px;border:1.5px solid rgba(46,36,51,.12);transition:transform .25s,border-color .25s}
 .mtx .camps li:hover{transform:translateX(4px);border-color:var(--purple)}
@@ -640,7 +649,11 @@ html.present .menu:hover{transform:none}
     <button class="btn dark pop opencase" data-case="globant"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
   </div>
   <div class="case-art pop">
-    <div class="frame opencase" data-case="globant" style="--c:var(--lilac);height:min(50vh,470px)"><img src="img/conavi-landing.webp" alt="Landing de la campaña" style="object-position:center"></div>
+    <div class="collage stackw opencase" data-case="globant" style="--c:var(--lilac)">
+      <div class="web w1"><div class="bar"><i></i><i></i><i></i><em>Remesas</em></div><img src="img/bco-remesas-1.webp" alt="Remesas Bancolombia"></div>
+      <div class="web w2"><div class="bar"><i></i><i></i><i></i><em>Cuenta del Mar</em></div><img src="img/bco-mar-1.webp" alt="Cuenta del Mar"></div>
+      <div class="web w3"><div class="bar"><i></i><i></i><i></i><em data-en="Christmas · Conavi">Navidad · Conavi</em></div><img src="img/conavi-landing.webp" alt="Campaña de Navidad Conavi"></div>
+    </div>
     <div class="note" style="right:-3%;bottom:-10%;background:var(--lilac)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Calm under pressure: I re-prioritize and protect the deadline.">Calma bajo presión: repriorizo y protejo la fecha.</span></div>
   </div>
 </section>
@@ -770,7 +783,7 @@ const CASES={
    {n:{es:'Cuenta del Mar',en:'Cuenta del Mar'},d:{es:'Una cuenta que apoya la conservación del océano con la siembra de manglares en el Caribe colombiano.',en:'An account that supports ocean conservation by planting mangroves in the Colombian Caribbean.'},u:'https://www.bancolombia.com/personas/cuentas/cuenta-del-mar'},
    {n:{es:'Remesas',en:'Remittances'},d:{es:'Recibir en Colombia el dinero que envían familiares o amigos desde el exterior, sin costos ocultos.',en:'Receiving money in Colombia sent by family or friends abroad, with no hidden fees.'},u:'https://www.bancolombia.com/personas/productos/transferencias-internacionales/remesas'}],
   prueba:{es:'Gestión de proyectos bajo presión, toma de decisiones y coordinación de stakeholders y equipos.',en:'Project management under pressure, decision-making and coordinating stakeholders and teams.'},
-  img:['conavi-landing','conavi-equipo']},
+  img:['conavi-landing','bco-mar-1','bco-mar-2','bco-remesas-1','bco-remesas-2','conavi-equipo']},
  azzurry:{title:{es:'Campañas todo el año que llevan al carrito',en:'Year-round campaigns that lead to the cart'},sub:{es:'Tiendas Azzurry · Estrategia en Meta y TikTok · Waco Digital Hub',en:'Tiendas Azzurry · Meta & TikTok strategy · Waco Digital Hub'},
   reto:{es:'Una tienda de calzado y accesorios de marcas originales que necesitaba destacar en una categoría saturada de ofertas y llevar tráfico a su e-commerce.',en:'A footwear and accessories store selling original brands that needed to stand out in a category full of offers and drive traffic to its e-commerce.'},
   pense:{es:'La gente no busca “una tienda”: busca el lanzamiento, la promo o la temporada. Así que armé un calendario de campañas para todo el año alrededor de esos momentos, y cada pieza tenía un objetivo comercial claro.',en:'People don’t look for “a store”: they look for the launch, the deal or the season. So I built a year-round campaign calendar around those moments, and every piece had a clear commercial goal.'},
