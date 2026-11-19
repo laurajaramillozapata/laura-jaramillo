@@ -3,717 +3,1010 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laura Jaramillo · Portafolio</title>
-<meta name="description" content="Laura Jaramillo: estratega digital y Marketing Project Manager. Social media, contenido, e-commerce y proyectos para marcas en LATAM, EE. UU. y Europa.">
-<meta property="og:title" content="Laura Jaramillo · Portafolio">
-<meta property="og:description" content="Estratega digital y Marketing Project Manager. Convierto objetivos de negocio en planes que un equipo puede ejecutar.">
+<title>Laura Jaramillo · Estratega digital & Marketing Project Manager</title>
+<meta name="theme-color" content="#FBF6EF">
+<meta property="og:title" content="Laura Jaramillo · Estratega digital & Marketing Project Manager">
+<meta property="og:description" content="Convierto objetivos de negocio en planes que un equipo puede ejecutar. Social media, contenido, e-commerce y gestión de proyectos.">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://laura-jaramillo.vercel.app/hd/daxweb-01.webp">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Laura Jaramillo: estratega de marketing digital y Marketing Project Manager. Convierto objetivos de negocio en planes que un equipo puede ejecutar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#FBF5EC; --paper:#FFFDF8; --ink:#1D1B1A; --soft:#5d5751;
-  --rosa:#F7B9CF; --lila:#CDB8F5; --amarillo:#F9DC72; --verde:#BFE5C6; --azul:#B4D3F7; --coral:#FF6B4A;
-  --r:22px;
+  --bg:#FBF6EF; --ink:#2E2433; --ink2:#5C5060; --mute:#9A8F9C; --line:#2E2433;
+  --purple:#8A63D2; --lilac:#D9C9F7; --lilac2:#F0E8FC; --yellow:#FFE08A; --blue:#BCD5F8; --green:#C2E6BA; --coral:#FFC6B3; --pink:#F7C6D9; --skin:#F3C7A5; --hair:#2A1C18;
+  --f:"Bricolage Grotesque",system-ui,sans-serif;
+  --pt:clamp(86px,12vh,120px); --pb:clamp(128px,16.5vh,160px); --px:clamp(28px,6.5vw,110px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Bricolage Grotesque",system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--f);-webkit-font-smoothing:antialiased}
+body{font-size:16px;line-height:1.5;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-::selection{background:var(--lila)}
+::selection{background:var(--lilac)}
+svg{overflow:visible}
+.k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.k b{color:var(--purple)}
 
-/* ---------- NAV ---------- */
-.nav{position:fixed;inset:16px 16px auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(251,245,236,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(29,27,26,.08);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.nav.hide{transform:translateY(-130%)}
-.logo{font-weight:800;font-size:19px;white-space:nowrap;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
-.logo i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--coral);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{transform:scale(.65)}}
-.nav ul{display:flex;gap:4px;list-style:none}
-.nav ul a{display:block;padding:10px 16px;border-radius:999px;font-weight:500;font-size:15px;transition:background .25s}
-.nav ul a:hover{background:var(--amarillo)}
-.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:600;font-size:15px;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
-.btn:hover{transform:translateY(-2px) rotate(-1.5deg);background:var(--coral)}
-.btn .ar{transition:transform .3s}
-.btn:hover .ar{transform:translateX(4px)}
-.btn.light{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink)}
-.btn.light:hover{background:var(--amarillo)}
+/* ===== horizontal engine ===== */
+#hs{position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.track{position:absolute;top:0;left:0;height:100%;display:flex;will-change:transform}
+.panel{position:relative;flex:0 0 100vw;width:100vw;height:100vh;padding:var(--pt) var(--px) var(--pb)}
+.thread{position:absolute;left:0;bottom:44px;height:60px;pointer-events:none}
+.thread path{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.thread .base{stroke:rgba(21,18,23,.12);stroke-dasharray:3 9}
 
-.lang{display:flex;gap:2px;padding:4px;border-radius:999px;border:1.5px solid var(--ink);margin-left:auto}
-.lang button{padding:7px 12px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.04em;transition:background .25s,color .25s}
-.lang button.on{background:var(--ink);color:var(--cream)}
-.lang button:not(.on):hover{background:var(--amarillo)}
-/* ---------- HERO ---------- */
-.hero{min-height:100vh;padding:130px 4vw 40px;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
-.eyebrow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:15px;font-weight:500;color:var(--soft);margin-bottom:2vh}
-.eyebrow b{color:var(--ink);font-weight:600}
-.word{font-weight:800;font-size:clamp(72px,18.4vw,330px);line-height:.84;letter-spacing:-.055em;font-variation-settings:"wdth" 82,"opsz" 96;white-space:nowrap}
-.word span{display:inline-block;transform:translateY(105%) rotate(6deg);opacity:0;animation:rise .95s cubic-bezier(.2,.9,.2,1) forwards}
-.word .ln{display:block;overflow:hidden;padding-bottom:.04em}
-.word .ln2{text-align:right}
-@keyframes rise{to{transform:none;opacity:1}}
-.hero-foot{display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;align-items:end;margin-top:4vh}
-.hero-foot p{font-size:clamp(19px,1.7vw,26px);line-height:1.3;max-width:560px;font-weight:400;opacity:0;animation:fade 1s .9s forwards}
-.hero-foot p em{font-style:normal;background:linear-gradient(transparent 58%,var(--amarillo) 58%)}
-.hero-cta{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;opacity:0;animation:fade 1s 1.1s forwards}
-@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* ===== menu card ===== */
+.menu{position:fixed;top:14px;right:18px;z-index:60;background:#fff;border-radius:18px;padding:12px 18px 14px;width:230px;box-shadow:0 18px 40px -26px rgba(0,0,0,.35);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.menu a,.menu button.row{display:flex;justify-content:space-between;align-items:center;width:100%;padding:9px 0;font-size:18px;font-weight:600;border-bottom:1.5px solid #E7E4EA}
+.menu a .ar,.menu button.row .ar{transition:transform .25s}
+.menu a:hover .ar{transform:translateX(5px)}
+.menu button.row:hover .ar{transform:translateY(3px)}
+.menu .icons{display:flex;gap:8px;align-items:center;padding-top:11px}
+.menu .icons a.ib{width:30px;height:30px;padding:0;justify-content:center;border:1.6px solid var(--ink);display:grid;place-items:center;font-size:13px}
+.menu .mt{display:none;font-weight:800;font-size:14px;align-items:center;gap:8px;padding-right:4px}
+.menu.mini{width:auto;padding:10px 12px}
+.menu.mini>a,.menu.mini>button.row{display:none}
+.menu.mini .mt{display:flex}
+.menu.mini .icons{padding-top:0}
+.menu.mini:hover{width:230px;padding:12px 18px 14px}
+.menu.mini:hover>a,.menu.mini:hover>button.row{display:flex}
+.menu.mini:hover .mt{display:none}
+.menu.mini:hover .icons{padding-top:11px}
+html.dark .hud{color:#fff}html.dark .hud .bar{background:rgba(255,255,255,.2)}html.dark .hud .bar i{background:#fff}
+html.dark .hud .dots button{background:var(--ink);border-color:#fff}html.dark .hud .nav button{border-color:#fff;background:transparent;color:#fff}
+html.dark .brand{color:#fff}
+.ib{width:30px;height:30px;border:1.6px solid var(--ink);border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:800;transition:background .2s,color .2s,transform .2s}
+.ib:hover{background:var(--ink);color:#fff;transform:rotate(-6deg)}
+.ib svg{width:15px;height:15px}
+.lang{margin-left:auto;display:flex;border:1.6px solid var(--ink);border-radius:8px;overflow:hidden}
+.lang button{padding:4px 8px;font-size:12px;font-weight:800}
+.lang button.on{background:var(--ink);color:#fff}
+.brand{position:fixed;top:24px;left:var(--px);z-index:55;font-weight:800;font-size:18px;letter-spacing:-.02em;opacity:0;transform:translateY(-8px);transition:all .4s;display:flex;align-items:center;gap:10px}
+.brand.show{opacity:1;transform:none}
+.brand i{display:flex;gap:3px}.brand i span{width:10px;height:10px;border-radius:50%}
 
-.badge{position:absolute;right:5vw;top:28vh;z-index:3;width:150px;height:150px;animation:fade 1s 1.2s both}
-.badge svg{width:100%;height:100%;animation:spin 16s linear infinite}
-.badge .core{position:absolute;inset:38px;border-radius:50%;background:var(--coral);display:grid;place-items:center;font-size:30px;color:var(--paper)}
+/* ===== HUD ===== */
+.hud{position:fixed;left:var(--px);right:var(--px);bottom:10px;z-index:50;display:flex;align-items:center;gap:16px;font-size:13px;font-weight:700}
+.hud .tt{min-width:190px}
+.hud .bar{flex:1;height:2px;background:rgba(21,18,23,.12);border-radius:2px;position:relative}
+.hud .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);border-radius:2px;width:0}
+.hud .dots{position:absolute;inset:0}
+.hud .dots button{position:absolute;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--bg);border:1.6px solid var(--ink);transition:transform .2s,background .2s}
+.hud .dots button:hover,.hud .dots button.on{background:var(--purple);border-color:var(--purple);transform:scale(1.35)}
+.hud .nav{display:flex;gap:6px}
+.hud .nav button{width:34px;height:34px;border-radius:50%;border:1.6px solid var(--ink);font-size:15px;transition:all .2s;background:var(--bg)}
+.hud .nav button:hover{background:var(--ink);color:#fff}
+
+/* ===== walker ===== */
+.walker{position:fixed;left:calc(var(--px) + 6px);bottom:62px;width:44px;z-index:45;pointer-events:none;transition:transform .3s}
+.walker.flip{transform:scaleX(-1)}
+.walker .leg{transform-origin:50% 0;transform-box:fill-box}
+.walker.walking .leg.l{animation:legL .42s ease-in-out infinite alternate}
+.walker.walking .leg.r{animation:legL .42s ease-in-out infinite alternate-reverse}
+.walker.walking .hop{animation:hop .28s ease-in-out infinite alternate}
+@keyframes legL{from{transform:rotate(22deg)}to{transform:rotate(-22deg)}}
+@keyframes bob{to{transform:translateY(-3px)}}
+.walker .bubble{position:absolute;left:56px;top:-6px;background:#fff;border:1.6px solid var(--ink);border-radius:12px 12px 12px 2px;padding:4px 9px;font-size:12px;font-weight:700;white-space:nowrap;opacity:0;transition:opacity .3s}
+.walker.talk .bubble{opacity:1}
+.walker.flip .bubble{transform:scaleX(-1)}
+
+/* ===== cursor ===== */
+.cur{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--ink);pointer-events:none;z-index:300;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;display:grid;place-items:center}
+.cur b{font-size:11px;font-weight:800;color:#fff;opacity:0;transition:opacity .2s;letter-spacing:.04em}
+.cur.link{width:34px;height:34px;background:var(--lilac)}
+.cur.big{width:78px;height:78px;background:var(--purple)}
+.cur.big b{opacity:1}
+@media (hover:none){.cur{display:none}}
+
+/* ===== shared ===== */
+.h1{font-size:clamp(64px,11.5vw,190px);font-weight:700;letter-spacing:-.055em;line-height:.85}
+.h2{font-size:clamp(34px,min(4.6vw,7.4vh),76px);font-weight:700;letter-spacing:-.04em;line-height:.98}
+.h2 em{font-style:normal;color:var(--purple)}
+.lead{font-size:clamp(16px,min(1.35vw,2.3vh),21px);color:var(--ink2);line-height:1.5}
+.doodle,.flag,.stk-b .blob svg,.journey svg.path,.doc .paper svg{filter:url(#crayon2)}
+.doodle{stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.draw path,.draw circle,.draw line,.draw polyline,.draw rect,.draw ellipse{stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);transition:stroke-dashoffset 1.4s cubic-bezier(.6,.1,.2,1)}
+.panel.in .draw path,.panel.in .draw circle,.panel.in .draw line,.panel.in .draw polyline,.panel.in .draw rect,.panel.in .draw ellipse{stroke-dashoffset:0}
+.pop{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.panel.in .pop{opacity:1;transform:none}
+.panel.in .pop:nth-child(2){transition-delay:.08s}.panel.in .pop:nth-child(3){transition-delay:.16s}.panel.in .pop:nth-child(4){transition-delay:.24s}.panel.in .pop:nth-child(5){transition-delay:.32s}.panel.in .pop:nth-child(6){transition-delay:.4s}.panel.in .pop:nth-child(7){transition-delay:.48s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:99px;border:1.8px solid var(--ink);font-weight:700;font-size:15px;transition:transform .25s,background .25s,color .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:var(--purple);border-color:var(--purple)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.wig:hover{animation:wig .5s ease-in-out}
+@keyframes wig{25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+
+/* ===== P0 hero ===== */
+#hola{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding-top:clamp(70px,9vh,100px)}
+#hola .intro{position:relative;z-index:3}
+#hola .sub{display:flex;gap:28px;align-items:flex-start;margin-top:3.4vh}
+#hola .sub p{max-width:330px;font-size:clamp(15px,min(1.2vw,2.1vh),19px);color:var(--ink2)}
+.status{display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:99px;padding:7px 14px 7px 10px;font-size:13px;font-weight:700;margin-bottom:3vh}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--green);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(93,194,122,.6)}70%{box-shadow:0 0 0 9px rgba(93,194,122,0)}100%{box-shadow:0 0 0 0 rgba(93,194,122,0)}}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln span{display:inline-block;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.h1 .ln:nth-child(2) span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.rot{display:inline-grid;overflow:hidden;vertical-align:bottom;height:1.5em}
+.rot span{grid-area:1/1;color:var(--purple);font-weight:700;transform:translateY(110%);transition:transform .55s cubic-bezier(.2,.8,.2,1);white-space:nowrap}
+.rot span.on{transform:none}.rot span.out{transform:translateY(-110%)}
+.hero-art{position:relative;height:min(78vh,720px);align-self:end}
+.arcs{position:absolute;inset:0;z-index:0}
+.arcs .a{position:absolute;border-radius:50%;border-style:solid;border-color:transparent;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.arcs .a1{width:min(58vh,520px);height:min(58vh,520px);border-width:min(7vh,64px);border-top-color:var(--pink);border-left-color:var(--pink);left:2%;top:4%}
+.arcs .a2{width:min(44vh,400px);height:min(44vh,400px);border-width:min(6vh,54px);border-right-color:var(--blue);border-bottom-color:var(--blue);right:0;top:16%}
+.arcs .a3{width:min(30vh,270px);height:min(30vh,270px);border-width:min(4.6vh,42px);border-top-color:var(--yellow);border-right-color:var(--yellow);left:18%;bottom:6%}
+.avatar{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:96%;z-index:2;cursor:pointer}
+.avatar svg{height:100%;width:auto}
+.avatar .hairback{transform-origin:260px 540px;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(.8deg)}}
+.avatar .lids{opacity:0;animation:blink 5.5s infinite}
+@keyframes blink{0%,93%,100%{opacity:0}95%,97%{opacity:1}}
+.avatar .puL,.avatar .puR{transition:transform .12s linear}
+.avatar .m-open{opacity:0;transition:opacity .2s}.avatar:hover .m-open{opacity:1}.avatar .m-closed{transition:opacity .2s}.avatar:hover .m-closed{opacity:0}
+.earA,.earB{transform-box:fill-box;transform-origin:50% 100%}
+.earA{animation:twitch 4s ease-in-out infinite}.earB{animation:twitch 4s ease-in-out 1.3s infinite}
+@keyframes twitch{0%,86%,100%{transform:rotate(0)}90%{transform:rotate(-12deg)}94%{transform:rotate(6deg)}}
+.bunNose{transform-box:fill-box;transform-origin:center;animation:sniff 1.6s ease-in-out infinite}
+@keyframes sniff{0%,60%,100%{transform:none}70%{transform:translateY(-1px) scale(1.08)}80%{transform:none}90%{transform:translateY(-1px) scale(1.08)}}
+.avatar .bunwrap{transition:transform .3s}
+.avatar:hover .bunwrap{animation:hop .45s ease-in-out infinite alternate}
+@keyframes hop{to{transform:translateY(-12px)}}
+.avatar .ht{opacity:0;transform-box:fill-box;transform-origin:center}
+.avatar:hover .ht{animation:float 1.6s ease-out infinite}
+.avatar:hover .h2{animation-delay:.4s}.avatar:hover .h3{animation-delay:.8s}
+@keyframes float{0%{opacity:0;transform:translateY(20px) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translateY(-50px) scale(1.1) rotate(10deg)}}
+.say{position:absolute;left:2%;top:10%;z-index:4;background:#fff;border:2px solid var(--ink);border-radius:20px 20px 4px 20px;padding:10px 16px;font-weight:700;font-size:15px;opacity:0;transform:scale(.7) rotate(-6deg);transform-origin:100% 100%;transition:all .35s cubic-bezier(.3,1.6,.5,1)}
+.hero-art:hover .say{opacity:1;transform:rotate(-3deg)}
+.cue{position:absolute;left:calc(var(--px) + 64px);bottom:78px;display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;z-index:3}
+.cue .ar{display:inline-block;animation:nudge 1.4s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(10px)}}
+#scribble{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* ===== P1 roles ===== */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,26px);margin-top:4.5vh}
+.role{position:relative;background:#fff;border-radius:26px;padding:clamp(16px,2.2vh,30px) clamp(18px,1.8vw,30px);min-height:min(44vh,430px);display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.role:hover{transform:translateY(-10px) rotate(-.7deg);box-shadow:0 30px 50px -30px rgba(40,20,70,.35)}
+.role .ic{height:min(10.5vh,104px);margin-bottom:1.6vh}
+.role .ic svg{height:100%;width:auto}
+.role h3{font-size:clamp(22px,min(2vw,3.4vh),32px);letter-spacing:-.03em;line-height:1.05}
+.role p{color:var(--ink2);margin-top:1.2vh;font-size:clamp(14px,min(1.05vw,1.9vh),17px)}
+.role ul{list-style:none;margin-top:auto;padding-top:2vh;display:flex;flex-wrap:wrap;gap:6px}
+.role li{font-size:13px;font-weight:700;border-radius:99px;padding:5px 11px;background:var(--lilac2)}
+.role:nth-child(2) li{background:#FFF0C6}.role:nth-child(3) li{background:#DDEBFF}
+.role .tag{position:absolute;top:18px;right:18px;font-size:12px;font-weight:800;border-radius:99px;padding:4px 10px;border:1.6px solid var(--ink)}
+/* icon anims */
+.role .chk{stroke-dasharray:40;stroke-dashoffset:40;transition:stroke-dashoffset .4s}
+.role:hover .chk{stroke-dashoffset:0}.role:hover .chk2{transition-delay:.15s}.role:hover .chk3{transition-delay:.3s}
+.role .needle{transform-origin:60px 60px;transform-box:view-box;transition:transform 1.2s cubic-bezier(.3,1.5,.5,1)}
+.role:hover .needle{transform:rotate(320deg)}
+.role .pencil{transition:transform .2s}
+.role:hover .pencil{animation:scrib .25s linear infinite alternate}
+@keyframes scrib{from{transform:translate(-6px,2px) rotate(-4deg)}to{transform:translate(8px,-2px) rotate(3deg)}}
+.role .scr{stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1s}
+.role:hover .scr{stroke-dashoffset:0}
+
+/* ===== P2 loop ===== */
+#como-pienso{display:grid;grid-template-columns:.85fr 1.15fr;gap:3vw;align-items:center}
+.loop{position:relative;height:min(70vh,640px);aspect-ratio:1;justify-self:center}
+.loop svg{width:100%;height:100%}
+.node{cursor:pointer}
+.node circle.c{fill:#fff;stroke:var(--ink);stroke-width:2.4;transition:fill .3s,r .3s}
+.node text{font-family:var(--f);font-weight:800;font-size:20px;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.node .lb{font-size:17px;font-weight:700}
+.node.on circle.c{fill:var(--c)}
+.node:hover circle.c{fill:var(--c)}
+.loop .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50%;text-align:center}
+.loop .center .q{font-size:clamp(17px,min(1.5vw,2.6vh),24px);font-weight:700;letter-spacing:-.02em;line-height:1.2;min-height:3.6em}
+.loop .center .o{margin-top:1.4vh;font-size:clamp(13px,min(1vw,1.8vh),15px);color:var(--ink2)}
+.loop .center .o b{display:block;color:var(--purple);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.loop .center .fade{transition:opacity .3s}
+.ring{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 10;animation:spin 60s linear infinite;transform-origin:300px 300px}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-.stickers{position:absolute;inset:0;pointer-events:none;z-index:4}
-.st{position:absolute;pointer-events:auto;padding:12px 20px;border-radius:999px;font-weight:600;font-size:16px;border:1.5px solid var(--ink);cursor:grab;user-select:none;touch-action:none;box-shadow:0 6px 0 var(--ink);animation:pop .7s cubic-bezier(.3,1.6,.5,1) both}
+/* ===== P3 principles ===== */
+.princ{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,22px);margin-top:4vh}
+.pr{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:clamp(14px,2.2vh,24px) 4px;border-top:2px solid var(--ink);transition:transform .3s}
+.pr:hover{transform:translateX(6px)}
+.pr .ic{width:clamp(54px,7vh,70px);height:clamp(54px,7vh,70px);border-radius:18px;display:grid;place-items:center;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pr:hover .ic{transform:rotate(-10deg) scale(1.1)}
+.pr .ic svg{width:66%;height:66%}
+.pr h4{font-size:clamp(17px,min(1.4vw,2.5vh),22px);letter-spacing:-.02em;line-height:1.15}
+.pr p{color:var(--ink2);font-size:clamp(13.5px,min(1vw,1.85vh),16px);margin-top:6px}
+.ai{margin-top:3vh;display:flex;align-items:center;gap:14px;background:var(--pink);color:var(--ink);border-radius:18px;padding:14px 20px;font-size:clamp(14px,min(1.05vw,1.9vh),16px)}
+.ai .spark{flex:none;width:34px;height:34px;animation:spin 6s linear infinite}
+
+/* ===== P4 toolkit ===== */
+.kit{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.2vw,20px);margin-top:4vh;align-items:start}
+.doc{position:relative;cursor:default}
+.doc .paper{background:#fff;border:2px solid var(--ink);border-radius:6px 22px 6px 6px;aspect-ratio:3/3.5;max-height:30vh;margin:auto;padding:12% 12%;position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;box-shadow:6px 6px 0 var(--ink)}
+.doc:nth-child(odd) .paper{transform:rotate(-2deg)}.doc:nth-child(even) .paper{transform:rotate(2deg)}
+.doc:hover .paper{transform:rotate(0) translateY(-12px);box-shadow:10px 14px 0 var(--purple)}
+.doc .paper svg{width:100%;height:100%}
+.doc h5{font-size:clamp(14px,min(1.2vw,2.2vh),19px);margin-top:2vh;letter-spacing:-.02em;line-height:1.15}
+.doc p{font-size:clamp(12.5px,min(.92vw,1.7vh),14.5px);color:var(--ink2);margin-top:4px}
+.doc .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(.25);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.doc:hover .bar{transform:scaleX(1)}
+.doc .bar:nth-of-type(2){transition-delay:.08s}.doc .bar:nth-of-type(3){transition-delay:.16s}.doc .bar:nth-of-type(4){transition-delay:.24s}
+.doc .ln2{stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s .5s}
+.panel.in .doc .ln2{stroke-dashoffset:0}
+.doc:hover .ln2{animation:redraw 1s}
+@keyframes redraw{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+.doc .mv{transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+.doc:hover .mv{transform:translateX(34px)}
+.doc .cell{transition:fill .3s}
+.doc:hover .cell{fill:var(--yellow)}
+.doc:hover .cell.b{fill:var(--lilac)}
+.doc .stk{transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.doc:hover .stk{transform:rotate(-8deg) translateY(-4px)}
+.doc:hover .stk.s2{transform:rotate(7deg) translateY(-6px)}
+
+/* ===== P5 90 days ===== */
+.journey{position:relative;margin-top:4vh;height:min(46vh,430px)}
+.journey svg.path{position:absolute;inset:0;width:100%;height:100%}
+.stop{position:absolute;width:22%}
+.stop .flag{width:54px;height:64px;transition:transform .4s cubic-bezier(.3,1.6,.5,1);transform-origin:8px 62px}
+.stop:hover .flag{transform:rotate(-12deg) scale(1.12)}
+.stop .when{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-top:10px}
+.stop h4{font-size:clamp(20px,min(1.8vw,3vh),28px);letter-spacing:-.03em;margin-top:2px}
+.stop p{font-size:clamp(13px,min(.98vw,1.8vh),15.5px);color:var(--ink2);margin-top:6px}
+
+/* ===== cases ===== */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.case .num{font-size:clamp(56px,min(9vw,11vh),140px);font-weight:300;letter-spacing:-.06em;line-height:.8;color:var(--purple)}
+.case .meta{margin-top:1.6vh}
+.case h3{font-size:clamp(26px,min(3vw,4.8vh),50px);letter-spacing:-.04em;line-height:1.02;margin-top:1.4vh}
+.case .bl{margin-top:2vh;display:grid;gap:1.2vh}
+.case .bl div{display:grid;grid-template-columns:112px 1fr;gap:12px;font-size:clamp(13px,min(1.05vw,1.9vh),16.5px);line-height:1.42;color:var(--ink2);padding-top:1.1vh;border-top:1.5px solid rgba(21,18,23,.14)}
+.case .bl b{color:var(--ink);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.case .btn{margin-top:2.4vh}
+.frame{position:relative;border:10px solid #fff;outline:2px solid var(--ink);border-radius:6px;box-shadow:16px 16px 0 var(--c,var(--lilac));background:#fff;cursor:pointer;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;max-height:62vh;overflow:hidden}
+.frame:hover{transform:translate(-6px,-6px) rotate(-.6deg);box-shadow:24px 24px 0 var(--c,var(--lilac))}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.frame .imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;height:100%}
+.note{position:absolute;z-index:3;background:var(--yellow);padding:14px 16px 16px;width:min(230px,18vw);font-weight:700;font-size:clamp(13px,min(1vw,1.8vh),15px);line-height:1.3;transform:rotate(4deg);box-shadow:4px 6px 0 rgba(0,0,0,.12);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.note:hover{transform:rotate(-2deg) scale(1.05)}
+.note small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.note:before{content:"";position:absolute;top:-10px;left:50%;width:60px;height:20px;margin-left:-30px;background:rgba(255,255,255,.6);transform:rotate(-3deg)}
+.case-art{position:relative}
+
+/* ===== brands wall ===== */
+#marcas .wall{position:relative;height:min(58vh,560px);margin-top:3vh}
+.stk-b{position:absolute;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.stk-b .blob{width:clamp(84px,min(8vw,13vh),124px);height:clamp(84px,min(8vw,13vh),124px);border-radius:50%;border:2.4px solid var(--ink);display:grid;place-items:center;background:var(--c);transition:transform .35s cubic-bezier(.3,1.6,.5,1);animation:float 5s ease-in-out infinite}
+.stk-b .blob svg{width:58%;height:58%}
+.stk-b span{font-weight:800;font-size:clamp(13px,min(1vw,1.9vh),16px);background:#fff;padding:3px 10px;border-radius:99px;border:1.6px solid var(--ink);white-space:nowrap}
+.stk-b:hover .blob{transform:scale(1.12) rotate(-8deg)}
+@keyframes float{50%{translate:0 -8px}}
+
+/* ===== me ===== */
+#yo{display:grid;grid-template-columns:.8fr 1.2fr;gap:4vw;align-items:center}
+.me-art{position:relative;height:min(68vh,620px)}
+.me-art .bg{position:absolute;width:86%;aspect-ratio:1;border-radius:50%;background:var(--lilac2);left:7%;top:8%}
+.me-art svg{position:relative;height:100%;width:auto;display:block;margin:auto}
+.me-art .typing{animation:type .3s ease-in-out infinite alternate}
+@keyframes type{to{transform:translateY(-3px)}}
+.me-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6vh 2.4vw;margin-top:3.4vh}
+.me-grid h4{font-size:clamp(17px,min(1.4vw,2.4vh),21px);letter-spacing:-.02em}
+.me-grid p{font-size:clamp(13.5px,min(1vw,1.85vh),16px);color:var(--ink2);margin-top:6px}
+.jobs{list-style:none;margin-top:6px}
+.jobs li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(21,18,23,.2);font-size:clamp(13px,min(.98vw,1.8vh),15px)}
+.jobs li span{color:var(--mute);white-space:nowrap}
+
+/* ===== contact ===== */
+#hablemos{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3vw;align-items:center;background:#EBE0FC;color:var(--ink)}
+#hablemos .k{color:var(--mute)}
+.big{font-size:clamp(64px,min(9.5vw,18vh),180px);font-weight:700;letter-spacing:-.06em;line-height:.85}
+.big em{font-style:normal;color:var(--purple)}
+#hablemos .lead{color:var(--ink2);max-width:600px;margin-top:3vh}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:4vh;align-items:center}
+.cta .btn{border-color:var(--ink);font-size:17px;padding:18px 28px}
+.cta .btn.y{background:var(--ink);color:#fff;border-color:var(--ink)}.cta .btn.y:hover{background:var(--purple);border-color:var(--purple)}
+.cta .btn.w{background:#fff;color:var(--ink)}
+.cta .btn.w:hover{background:var(--ink);color:#fff}
+.cvl{display:inline-flex;border:1.6px solid var(--ink);border-radius:99px;overflow:hidden;margin-left:4px}
+.cvl button{padding:6px 12px;font-size:13px;font-weight:800;color:var(--ink)}
+.cvl button.on{background:var(--ink);color:#fff}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:4vh}
+.facts span{font-size:13px;font-weight:700;border:1.4px solid rgba(46,36,51,.25);border-radius:99px;padding:6px 12px;background:rgba(255,255,255,.5)}
+.bye{position:relative;height:min(64vh,580px);margin-right:3vw}
+.bye svg{height:100%;max-width:100%;width:auto;display:block;margin:auto}
+.bye .hand{transform-origin:400px 258px;transform-box:view-box;animation:wave .5s ease-in-out infinite alternate}
+
+/* ===== modal ===== */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(21,18,23,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:22px}
+.modal.open{display:flex;animation:fd .25s}
+@keyframes fd{from{opacity:0}}
+.mbox{background:var(--bg);border-radius:26px;width:min(1180px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.05fr .95fr;animation:pp .45s cubic-bezier(.2,.8,.2,1);position:relative}
+@keyframes pp{from{transform:translateY(30px) scale(.97)}}
+.mtx{padding:36px 36px 34px}
+.mtx h3{font-size:clamp(30px,3vw,46px);letter-spacing:-.04em;line-height:1;margin:10px 0 8px}
+.mtx .sub{color:var(--mute);font-weight:600}
+.mtx .sec{margin-top:20px}
+.mtx .sec b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
+.mtx .sec p,.mtx .sec li{color:var(--ink2);font-size:15.5px}
+.mtx .sec ul{padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1.6px solid var(--ink);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700;background:#fff}
+.chips span.m{background:var(--lilac2);border-color:var(--lilac2);color:var(--purple)}
+.mim{background:#fff;padding:22px;display:flex;flex-direction:column;gap:12px;max-height:92vh;overflow:auto;border-radius:0 26px 26px 0}
+.mim.two{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.mim img{border-radius:12px;border:1px solid #eee;cursor:zoom-in}
+.x{position:absolute;right:16px;top:16px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;font-size:18px;z-index:3}
+.lb .lbi{max-width:min(1300px,94vw);max-height:90vh;border-radius:14px}
+.toast{position:fixed;bottom:70px;left:50%;transform:translate(-50%,130px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;z-index:400;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.toast.show{transform:translate(-50%,0)}
+
+/* ===== present mode ===== */
+html.present .menu{transform:translateX(130%)}
+html.present .menu:hover{transform:none}
+.ptip{position:fixed;top:18px;left:50%;transform:translate(-50%,-120px);background:var(--yellow);padding:10px 16px;border-radius:12px;font-size:13px;font-weight:800;z-index:210;transition:transform .5s}
+.ptip.show{transform:translate(-50%,0)}
+
+/* ===== mobile: vertical ===== */
+@media (max-width:820px){
+  .stage{position:relative;height:auto;overflow:visible}
+  .track{position:relative;flex-direction:column;transform:none!important}
+  .panel{width:100%;flex:none;height:auto;min-height:auto;padding:90px 22px 70px}
+  .thread,.walker,.hud .dots{display:none}
+  .menu{width:auto;padding:8px 12px;top:10px;right:10px}
+  .menu>a,.menu>.row,.menu .mt,#presentBtn{display:none!important}.menu .icons{padding-top:0}.menu.mini:hover{width:auto;padding:8px 12px}
+  #hola .sub{flex-direction:column;gap:12px}#hola .sub p+p{display:none}.h1{font-size:19vw}
+  #hola,#como-pienso,.case,#yo,#hablemos{grid-template-columns:1fr}
+  .hero-art{height:58vh;margin-top:20px}
+  .cue{display:none}
+  .roles,.princ,.me-grid{grid-template-columns:1fr}
+  .kit{grid-template-columns:1fr 1fr}
+  .journey{height:auto}.journey svg.path{display:none}.stop{position:relative;width:auto!important;left:auto!important;top:auto!important;margin-bottom:26px}
+  #marcas .wall{height:auto;display:flex;flex-wrap:wrap;gap:22px;justify-content:center}.stk-b{position:relative;left:auto!important;top:auto!important}
+  .note{position:relative;width:auto;margin-top:16px;right:auto!important;left:auto!important;bottom:auto!important;top:auto!important}
+  .mbox{grid-template-columns:1fr}.mim{border-radius:0 0 26px 26px}
+  .bye{height:44vh}.loop{height:auto;width:100%}
+  html,body{overflow-x:hidden}.panel{overflow-x:clip}
+  .me-art{height:auto}.me-art svg{width:100%;height:auto;max-height:62vh}.bye{height:auto;margin:0}.bye svg{width:100%;height:auto;max-height:56vh}
+  .menu{left:auto;max-width:calc(100vw - 20px)}
+  .k{font-size:11px}
+  .brand{left:10px;top:10px;background:rgba(251,246,239,.94);padding:7px 12px;border-radius:99px;box-shadow:0 4px 14px -8px rgba(0,0,0,.25);font-size:15px}
+  .hud{bottom:10px;left:10px;right:10px;background:var(--bg);padding:6px 6px 6px 14px;border-radius:99px;box-shadow:0 6px 20px -10px rgba(0,0,0,.3)}.hud .tt{min-width:0}html.dark .hud{background:var(--ink)}
+  .big{font-size:16.5vw}
+}
+@media (max-height:780px) and (min-width:821px){.h2{font-size:clamp(30px,min(4.4vw,6.8vh),70px)}.role ul{padding-top:1.2vh}.role li{padding:4px 9px;font-size:12px}.princ{margin-top:3vh}.pr{padding:1.6vh 4px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.pop{opacity:1;transform:none}.draw *{stroke-dashoffset:0!important}}
+/* ===== nuevo diseño: collages HD ===== */
+.h1{font-variation-settings:"wdth" 82;font-weight:800}
+.h2,.big,.case h3{font-variation-settings:"wdth" 88}
+.hc{position:absolute;inset:0;z-index:2}
+.hph{position:absolute;left:50%;top:52%;height:64%;aspect-ratio:9/16;translate:-50% -50%;border:8px solid var(--ink);border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 40px 60px -26px rgba(46,36,51,.55);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.hph img{width:100%;height:100%;object-fit:cover}
+.hp{position:absolute;height:36%;aspect-ratio:4/5;object-fit:cover;border:5px solid #fff;border-radius:18px;box-shadow:0 24px 40px -18px rgba(46,36,51,.5);transition:transform .8s cubic-bezier(.2,.8,.2,1);animation:drift 7s ease-in-out infinite}
+.hp.p1{left:4%;top:8%;rotate:-9deg}.hp.p2{right:4%;top:4%;rotate:8deg;animation-delay:-2s}
+.hp.p3{left:8%;bottom:6%;rotate:6deg;animation-delay:-4s}.hp.p4{right:2%;bottom:10%;rotate:-6deg;animation-delay:-1s}
+@keyframes drift{50%{transform:translateY(-12px)}}
+.hero-art:hover .hph{transform:rotate(-3deg) scale(1.03)}
+.stickers{position:absolute;inset:0;z-index:4;pointer-events:none}
+.st{position:absolute;pointer-events:auto;padding:10px 18px;border-radius:999px;font-weight:700;font-size:15px;border:1.6px solid var(--ink);cursor:grab;user-select:none;touch-action:none;box-shadow:0 5px 0 var(--ink);white-space:nowrap;animation:popst .7s cubic-bezier(.3,1.6,.5,1) both}
 .st:active{cursor:grabbing}
-@keyframes pop{from{transform:scale(0) rotate(var(--rot))}to{transform:scale(1) rotate(var(--rot))}}
-.st-hint{position:absolute;left:4vw;top:118px;font-size:13px;color:var(--soft);opacity:0;animation:fade 1s 2s forwards}
-
-/* ---------- MARQUEE ---------- */
-.reel{padding:5vh 0 7vh;overflow:hidden;display:grid;gap:18px}
-.track{display:flex;gap:18px;width:max-content;animation:slide 70s linear infinite}
-.track.rev{animation-direction:reverse;animation-duration:85s}
-.reel:hover .track{animation-play-state:paused}
-.track img{width:200px;height:266px;object-fit:cover;border-radius:18px;transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 1px 0 rgba(0,0,0,.05)}
-.track img:nth-child(odd){transform:rotate(-2deg)}
-.track img:nth-child(even){transform:rotate(2deg)}
-.track img:hover{transform:scale(1.08) rotate(0)}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* ---------- STATEMENT ---------- */
-.statement{padding:14vh 6vw 16vh;max-width:1400px;margin:auto}
-.lbl{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:28px}
-.lbl::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--coral)}
-.big{font-size:clamp(30px,4.3vw,68px);line-height:1.08;letter-spacing:-.03em;font-weight:600}
-.big .w{color:rgba(29,27,26,.16);transition:color .35s}
-.big .w.on{color:var(--ink)}
-.big .hl{display:inline-block;padding:0 .18em;border-radius:.3em;transition:background .5s}
-.big .w.on.hl.c1{background:var(--rosa)}.big .w.on.hl.c2{background:var(--verde)}.big .w.on.hl.c3{background:var(--lila)}
-
-/* ---------- WORK ---------- */
-.work{padding:6vh 4vw 12vh}
-.work-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
-.h2{font-size:clamp(54px,9vw,150px);font-weight:800;letter-spacing:-.05em;line-height:.88;font-variation-settings:"wdth" 85}
-.h2 sup{font-size:.25em;vertical-align:top;letter-spacing:0;margin-left:.15em;font-weight:600}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.chip{padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);font-weight:500;font-size:15px;transition:all .25s}
-.chip:hover{background:var(--paper)}
-.chip.on{background:var(--ink);color:var(--cream)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;grid-auto-flow:dense}
-.card{grid-column:span 4;cursor:pointer;opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
-.card.in{opacity:1;transform:none}
-.card.wide{grid-column:span 8}
-.card.hidden{display:none}
-.media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.3;display:grid;place-items:center;isolation:isolate}
-.card.wide .media{aspect-ratio:16/10.2}
-.media::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.55),transparent 60%);z-index:-1}
-.phone{width:46%;max-width:260px;aspect-ratio:9/16.2;border-radius:30px;border:7px solid var(--ink);background:#fff;overflow:hidden;position:relative;box-shadow:0 30px 50px -20px rgba(29,27,26,.45);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.card.wide .phone{width:26%}
-.phone::before{content:"";position:absolute;top:6px;left:50%;translate:-50% 0;width:34%;height:12px;border-radius:9px;background:var(--ink);z-index:2}
-.phone .scr{transition:transform 7s cubic-bezier(.45,0,.3,1)}.phone img{width:100%}
-.card:hover .phone{transform:translateY(-10px) rotate(-3deg)}
-.card:hover .phone .scr{transform:translateY(calc(-100% + 100cqh))}
-.phone{container-type:size}
-.phone.second{position:absolute;width:20%;right:12%;bottom:-6%;transform:rotate(8deg)}
-.card:hover .phone.second{transform:translateY(-16px) rotate(4deg)}
-.browser{width:84%;border-radius:14px;overflow:hidden;background:#fff;border:2px solid var(--ink);box-shadow:0 30px 50px -22px rgba(29,27,26,.45);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.browser .bar{height:24px;background:var(--paper);border-bottom:2px solid var(--ink);display:flex;gap:6px;align-items:center;padding:0 10px}
-.browser .bar i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
-.browser .bar i:nth-child(1){background:var(--coral)}.browser .bar i:nth-child(2){background:var(--amarillo)}.browser .bar i:nth-child(3){background:var(--verde)}
-.card:hover .browser{transform:translateY(-10px) rotate(1.5deg) scale(1.02)}
-.tag{position:absolute;top:18px;right:18px;z-index:3;padding:9px 15px;border-radius:999px;background:var(--paper);border:1.5px solid var(--ink);font-weight:600;font-size:14px;transform:rotate(6deg);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
-.card:hover .tag{transform:rotate(-4deg) scale(1.08)}
-.meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 4px 0}
-.meta h3{font-size:clamp(22px,2vw,30px);font-weight:700;letter-spacing:-.025em}
-.meta p{font-size:15px;color:var(--soft);text-align:right}
-.meta .go{display:inline-block;transition:transform .3s}
-.card:hover .meta .go{transform:translate(4px,-4px)}
-
-/* stack media */
-.media .phone.full img{width:100%;height:100%;object-fit:cover}
-.post{position:absolute;width:31%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:4px solid #fff;box-shadow:0 26px 40px -18px rgba(29,27,26,.5);transition:transform .7s cubic-bezier(.2,.8,.2,1);z-index:2}
-.post.p1{left:8%;bottom:10%;transform:rotate(-8deg)}
-.post.p2{right:8%;top:11%;transform:rotate(7deg)}
-.post.p3{right:10%;bottom:7%;transform:rotate(-3deg)}
-.card:hover .post.p1{transform:rotate(-13deg) translate(-14px,-8px)}
-.card:hover .post.p2{transform:rotate(12deg) translate(12px,-10px)}
-.card:hover .post.p3{transform:rotate(3deg) translate(10px,6px)}
-.card.wide .post{width:20%}
-.card.wide .phone{width:24%}
-.post.solo{position:relative;width:58%;left:auto;bottom:auto;transform:rotate(-4deg)}
-.card:hover .post.solo{transform:rotate(2deg) scale(1.04)}
-.webbg{position:absolute;left:5%;top:13%;width:60%;border-radius:12px;overflow:hidden;border:2px solid var(--ink);background:#fff;box-shadow:0 26px 40px -22px rgba(29,27,26,.5);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.webbg .bar{height:20px;background:var(--paper);border-bottom:2px solid var(--ink);display:flex;gap:5px;align-items:center;padding:0 9px}
-.webbg .bar i{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink)}
-.card:hover .webbg{transform:translate(-10px,-6px) rotate(-1.5deg)}
-.media.hasweb .phone{margin-left:46%}
-.media.hasweb .post.p2{right:4%;top:auto;bottom:9%}
-.track img.wd{width:520px}
-
-/* ---------- INDUSTRIES ---------- */
-.ind{background:var(--ink);color:var(--cream);padding:4vh 0;overflow:hidden;transform:rotate(-2deg);margin:4vh -2vw}
-.ind .track{animation-duration:40s;gap:0}
-.ind span{font-size:clamp(40px,6vw,96px);font-weight:700;letter-spacing:-.04em;padding:0 .4em;white-space:nowrap;font-variation-settings:"wdth" 80}
-.ind span.s{color:var(--amarillo)}
-
-/* ---------- SERVICES ---------- */
-.svc{padding:16vh 4vw 10vh}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-.sv{border-radius:var(--r);padding:34px 30px 30px;min-height:460px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.sv:hover{transform:translateY(-8px) rotate(-.6deg)}
-.sv .n{font-size:15px;font-weight:600}
-.sv h3{font-size:clamp(34px,3.2vw,52px);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:20px 0 14px}
-.sv p{font-size:17px;line-height:1.4;max-width:34ch}
-.sv ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.sv li{padding:8px 14px;border-radius:999px;background:rgba(255,253,248,.7);font-size:14px;font-weight:500}
-.sv .shape{position:absolute;right:-40px;top:-40px;width:170px;height:170px;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
-.sv:hover .shape{transform:rotate(90deg) scale(1.1)}
-
-/* ---------- PROCESS ---------- */
-.proc{padding:10vh 4vw 12vh}
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:48px;counter-reset:s}
-.step{border:1.5px solid var(--ink);border-radius:var(--r);padding:22px 20px 24px;background:var(--paper);min-height:250px;display:flex;flex-direction:column;justify-content:space-between;transition:background .35s,transform .35s;opacity:0;transform:translateY(30px)}
-.step.in{opacity:1;transform:none;transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1),background .35s}
-.step:hover{background:var(--c);transform:translateY(-6px)}
-.step .k{width:46px;height:46px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-weight:700;border:1.5px solid var(--ink)}
-.step h4{font-size:26px;letter-spacing:-.03em;margin:30px 0 8px}
-.step p{font-size:15px;line-height:1.35;color:var(--soft)}
-.step:hover p{color:var(--ink)}
-
-.principles{display:grid;grid-template-columns:1fr 1fr;gap:6vw;margin-top:12vh;align-items:start}
-.plist{list-style:none;border-top:1.5px solid var(--ink)}
-.plist li{display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1.5px solid var(--ink);font-size:clamp(20px,1.8vw,28px);font-weight:600;letter-spacing:-.02em;transition:padding .35s,background .35s}
-.plist li:hover{padding-left:16px;background:var(--amarillo)}
-.plist li small{font-size:14px;color:var(--soft);font-weight:500;min-width:28px}
-.ai{border-radius:var(--r);background:var(--lila);padding:36px;position:sticky;top:110px}
-.ai h3{font-size:clamp(30px,2.8vw,44px);letter-spacing:-.04em;line-height:1;margin-bottom:14px}
-.ai p{font-size:18px;line-height:1.4}
-.days{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
-.days div{background:var(--paper);border-radius:16px;padding:14px}
-.days b{display:block;font-size:13px;color:var(--soft);font-weight:600}
-.days span{font-size:17px;font-weight:700}
-
-/* ---------- ABOUT ---------- */
-.about{padding:14vh 4vw;display:grid;grid-template-columns:1fr 1.25fr;gap:6vw;align-items:start}
-.blob-wrap{position:sticky;top:110px;aspect-ratio:1;max-width:520px;width:100%}
-.blob-wrap svg{width:100%;height:100%}
-.about .big{font-size:clamp(26px,2.9vw,44px)}
-.timeline{margin-top:7vh;border-top:1.5px solid var(--ink)}
-.row{display:grid;grid-template-columns:1.2fr 1.3fr .7fr;gap:14px;padding:22px 6px;border-bottom:1.5px solid var(--ink);align-items:baseline;transition:background .3s,padding .3s}
-.row:hover{background:var(--verde);padding-left:16px}
-.row b{font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em}
-.row span{font-size:16px}
-.row em{font-style:normal;text-align:right;color:var(--soft);font-size:15px}
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:5vh}
-.tools span{padding:9px 16px;border-radius:999px;border:1.5px solid var(--ink);font-size:15px;font-weight:500;transition:transform .3s,background .3s}
-.tools span:hover{transform:rotate(-4deg);background:var(--rosa)}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:5vh}
-.facts div{border-radius:18px;padding:18px;background:var(--paper)}
-.facts b{display:block;font-size:13px;color:var(--soft);font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}
-.facts span{font-size:18px;font-weight:600;line-height:1.25}
-
-/* ---------- CONTACT ---------- */
-.contact{background:var(--ink);color:var(--cream);border-radius:40px 40px 0 0;padding:16vh 4vw 0;overflow:hidden;position:relative}
-.contact .lbl::before{background:var(--amarillo)}
-.ask{font-size:clamp(70px,14vw,250px);font-weight:800;letter-spacing:-.055em;line-height:.85;font-variation-settings:"wdth" 80}
-.ask .q{display:inline-block;color:var(--amarillo);animation:wob 2.6s ease-in-out infinite;transform-origin:50% 80%}
-@keyframes wob{50%{transform:rotate(14deg)}}
-.contact-row{display:grid;grid-template-columns:1fr 1fr;gap:5vw;margin-top:7vh;align-items:end}
-.contact-row p{font-size:clamp(19px,1.6vw,24px);line-height:1.35;max-width:540px;color:#d8d0c6}
-.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
-.contact .btn{background:var(--amarillo);color:var(--ink)}
-.contact .btn:hover{background:var(--rosa)}
-.contact .btn.light{background:transparent;color:var(--cream);border-color:var(--cream)}
-.contact .btn.light:hover{background:var(--cream);color:var(--ink)}
-.mail{margin-top:22px;font-size:15px;color:#a9a097;text-align:right}
-.mail a{color:var(--cream);border-bottom:1px solid}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px;color:#a9a097;margin-top:12vh;padding-bottom:16px}
-.giant{font-size:clamp(50px,13.6vw,270px);font-weight:800;letter-spacing:-.06em;line-height:.78;white-space:nowrap;margin:2vh -0.5vw -2.2vw;color:var(--cream);font-variation-settings:"wdth" 80}
-.giant span{display:inline-block;transition:transform .5s cubic-bezier(.3,1.6,.5,1),color .3s}
-.giant span:hover{transform:translateY(-14%) rotate(-6deg);color:var(--rosa)}
-
-/* ---------- MODAL ---------- */
-.modal{position:fixed;inset:0;z-index:80;pointer-events:none}
-.modal .veil{position:absolute;inset:0;background:rgba(29,27,26,.45);opacity:0;transition:opacity .45s}
-.panel{position:absolute;top:12px;right:12px;bottom:12px;width:min(880px,calc(100% - 24px));background:var(--cream);border-radius:28px;overflow-y:auto;transform:translateX(105%);transition:transform .65s cubic-bezier(.2,.9,.2,1);overscroll-behavior:contain}
-.modal.open{pointer-events:auto}
-.modal.open .veil{opacity:1}
-.modal.open .panel{transform:none}
-.p-top{padding:34px 40px 30px;position:relative}
-.close{position:sticky;top:16px;float:right;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--cream);font-size:22px;z-index:3;transition:transform .35s,background .3s;margin:16px 16px 0 0}
-.close:hover{transform:rotate(90deg);background:var(--coral)}
-.p-top .kicker{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--soft)}
-.p-top h2{font-size:clamp(48px,7vw,96px);letter-spacing:-.05em;line-height:.9;font-weight:800;margin:14px 0 18px;font-variation-settings:"wdth" 85}
-.p-top .lead{font-size:20px;line-height:1.4;max-width:58ch}
-.p-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.p-tags span{padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid rgba(29,27,26,.2);font-size:14px;font-weight:500}
-.p-hero{margin:0 40px;border-radius:22px;padding:40px 30px;display:flex;justify-content:center;gap:24px;align-items:flex-end;overflow:hidden}
-.p-hero img{border-radius:14px;max-height:500px;width:auto;max-width:100%;min-width:0;flex-shrink:1;box-shadow:0 24px 40px -20px rgba(29,27,26,.5)}
-.p-body{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:30px 40px}
-.p-body div{background:var(--paper);border-radius:20px;padding:22px}
-.p-body h5{font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;display:flex;gap:8px;align-items:center}
-.p-body h5::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--coral)}
-.p-body p{font-size:16px;line-height:1.45}
-.p-gal{columns:2;column-gap:14px;padding:0 40px}
-.p-gal img{width:100%;border-radius:16px;margin-bottom:14px;break-inside:avoid;border:1px solid rgba(29,27,26,.1)}
-.p-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 40px 44px}
-.next{font-weight:700;font-size:20px;display:flex;gap:10px;align-items:center}
-.next:hover{color:var(--coral)}
-
-/* ---------- CURSOR ---------- */
-.cur{position:fixed;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--amarillo);color:var(--ink);display:grid;place-items:center;font-weight:700;font-size:15px;pointer-events:none;z-index:90;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.5,.5,1);mix-blend-mode:normal;border:1.5px solid var(--ink)}
-.cur.on{transform:scale(1)}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:1000px){
-  .nav ul{display:none}
-  .card,.card.wide{grid-column:span 6}
-  .card.wide .phone{width:44%}
-  .card.wide .media{aspect-ratio:4/4.3}
-  .svc-grid{grid-template-columns:1fr}
-  .sv{min-height:auto}
-  .steps{grid-template-columns:repeat(3,1fr)}
-  .principles,.about,.contact-row,.hero-foot{grid-template-columns:1fr}
-  .blob-wrap{position:relative;top:0;max-width:340px}
-  .hero-cta,.actions{justify-content:flex-start}
-  .mail{text-align:left}
-  .badge{display:none}
-  .ai{position:relative;top:0}
-  .p-body{grid-template-columns:1fr}
+@keyframes popst{from{transform:scale(0) rotate(var(--rot))}to{transform:scale(1) rotate(var(--rot))}}
+.collage{position:relative;height:min(62vh,580px);border-radius:28px;background:var(--c);border:2px solid var(--ink);box-shadow:14px 14px 0 var(--ink);cursor:pointer;overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.collage:hover{transform:translate(-6px,-6px) rotate(-.6deg);box-shadow:20px 20px 0 var(--ink)}
+.collage .ph{position:absolute;left:50%;top:50%;height:86%;aspect-ratio:9/16;translate:-50% -50%;border:7px solid var(--ink);border-radius:30px;overflow:hidden;background:#fff;box-shadow:0 30px 50px -20px rgba(0,0,0,.45);z-index:2;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.collage .ph img{width:100%;height:100%;object-fit:cover}
+.collage .ps,.bye .ps{position:absolute;height:46%;aspect-ratio:4/5;object-fit:cover;border:5px solid #fff;border-radius:16px;box-shadow:0 24px 40px -18px rgba(0,0,0,.5);z-index:3;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.collage .ps.a{left:7%;bottom:7%;rotate:-8deg}.collage .ps.b{right:7%;top:8%;rotate:7deg}
+.collage:hover .ps.a{transform:translate(-10px,-8px) rotate(-5deg)}.collage:hover .ps.b{transform:translate(10px,-8px) rotate(5deg)}
+.collage:hover .ph{transform:translateY(-8px) rotate(-2deg)}
+.collage .web{position:absolute;left:5%;top:8%;width:64%;border-radius:12px;overflow:hidden;border:2px solid var(--ink);background:#fff;box-shadow:0 26px 40px -22px rgba(0,0,0,.5);z-index:1}
+.collage .web .bar{height:20px;background:var(--bg);border-bottom:2px solid var(--ink);display:flex;gap:5px;align-items:center;padding:0 9px}
+.collage .web .bar i{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink)}
+#galeria{display:grid;grid-template-columns:.75fr 1.25fr;gap:4vw;align-items:center}
+.gal{height:min(76vh,700px);display:grid;grid-template-columns:repeat(3,1fr);gap:16px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(transparent,#000 10%,#000 90%,transparent)}
+.gcol{display:flex;flex-direction:column;gap:16px;animation:gup 46s linear infinite}
+.gcol.d{animation:gdown 52s linear infinite}
+.gal:hover .gcol{animation-play-state:paused}
+.gcol img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;cursor:zoom-in;transition:transform .4s}
+.gcol img:hover{transform:scale(1.04) rotate(-1deg)}
+@keyframes gup{to{transform:translateY(-50%)}}
+@keyframes gdown{from{transform:translateY(-50%)}to{transform:none}}
+.mosaic{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px;width:78%;margin:6% auto 0}
+.mosaic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:5px solid #fff;box-shadow:0 20px 34px -18px rgba(0,0,0,.45);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.mosaic img:nth-child(1){rotate:-5deg}.mosaic img:nth-child(2){rotate:4deg;margin-top:14%}.mosaic img:nth-child(3){rotate:3deg;margin-top:-14%}.mosaic img:nth-child(4){rotate:-4deg}
+.mosaic img:hover{transform:scale(1.06)}
+.bye .disc{position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:var(--pink);left:11%;top:10%}
+.badge2{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;translate:-50% -50%;z-index:2}
+.badge2 svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.badge2 .core{position:absolute;inset:26%;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font-size:34px}
+.bye .ps.x1{left:4%;top:4%;height:44%;rotate:-8deg;animation:drift 7s ease-in-out infinite}
+.bye .ps.x2{right:4%;bottom:2%;height:44%;rotate:7deg;animation:drift 7s ease-in-out -3s infinite}
+@media (max-width:820px){
+  #galeria{grid-template-columns:1fr}.gal{height:70vh;margin-top:24px}
+  .collage{height:62vh}.hero-art{height:62vh}
+  .bye{height:60vh}.me-art .mosaic{width:92%}
+  .st{font-size:13px;padding:8px 13px}
 }
-@media (max-width:640px){
-  .card,.card.wide{grid-column:span 12}
-  .steps{grid-template-columns:1fr 1fr}
-  .row{grid-template-columns:1fr;gap:4px}
-  .row em{text-align:left}
-  .facts,.days{grid-template-columns:1fr 1fr}
-  .track img{width:150px;height:200px}
-  .p-top,.p-body,.p-foot{padding-left:22px;padding-right:22px}
-  .p-hero,.p-gal{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}
-  .p-gal{columns:1}
-  .st{font-size:13px;padding:9px 14px;position:relative;left:auto!important;top:auto!important;box-shadow:0 4px 0 var(--ink)}
-  .stickers{position:relative;inset:auto;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-  .nav{padding-left:16px}
-  .nav .btn{padding:11px 16px}
-  .lang button{padding:6px 9px}
-  .st-hint{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .track{animation:none!important}
-}
+/* sin ilustración */
+.avatar *,.me-art *,.bye *,.avatar .hairback{animation:none!important}
+.avatar .earA,.avatar .earB,.bunNose,.earA,.earB{animation:none!important}
+.avatar{cursor:default}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="boil"><feTurbulence id="turb" type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+    
+<filter id="crayon" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" seed="9" result="g"/>
+<feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.55 1.18" result="gm"/>
+<feComposite in="d" in2="gm" operator="in"/></filter>
+<filter id="crayon2" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="2" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="2.4" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="1" seed="3" result="g"/>
+<feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.45 1.15" result="gm"/>
+<feComposite in="d" in2="gm" operator="in"/></filter>
+<clipPath id="ceL"><ellipse cx="150" cy="176" rx="15" ry="17"/></clipPath><clipPath id="ceR"><ellipse cx="207" cy="173" rx="15" ry="17"/></clipPath><clipPath id="hbclip"><path d="M176.0 46.0 C 158.7 45.3 141.0 50.3 128.0 58.0 C 115.0 65.7 104.7 78.3 98.0 92.0 C 91.3 105.7 90.3 124.3 88.0 140.0 C 85.7 155.7 86.3 171.7 84.0 186.0 C 81.7 200.3 74.7 213.3 74.0 226.0 C 73.3 238.7 81.3 249.7 80.0 262.0 C 78.7 274.3 67.0 287.3 66.0 300.0 C 65.0 312.7 75.3 325.0 74.0 338.0 C 72.7 351.0 58.7 365.3 58.0 378.0 C 57.3 390.7 69.7 402.7 70.0 414.0 C 70.3 425.3 46.7 439.7 60.0 446.0 C 73.3 452.3 123.3 451.0 150.0 452.0 C 176.7 453.0 200.0 455.7 220.0 452.0 C 240.0 448.3 260.3 439.7 270.0 430.0 C 279.7 420.3 278.3 406.3 278.0 394.0 C 277.7 381.7 267.3 368.7 268.0 356.0 C 268.7 343.3 281.7 330.3 282.0 318.0 C 282.3 305.7 270.3 294.0 270.0 282.0 C 269.7 270.0 280.3 258.7 280.0 246.0 C 279.7 233.3 269.7 220.3 268.0 206.0 C 266.3 191.7 271.0 176.3 270.0 160.0 C 269.0 143.7 268.3 124.3 262.0 108.0 C 255.7 91.7 246.3 72.3 232.0 62.0 C 217.7 51.7 193.3 46.7 176.0 46.0 Z"/></clipPath>
+  </defs>
+</svg>
 
-<nav class="nav" id="nav">
-  <a href="#top" class="logo"><i></i>Laura J.</a>
-  <ul>
-    <li><a href="#trabajo" data-en='Work'>Trabajo</a></li>
-    <li><a href="#servicios" data-en='What I do'>Qué hago</a></li>
-    <li><a href="#proceso" data-en='How I think'>Cómo pienso</a></li>
-    <li><a href="#sobre" data-en='About me'>Sobre mí</a></li>
-  </ul>
-  <div class="lang" id="lang" role="group" aria-label="Idioma / Language"><button data-l="es">ES</button><button data-l="en">EN</button></div>
-  <a href="#hablemos" class="btn" data-en='Let’s talk <span class="ar">→</span>'>Hablemos <span class="ar">→</span></a>
-</nav>
+<div class="cur" id="cur"><b id="curt">ver</b></div>
+<div class="toast" id="toast"></div>
+<div class="ptip" id="ptip" data-en="Presentation mode · ← → or space · Esc to exit">Modo presentación · ← → o espacio · Esc para salir</div>
 
-<!-- HERO -->
-<header class="hero" id="top">
-  <div class="stickers" id="stickers"></div>
-  <div class="st-hint" data-en='← drag me'>← arrástrame</div>
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-      <text font-size="19" font-weight="600" letter-spacing="3.2" fill="#1D1B1A"><textPath href="#c" textLength="486" lengthAdjust="spacing" data-en='AVAILABLE ✦ REMOTE ✦ AVAILABLE ✦ REMOTE ✦'>DISPONIBLE ✦ REMOTO ✦ DISPONIBLE ✦ REMOTO ✦</textPath></text></svg>
-    <div class="core">✦</div>
+<a class="brand" id="brand" href="#" data-go="hola"><i><span style="background:var(--yellow)"></span><span style="background:var(--purple)"></span><span style="background:var(--blue)"></span></i>Laura Jaramillo</a>
+
+<aside class="menu" id="menu">
+  <a href="#" data-go="como-pienso"><span data-en="How I think">Cómo pienso</span><span class="ar">→</span></a>
+  <a href="#" data-go="caso-1"><span data-en="Cases">Casos</span><span class="ar">→</span></a>
+  <a href="#" data-go="yo"><span data-en="Me">Yo</span><span class="ar">→</span></a>
+  <button class="row cvbtn"><span data-en="Resume">Hoja de vida</span><span class="ar">↓</span></button>
+  <div class="icons">
+    <span class="mt"><svg width="18" height="14" viewBox="0 0 18 14"><path d="M1 2h16M1 7h16M1 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-en="Menu">Menú</span></span>
+    <a class="ib" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    <button class="ib" id="presentBtn" aria-label="Presentar" title="Modo presentación"><svg viewBox="0 0 16 16"><path d="M4 2.5 L13 8 L4 13.5 Z" fill="currentColor"/></svg></button>
+    <div class="lang"><button class="on" data-l="es">ES</button><button data-l="en">EN</button></div>
   </div>
-  <div class="eyebrow"><span data-en='<b>Portfolio 2026</b> — Digital strategy, content and projects'><b>Portafolio 2026</b> — Estrategia digital, contenido y proyectos</span><span data-en='Medellín, Colombia · <b>Working remotely, worldwide</b>'>Medellín, Colombia · <b>Trabajo remoto para el mundo</b></span></div>
-  <h1 class="word" aria-label="Laura Jaramillo">
-    <span class="ln" data-split>Laura</span>
-    <span class="ln ln2" data-split>Jaramillo</span>
-  </h1>
-  <div class="hero-foot">
-    <p data-en='Digital strategist and <em>Marketing Project Manager</em>. I turn business goals into plans a team can execute, and into content people actually want to see.'>Estratega digital y <em>Marketing Project Manager</em>. Convierto objetivos de negocio en planes que un equipo puede ejecutar, y en contenido que la gente sí quiere ver.</p>
-    <div class="hero-cta">
-      <a href="#trabajo" class="btn" data-en='See my work <span class="ar">↓</span>'>Ver mi trabajo <span class="ar">↓</span></a>
-      <a href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener" class="btn light">LinkedIn <span class="ar">↗</span></a>
+</aside>
+
+<div id="hs"><div class="stage"><div class="track" id="track">
+
+<!-- ============ 0 HOLA ============ -->
+<section class="panel" id="hola" data-title="Hola" data-title-en="Hello">
+  <canvas id="scribble"></canvas>
+  <div class="intro">
+    <span class="status"><i></i><span data-en="Open to new roles and projects · Remote">Disponible para nuevos roles y proyectos · Remoto</span></span>
+    <h1 class="h1"><span class="ln"><span>Laura</span></span><span class="ln"><span>Jaramillo</span></span></h1>
+    <div class="sub">
+      <p><b data-en="Digital strategist & Marketing Project Manager.">Estratega digital y Marketing Project Manager.</b><br><span data-en="I turn business goals into">Convierto objetivos de negocio en</span><br>
+        <span class="rot" id="rot"><span class="on" data-en="plans a team can run.">planes que un equipo puede ejecutar.</span><span data-en="content that connects.">contenido que conecta.</span><span data-en="launches on time.">lanzamientos a tiempo.</span><span data-en="aligned teams.">equipos alineados.</span></span></p>
+      <p style="max-width:250px" data-en="This is an exhibition of how I think and work. Scroll and it moves sideways →">Esto es una exposición de cómo pienso y trabajo. Haz scroll y se mueve hacia el lado →</p>
     </div>
   </div>
-</header>
-
-<!-- REEL -->
-<section class="reel" aria-label="Contenido de las marcas">
-  <div class="track" id="t1"></div>
-  <div class="track rev" id="t2"></div>
-</section>
-
-<!-- STATEMENT -->
-<section class="statement">
-  <div class="lbl" data-en='Hi, I’m Laura'>Hola, soy Laura</div>
-  <p class="big" id="stmt" data-en='I’ve spent almost five years across social media, content and e‑commerce. I think of [strategy|c1], [people|c2] and [execution|c3] as one system, and what I enjoy most is when the plan breaks and we have to decide fast without losing quality.'>Llevo casi cinco años entre redes sociales, contenido y e‑commerce. Pienso la [estrategia|c1], las [personas|c2] y la [ejecución|c3] como un solo sistema, y lo que más disfruto es cuando el plan se rompe y hay que decidir rápido sin perder la calidad.</p>
-</section>
-
-<!-- WORK -->
-<section class="work" id="trabajo">
-  <div class="work-head">
-    <h2 class="h2" data-en='Work<sup>(11)</sup>'>Trabajo<sup>(11)</sup></h2>
-    <div class="filters" id="filters">
-      <button class="chip on" data-f="all" data-en='All'>Todo</button>
-      <button class="chip" data-f="social">Social media</button>
-      <button class="chip" data-f="content" data-en='Content & copy'>Contenido & copy</button>
-      <button class="chip" data-f="pm">Project management</button>
-      <button class="chip" data-f="ecom">E‑commerce</button>
+  <div class="hero-art" id="heroArt">
+    <div class="arcs" id="arcs"><span class="a a1"></span><span class="a a2"></span><span class="a a3"></span></div>
+    <div class="hc">
+      <img class="hp p1" src="hd/holacalm-09.webp" alt="">
+      <img class="hp p2" src="hd/laskin-01.webp" alt="">
+      <img class="hp p3" src="hd/riascos-05.webp" alt="">
+      <img class="hp p4" src="hd/azzurry-12.webp" alt="">
+      <div class="hph"><img src="hd/dax-01.webp" alt="Reel de DAX Home"></div>
     </div>
+    <div class="stickers" id="stickers"></div>
   </div>
-  <div class="grid" id="grid"></div>
+  <div class="cue"><span data-en="Exhibition this way">Exposición por aquí</span> <span class="ar">→</span></div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="ind" aria-label="Industrias">
-  <div class="track" id="t3"></div>
-</section>
-
-<!-- SERVICES -->
-<section class="svc" id="servicios">
-  <div class="lbl" data-en='Where I add value'>Dónde aporto</div>
-  <h2 class="h2" data-en='What I do'>Qué hago</h2>
-  <div class="svc-grid">
-    <article class="sv" style="background:var(--rosa)">
-      <svg class="shape" viewBox="0 0 100 100"><path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39Z" fill="#FFFDF8"/></svg>
-      <div><span class="n">01</span><h3 data-en='As a Project Manager'>Como Project Manager</h3><p data-en='I run projects end to end: timelines, milestones, stakeholders and the quality of every deliverable.'>Llevo los proyectos de principio a fin: cronogramas, hitos, stakeholders y calidad de cada entregable.</p></div>
-      <ul><li data-en='Timelines &amp; milestones'>Cronogramas e hitos</li><li>Stakeholders</li><li>KPIs</li><li>Scrum / Agile</li></ul>
+<!-- ============ 1 ROLES ============ -->
+<section class="panel" id="donde-aporto" data-title="Dónde aporto" data-title-en="Where I add value">
+  <div class="k"><b>01</b> · <span data-en="Where I add value">Dónde aporto</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="One goal, <em>three hats</em>. I switch between them depending on what the team needs.">Un objetivo, <em>tres sombreros</em>. Me pongo el que el equipo necesite.</h2>
+  <div class="roles">
+    <article class="role pop">
+      <span class="tag" style="background:var(--lilac)">PM</span>
+      <div class="ic"><svg viewBox="0 0 120 120" class="doodle"><rect x="26" y="18" width="68" height="92" rx="8" fill="#fff"/><rect x="44" y="10" width="32" height="16" rx="5" fill="var(--lilac)"/><path class="chk chk1" d="M38 48 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path class="chk chk2" d="M38 70 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path class="chk chk3" d="M38 92 l7 7 l12 -14" stroke="var(--purple)" stroke-width="4"/><path d="M64 50 h20 M64 72 h20 M64 94 h20"/></svg></div>
+      <h3 data-en="As a Project Manager">Como Project Manager</h3>
+      <p data-en="I take a goal, turn it into a plan with milestones and owners, follow up every day and protect the date and the quality.">Tomo un objetivo, lo vuelvo un plan con hitos y responsables, hago seguimiento diario y protejo la fecha y la calidad.</p>
+      <ul><li data-en="Timelines & milestones">Cronogramas e hitos</li><li>Stakeholders</li><li data-en="Deliverable QA">Calidad de entregables</li><li>KPIs</li><li>Scrum / Agile</li></ul>
     </article>
-    <article class="sv" style="background:var(--lila)">
-      <svg class="shape" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#FFFDF8"/><circle cx="50" cy="50" r="22" fill="#CDB8F5"/></svg>
-      <div><span class="n">02</span><h3 data-en='As a digital strategist'>Como estratega digital</h3><p data-en='Social, content, e‑commerce and branding thought of as one system, with a consistent brand voice.'>Redes, contenido, e‑commerce y branding pensados como un solo sistema, con una voz de marca coherente.</p></div>
-      <ul><li data-en='360° strategy'>Estrategia 360°</li><li data-en='Editorial calendar'>Calendario editorial</li><li>E‑commerce</li><li>Branding</li></ul>
+    <article class="role pop">
+      <span class="tag" style="background:var(--yellow)" data-en="Strategy">Estrategia</span>
+      <div class="ic"><svg viewBox="0 0 120 120" class="doodle"><circle cx="60" cy="60" r="44" fill="#fff"/><circle cx="60" cy="60" r="34" stroke-dasharray="2 7"/><g class="needle"><path d="M60 26 L68 60 L60 94 L52 60 Z" fill="var(--yellow)"/><path d="M60 26 L68 60 L52 60 Z" fill="var(--coral)"/></g><circle cx="60" cy="60" r="4" fill="var(--ink)"/></svg></div>
+      <h3 data-en="As a digital strategist">Como estratega digital</h3>
+      <p data-en="I define what to say, to whom, where and why: social, content, e-commerce and brand working as one system.">Defino qué decir, a quién, dónde y para qué: redes, contenido, e-commerce y marca funcionando como un solo sistema.</p>
+      <ul><li>Social media</li><li data-en="Content strategy">Estrategia de contenido</li><li>E-commerce</li><li>Branding</li></ul>
     </article>
-    <article class="sv" style="background:var(--amarillo)">
-      <svg class="shape" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" rx="26" fill="#FFFDF8"/></svg>
-      <div><span class="n">03</span><h3 data-en='Inside the creative team'>Dentro del equipo creativo</h3><p data-en='I write, ideate and land ideas: from concept to script, from copy to a piece ready to publish.'>Escribo, ideo y aterrizo: del concepto al guion, del copy a la pieza lista para publicar.</p></div>
-      <ul><li>Copywriting</li><li>Storytelling</li><li data-en='Reels scripts'>Guiones de Reels</li><li data-en='AI‑assisted pieces'>Piezas con IA</li><li data-en='Community'>Comunidad</li></ul>
+    <article class="role pop">
+      <span class="tag" style="background:var(--blue)" data-en="Hands-on">Manos a la obra</span>
+      <div class="ic"><svg viewBox="0 0 160 120" class="doodle"><path class="scr" d="M14 96 C 30 70 44 104 60 80 C 74 60 86 98 104 74" stroke="var(--blue)" stroke-width="4"/><g class="pencil"><path d="M96 70 L132 22 L146 32 L110 80 L92 86 Z" fill="var(--yellow)"/><path d="M132 22 L146 32" stroke-width="6" stroke="var(--coral)"/><path d="M96 70 L110 80"/></g></svg></div>
+      <h3 data-en="Inside the creative team">Dentro del equipo creativo</h3>
+      <p data-en="I also get my hands dirty: I write copy and scripts, build pieces with AI and review every detail before it ships.">También me ensucio las manos: escribo copys y guiones, armo piezas con IA y reviso cada detalle antes de publicar.</p>
+      <ul><li>Copywriting</li><li>Storytelling</li><li data-en="Reels scripts">Guiones de Reels</li><li data-en="AI-made pieces">Piezas con IA</li><li>Community</li></ul>
     </article>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="proc" id="proceso">
-  <div class="lbl" data-en='How I think'>Cómo pienso</div>
-  <h2 class="h2" data-en='Six questions,<br>every project'>Seis preguntas,<br>cada proyecto</h2>
-  <div class="steps" id="steps">
-    <div class="step" style="--c:var(--rosa)"><span class="k">1</span><div data-en='<h4>Understand</h4><p>What does the business really need, and for whom?</p>'><h4>Entender</h4><p>¿Qué necesita de verdad el negocio y para quién?</p></div></div>
-    <div class="step" style="--c:var(--amarillo)"><span class="k">2</span><div data-en='<h4>Prioritize</h4><p>What moves the needle first, and what can wait?</p>'><h4>Priorizar</h4><p>¿Qué mueve la aguja primero y qué puede esperar?</p></div></div>
-    <div class="step" style="--c:var(--verde)"><span class="k">3</span><div data-en='<h4>Plan</h4><p>Who does what, when, and with which resources?</p>'><h4>Planear</h4><p>¿Quién hace qué, cuándo y con qué recursos?</p></div></div>
-    <div class="step" style="--c:var(--azul)"><span class="k">4</span><div data-en='<h4>Align</h4><p>Does everyone share the same goal and the same date?</p>'><h4>Alinear</h4><p>¿Todos entienden el mismo objetivo y la misma fecha?</p></div></div>
-    <div class="step" style="--c:var(--lila)"><span class="k">5</span><div data-en='<h4>Execute</h4><p>What changed, and what do we decide to keep the date?</p>'><h4>Ejecutar</h4><p>¿Qué cambió y qué decidimos para no perder la fecha?</p></div></div>
-    <div class="step" style="--c:var(--rosa)"><span class="k">6</span><div data-en='<h4>Measure</h4><p>What did we learn, and what will we do differently next time?</p>'><h4>Medir</h4><p>¿Qué aprendimos y qué hacemos distinto la próxima vez?</p></div></div>
+<!-- ============ 2 COMO PIENSO ============ -->
+<section class="panel" id="como-pienso" data-title="Cómo pienso" data-title-en="How I think">
+  <div>
+    <div class="k"><b>02</b> · <span data-en="How I think">Cómo pienso</span></div>
+    <h2 class="h2 pop" style="margin-top:2vh" data-en="My system is a <em>loop</em>, not a list.">Mi sistema es un <em>ciclo</em>, no una lista.</h2>
+    <p class="lead pop" style="margin-top:2.6vh;max-width:470px" data-en="Every project goes through the same six questions. That's how I keep strategy, people and execution connected — and how I know what to do when something changes.">Todo proyecto pasa por las mismas seis preguntas. Así mantengo conectadas la estrategia, las personas y la ejecución, y así sé qué hacer cuando algo cambia.</p>
+    <p class="pop k" style="margin-top:3vh" data-en="Hover or click each step ↗">Pasa el cursor o haz clic en cada paso ↗</p>
   </div>
+  <div class="loop pop" id="loop">
+    <svg viewBox="0 0 600 600"><circle class="ring" cx="300" cy="300" r="222"/><circle cx="300" cy="300" r="4" fill="var(--ink)"><animateMotion dur="12s" repeatCount="indefinite" path="M300 78 A222 222 0 1 1 299.9 78"/></circle><g id="nodes"></g></svg>
+    <div class="center"><div class="fade" id="lc"><div class="q" id="lq"></div><div class="o"><b data-en="What I deliver">Lo que entrego</b><span id="lo"></span></div></div></div>
+  </div>
+</section>
 
-  <div class="principles">
-    <ul class="plist">
-      <li data-en='<small>01</small>Clarity before speed'><small>01</small>Claridad antes que velocidad</li>
-      <li data-en='<small>02</small>Aligned people, not just tasks'><small>02</small>Personas alineadas, no solo tareas</li>
-      <li data-en='<small>03</small>I protect dates and quality'><small>03</small>Protejo fechas y calidad</li>
-      <li data-en='<small>04</small>I decide when the plan breaks'><small>04</small>Decido cuando el plan se rompe</li>
-      <li data-en='<small>05</small>One brand voice'><small>05</small>Una sola voz de marca</li>
-      <li data-en='<small>06</small>Measure to learn'><small>06</small>Medir para aprender</li>
-    </ul>
-    <div class="ai">
-      <div class="lbl" style="margin-bottom:16px" data-en='AI in my workflow'>IA en mi flujo</div>
-      <h3 data-en='Human judgment, AI speed.'>Criterio humano, velocidad de IA.</h3>
-      <p data-en='I use Claude and Gemini to research, ideate, write and automate. The final call and the brand’s tone always go through me.'>Uso Claude y Gemini para investigar, idear, redactar y automatizar. La decisión final y el tono de la marca siempre pasan por mí.</p>
-      <div class="lbl" style="margin:30px 0 0" data-en='My first 90 days'>Mis primeros 90 días</div>
-      <div class="days">
-        <div data-en='<b>Wk 1–2</b><span>Listen</span>'><b>Sem 1–2</b><span>Escuchar</span></div>
-        <div data-en='<b>Wk 3–4</b><span>Organize</span>'><b>Sem 3–4</b><span>Ordenar</span></div>
-        <div data-en='<b>Month 2</b><span>Execute</span>'><b>Mes 2</b><span>Ejecutar</span></div>
-        <div data-en='<b>Month 3</b><span>Optimize</span>'><b>Mes 3</b><span>Optimizar</span></div>
-      </div>
+<!-- ============ 3 PRINCIPIOS ============ -->
+<section class="panel" id="aporto" data-title="Lo que aporto" data-title-en="What I bring">
+  <div class="k"><b>03</b> · <span data-en="What I bring to a team">Lo que aporto a un equipo</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="Six things you can <em>count on</em> when I join.">Seis cosas con las que puedes <em>contar</em> cuando llego.</h2>
+  <div class="princ">
+    <div class="pr pop"><div class="ic" style="background:var(--yellow)"><svg viewBox="0 0 48 48" class="doodle"><path d="M24 6 C 14 6 9 14 10 21 C 11 27 16 29 17 34 L 31 34 C 32 29 37 27 38 21 C 39 14 34 6 24 6 Z" fill="#fff"/><path d="M18 39 h12 M20 43 h8"/></svg></div><div><h4 data-en="Clarity before speed">Claridad antes que velocidad</h4><p data-en="A plan everybody understands: what, who, when and how we'll measure it.">Un plan que todos entienden: qué, quién, cuándo y cómo lo vamos a medir.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--lilac)"><svg viewBox="0 0 48 48" class="doodle"><circle cx="12" cy="16" r="6" fill="#fff"/><circle cx="36" cy="16" r="6" fill="#fff"/><circle cx="24" cy="34" r="6" fill="#fff"/><path d="M17 19 L20 29 M31 19 L28 29 M18 16 h12"/></svg></div><div><h4 data-en="I align people, not just tasks">Alineo personas, no solo tareas</h4><p data-en="Creative, tech, sales and leadership pulling in the same direction.">Creativos, técnicos, comerciales y líderes remando hacia el mismo lado.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--green)"><svg viewBox="0 0 48 48" class="doodle"><rect x="7" y="10" width="34" height="31" rx="4" fill="#fff"/><path d="M7 18 h34 M15 6 v8 M33 6 v8"/><path d="M16 29 l5 5 l11 -10" stroke-width="3.4"/></svg></div><div><h4 data-en="I protect the date and the quality">Protejo la fecha y la calidad</h4><p data-en="Milestones, follow-up and reviews so nothing reaches the client half done.">Hitos, seguimiento y revisión para que nada llegue a medias al cliente.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--coral)"><svg viewBox="0 0 48 48" class="doodle"><path d="M6 32 L16 22 L24 30 L40 12" stroke-width="3.2"/><path d="M30 12 h10 v10"/></svg></div><div><h4 data-en="When the plan breaks, I decide">Cuando el plan se rompe, decido</h4><p data-en="I re-prioritize fast, re-align the team and keep the goal intact.">Repriorizo rápido, realineo al equipo y mantengo intacto el objetivo.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--blue)"><svg viewBox="0 0 48 48" class="doodle"><path d="M8 20 v10 h6 l14 9 V11 L14 20 Z" fill="#fff"/><path d="M34 18 c4 4 4 10 0 14 M38 13 c7 7 7 17 0 24"/></svg></div><div><h4 data-en="One brand, one voice">La marca habla con una sola voz</h4><p data-en="Tone, visual identity and positioning consistent across every channel.">Tono, identidad visual y posicionamiento coherentes en todos los canales.</p></div></div>
+    <div class="pr pop"><div class="ic" style="background:var(--lilac2)"><svg viewBox="0 0 48 48" class="doodle"><path d="M8 8 v32 h32"/><path d="M14 32 L22 22 L28 27 L38 14" stroke="var(--purple)" stroke-width="3.4"/><circle cx="38" cy="14" r="2.6" fill="var(--purple)"/></svg></div><div><h4 data-en="Measure to learn">Mido para aprender</h4><p data-en="KPIs that tell us what to repeat, what to change and what to stop.">KPIs que nos dicen qué repetir, qué cambiar y qué dejar de hacer.</p></div></div>
+  </div>
+  <div class="ai pop"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 C 21 13 27 19 38 20 C 27 21 21 27 20 38 C 19 27 13 21 2 20 C 13 19 19 13 20 2 Z" fill="var(--yellow)"/></svg><span data-en="<b>AI in my workflow:</b> I research, ideate, draft and automate faster with Claude and Gemini. The judgment stays human — the time saved goes back to the team."><b>IA en mi flujo:</b> investigo, ideo, redacto y automatizo más rápido con Claude y Gemini. El criterio sigue siendo humano; el tiempo que ahorro vuelve al equipo.</span></div>
+</section>
+
+<!-- ============ 4 ENTREGABLES ============ -->
+<section class="panel" id="entregables" data-title="Lo que entrego" data-title-en="What I deliver">
+  <div class="k"><b>04</b> · <span data-en="My toolkit">Mi caja de herramientas</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="Strategy only counts when it lands on <em>paper</em>.">La estrategia solo cuenta cuando aterriza en <em>papel</em>.</h2>
+  <p class="lead pop" style="margin-top:1.6vh;max-width:640px" data-en="These are the documents I build so a team always knows where we are going and how we are doing.">Estos son los documentos que construyo para que un equipo siempre sepa para dónde vamos y cómo vamos.</p>
+  <div class="kit">
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h50" stroke-width="5"/><path class="ln2" d="M10 30 h80 M10 42 h70 M10 54 h76 M10 66 h56"/><rect x="10" y="80" width="34" height="18" rx="4" fill="var(--lilac)"/><rect x="50" y="80" width="40" height="18" rx="4" fill="var(--yellow)"/></svg></div><h5 data-en="Campaign brief">Brief de campaña</h5><p data-en="Goal, audience, message and success KPI.">Objetivo, audiencia, mensaje y KPI de éxito.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h40" stroke-width="5"/><path d="M10 26 v76" stroke-dasharray="2 4"/><rect class="bar" x="14" y="32" width="46" height="11" rx="3" fill="var(--purple)" stroke="none"/><rect class="bar" x="30" y="50" width="48" height="11" rx="3" fill="var(--lilac)" stroke="none"/><rect class="bar" x="46" y="68" width="40" height="11" rx="3" fill="var(--yellow)" stroke="none"/><rect class="bar" x="20" y="86" width="64" height="11" rx="3" fill="var(--green)" stroke="none"/></svg></div><h5 data-en="Timeline & milestones">Cronograma e hitos</h5><p data-en="Who does what and by when.">Quién hace qué y para cuándo.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h44" stroke-width="5"/><g><rect x="10" y="26" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="30" y="26" width="18" height="18" rx="3" fill="#fff"/><rect x="50" y="26" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="70" y="26" width="18" height="18" rx="3" fill="#fff"/><rect x="10" y="48" width="18" height="18" rx="3" fill="#fff"/><rect x="30" y="48" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="50" y="48" width="18" height="18" rx="3" fill="#fff"/><rect x="70" y="48" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="10" y="70" width="18" height="18" rx="3" class="cell b" fill="#fff"/><rect x="30" y="70" width="18" height="18" rx="3" fill="#fff"/><rect x="50" y="70" width="18" height="18" rx="3" class="cell" fill="#fff"/><rect x="70" y="70" width="18" height="18" rx="3" fill="#fff"/></g></svg></div><h5 data-en="Editorial calendar">Calendario editorial</h5><p data-en="Pillars and formats, week by week.">Pilares y formatos, semana a semana.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h50" stroke-width="5"/><path d="M36 24 v80 M64 24 v80" stroke-dasharray="2 4"/><rect x="10" y="30" width="22" height="14" rx="3" fill="var(--yellow)"/><rect x="10" y="50" width="22" height="14" rx="3" fill="#fff"/><rect class="mv" x="40" y="30" width="22" height="14" rx="3" fill="var(--lilac)"/><rect x="68" y="30" width="22" height="14" rx="3" fill="var(--green)"/><rect x="68" y="50" width="22" height="14" rx="3" fill="var(--green)"/></svg></div><h5 data-en="Tracking board">Tablero de seguimiento</h5><p data-en="Status of every task, visible to all.">Estado de cada tarea, visible para todos.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:2"><path d="M10 12 h44" stroke-width="5"/><path d="M12 28 v68 h78"/><path class="ln2" d="M16 84 C 30 80 34 62 46 66 C 58 70 62 44 86 36" stroke="var(--purple)" stroke-width="3.2"/><circle cx="86" cy="36" r="3" fill="var(--purple)"/></svg></div><h5 data-en="KPI report">Reporte de KPIs</h5><p data-en="What happened, why, and what's next.">Qué pasó, por qué y qué sigue.</p></div>
+    <div class="doc pop"><div class="paper"><svg viewBox="0 0 100 110" class="doodle" style="stroke-width:1.8"><path d="M10 12 h50" stroke-width="5"/><g class="stk"><rect x="12" y="30" width="34" height="32" rx="2" fill="var(--yellow)"/><path d="M18 40 h20 M18 48 h14"/></g><g class="stk s2"><rect x="54" y="34" width="34" height="32" rx="2" fill="var(--lilac)"/><path d="M60 44 h20 M60 52 h14"/></g><g class="stk"><rect x="32" y="70" width="34" height="30" rx="2" fill="var(--green)"/><path d="M38 80 h20 M38 88 h12"/></g></svg></div><h5 data-en="Wrap-up & learnings">Cierre y aprendizajes</h5><p data-en="What we keep, change or drop next time.">Qué mantenemos, cambiamos o soltamos.</p></div>
+  </div>
+</section>
+
+<!-- ============ 5 90 DIAS ============ -->
+<section class="panel" id="primeros-90" data-title="Mis primeros 90 días" data-title-en="My first 90 days">
+  <div class="k"><b>05</b> · <span data-en="If I join your team">Si llego a tu equipo</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh;max-width:1100px" data-en="My first <em>90 days</em>, step by step.">Mis primeros <em>90 días</em>, paso a paso.</h2>
+  <div class="journey">
+    <svg class="path draw" viewBox="0 0 1200 400" preserveAspectRatio="none"><path class="doodle" style="--len:1500;stroke-width:3" d="M20 300 C 160 300 200 240 300 236 C 420 232 450 180 580 176 C 720 172 740 120 870 118 C 1000 116 1050 70 1180 60"/></svg>
+    <div class="stop pop" style="left:1%;top:44%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--lilac)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Weeks 1–2">Semanas 1–2</div><h4 data-en="Listen">Escuchar</h4><p data-en="I meet stakeholders, understand goals, the current metrics and how decisions get approved.">Conozco a los stakeholders, los objetivos, las métricas actuales y cómo se aprueban las cosas.</p></div>
+    <div class="stop pop" style="left:26%;top:30%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Weeks 3–4">Semanas 3–4</div><h4 data-en="Organize">Ordenar</h4><p data-en="Quick diagnosis, priorities, timeline and editorial calendar agreed with the team.">Diagnóstico rápido, prioridades, cronograma y calendario acordados con el equipo.</p></div>
+    <div class="stop pop" style="left:51%;top:15%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--blue)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Month 2">Mes 2</div><h4 data-en="Execute">Ejecutar</h4><p data-en="First campaigns and deliverables live, with a weekly follow-up ritual.">Primeras campañas y entregables en marcha, con un ritual semanal de seguimiento.</p></div>
+    <div class="stop pop" style="left:76%;top:0%"><svg class="flag" viewBox="0 0 54 64"><path d="M8 62 V6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M8 8 C 22 2 30 14 48 8 V 30 C 30 36 22 24 8 30 Z" fill="var(--green)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="when" data-en="Month 3">Mes 3</div><h4 data-en="Optimize">Optimizar</h4><p data-en="I read the KPIs with the team, share learnings and propose the next plan.">Leo los KPIs con el equipo, comparto aprendizajes y propongo el siguiente plan.</p></div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="panel" id="galeria" data-title="Muestra" data-title-en="Showcase">
+  <div>
+    <div class="k"><b>06</b> · <span data-en="Showcase">Muestra</span></div>
+    <h2 class="h2 pop" style="margin-top:2vh" data-en="What I do, <em>you can see</em>.">Lo que hago, <em>se ve</em>.</h2>
+    <p class="lead pop" style="margin-top:2.4vh;max-width:460px" data-en="Real pieces for the brands I’ve worked with: reels, carousels and campaigns made to stop the scroll and move the business.">Piezas reales de las marcas con las que he trabajado: reels, carruseles y campañas pensadas para detener el scroll y mover el negocio.</p>
+    <a href="#" class="btn dark pop" data-go="caso-1" style="margin-top:3vh"><span data-en="See the cases">Ver los casos</span> <span class="ar">→</span></a>
+  </div>
+  <div class="gal pop" id="gal"></div>
+</section>
+
+<!-- ============ 6-9 CASOS ============ -->
+<section class="panel case" id="caso-1" data-title="Caso 01 · DAX Home" data-title-en="Case 01 · DAX Home" data-case="dax">
+  <div>
+    <div class="num pop">01</div>
+    <div class="k meta pop">DAX Home · DAX International · <span data-en="2024 – 2026">2024 – 2026</span></div>
+    <h3 class="pop" data-en="From showroom brand to a 360° digital ecosystem">De marca de showroom a ecosistema digital 360°</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="One consistent voice across social, web and email — plus a new franchise program to launch.">Una sola voz coherente en redes, web y email, y además lanzar un nuevo programa de franquicias.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="Voice and pillars first, then calendar, then channels. And the franchise launch as a project with owners and milestones.">Primero la voz y los pilares, después el calendario, después los canales. Y el lanzamiento de franquicias como un proyecto con responsables e hitos.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="A more recognizable, consistent brand, more conversation on social, more organic traffic to the website and the franchise launched on schedule.">Una marca más reconocible y coherente, más conversación en redes, más tráfico orgánico al sitio y la franquicia lanzada a tiempo.</span></div>
     </div>
+    <button class="btn dark pop opencase" data-case="dax"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="collage opencase" data-case="dax" style="--c:var(--yellow)"><div class="web"><div class="bar"><i></i><i></i><i></i></div><img src="hd/daxweb-01.webp" alt="DAX Home web"></div><div class="ph" style="left:74%"><img src="hd/dax-01.webp" alt=""></div><img class="ps a" src="hd/dax-12.webp" alt="" style="left:8%;bottom:4%"></div>
+    <div class="note" style="left:-6%;bottom:-6%"><small data-en="What it proves">Lo que demuestra</small><span data-en="Leadership: strategy, brand and a cross-team launch in one role.">Liderazgo: estrategia, marca y un lanzamiento entre áreas en un mismo rol.</span></div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="sobre">
-  <div class="blob-wrap" aria-hidden="true">
-    <svg viewBox="0 0 400 400" id="blobs">
-      <circle cx="140" cy="150" r="110" fill="#F7B9CF"/>
-      <rect x="190" y="70" width="170" height="170" rx="60" fill="#CDB8F5"/>
-      <circle cx="250" cy="280" r="95" fill="#F9DC72"/>
-      <path d="M70 250 q50 -40 100 0 t100 0" stroke="#1D1B1A" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <circle cx="110" cy="320" r="38" fill="#BFE5C6"/>
-      <path d="M300 40 L309 66 L336 70 L314 86 L321 112 L300 97 L279 112 L286 86 L264 70 L291 66Z" fill="#FF6B4A"/>
-      <circle cx="160" cy="135" r="9" fill="#1D1B1A"/><circle cx="215" cy="135" r="9" fill="#1D1B1A"/>
-      <path d="M165 170 q22 22 45 0" stroke="#1D1B1A" stroke-width="5" fill="none" stroke-linecap="round"/>
-    </svg>
+<section class="panel case" id="caso-2" data-title="Caso 02 · Globant" data-title-en="Case 02 · Globant" data-case="globant">
+  <div>
+    <div class="num pop">02</div>
+    <div class="k meta pop"><span data-en="Globant · client: Bancolombia">Globant · cliente: Bancolombia</span> · 2025</div>
+    <h3 class="pop" data-en="Changing the plan mid-campaign, without moving the date">Cambiar el plan a mitad de campaña, sin mover la fecha</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="In the Conavi Christmas campaign, people didn't understand the limited-edition cards were free or how to get them.">En la campaña navideña de Conavi la gente no entendía que las tarjetas de edición limitada eran gratis ni cómo obtenerlas.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="The date can't move, the message can. Re-align everyone around a clearer offer and a simpler path.">La fecha no se mueve, el mensaje sí. Realinear a todos alrededor de una oferta más clara y un camino más simple.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="New landing and information, multidisciplinary teams aligned and milestones delivered on time.">Nueva landing e información, equipos multidisciplinarios alineados e hitos entregados a tiempo.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="globant"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="frame opencase" data-case="globant" style="--c:var(--lilac);height:min(50vh,470px)"><img src="img/conavi-landing.webp" alt="Landing de la campaña" style="object-position:center"></div>
+    <div class="note" style="right:-3%;bottom:-10%;background:var(--lilac)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Calm under pressure: I re-prioritize and protect the deadline.">Calma bajo presión: repriorizo y protejo la fecha.</span></div>
+  </div>
+</section>
+
+<section class="panel case" id="caso-3" data-title="Caso 03 · Azzurry" data-title-en="Case 03 · Azzurry" data-case="azzurry">
+  <div>
+    <div class="num pop">03</div>
+    <div class="k meta pop">Tiendas Azzurry · Waco Digital Hub</div>
+    <h3 class="pop" data-en="Year-round campaigns that lead to the cart">Campañas todo el año que llevan al carrito</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="Stand out as an authorized retailer of original brands in a category full of offers.">Destacar como distribuidor de marcas originales en una categoría llena de ofertas.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="A year-round campaign calendar built around the moments people already care about: launches, seasonal sales and key dates.">Un calendario de campañas para todo el año, construido sobre los momentos que a la gente ya le importan: lanzamientos, rebajas de temporada y fechas clave.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="More brand awareness, new customers and more traffic to the online store.">Más reconocimiento de marca, nuevos clientes y más tráfico al e-commerce.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="azzurry"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="collage opencase" data-case="azzurry" style="--c:var(--blue)"><div class="ph"><img src="hd/azzurry-01.webp" alt="Reel Azzurry"></div><img class="ps b" src="hd/azzurry-12.webp" alt=""></div>
+    <div class="note" style="left:-7%;top:8%;background:var(--green)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Visual direction with a commercial goal.">Dirección visual con objetivo comercial.</span></div>
+  </div>
+</section>
+
+<section class="panel case" id="caso-4" data-title="Caso 04 · Laskin" data-title-en="Case 04 · Laskin" data-case="laskin">
+  <div>
+    <div class="num pop">04</div>
+    <div class="k meta pop">Laskin · <span data-en="Dermatology &amp; aesthetic medicine · Anniversary month">Dermatología y medicina estética · Mes de aniversario</span></div>
+    <h3 class="pop" data-en="An anniversary turned into a sales engine">Un aniversario convertido en motor de ventas</h3>
+    <div class="bl pop">
+      <div><b data-en="Challenge">El reto</b><span data-en="Turn the anniversary month into a sales driver, with efficient ad investment.">Convertir el mes de aniversario en un impulsor de ventas, con una inversión eficiente en pauta.</span></div>
+      <div><b data-en="How I thought">Cómo lo pensé</b><span data-en="Each channel with a clear role: Meta to bring scale and Google to add high-efficiency results.">Cada canal con un rol claro: Meta para dar escala y Google para sumar resultados de alta eficiencia.</span></div>
+      <div><b data-en="Result">Resultado</b><span data-en="Strong sales, high and sustained ROAS and a cost per result going down. Laser hair removal became the main conversion driver.">Ventas robustas, ROAS alto y sostenido y costo por resultado en descenso. La depilación láser se consolidó como el principal motor de conversión.</span></div>
+    </div>
+    <button class="btn dark pop opencase" data-case="laskin"><span data-en="See full case">Ver caso completo</span> <span class="ar">→</span></button>
+  </div>
+  <div class="case-art pop">
+    <div class="collage opencase" data-case="laskin" style="--c:var(--lilac)"><div class="ph"><img src="hd/laskin-07.webp" alt="Reel Laskin"></div><img class="ps a" src="hd/laskin-01.webp" alt=""></div>
+    <div class="note" style="right:-4%;top:6%;background:var(--pink)"><small data-en="What it proves">Lo que demuestra</small><span data-en="Commercial thinking: content and ads connected to sales.">Pensamiento comercial: contenido y pauta conectados con ventas.</span></div>
+  </div>
+</section>
+
+<!-- ============ 9 MARCAS ============ -->
+<section class="panel" id="marcas" data-title="Marcas" data-title-en="Brands">
+  <div class="k"><b>07</b> · <span data-en="Brands I've worked with">Marcas con las que he trabajado</span></div>
+  <h2 class="h2 pop" style="margin-top:2vh" data-en="Seven industries, <em>one way</em> of working.">Siete industrias, <em>una sola</em> forma de trabajar.</h2>
+  <p class="k pop" style="margin-top:1.4vh" data-en="Click a brand to see the work">Haz clic en una marca para ver el trabajo</p>
+  <div class="wall" id="wall"></div>
+</section>
+
+<!-- ============ 10 YO ============ -->
+<section class="panel" id="yo" data-title="Yo" data-title-en="Me">
+  <div class="me-art pop">
+    <div class="bg"></div>
+    <div class="mosaic"><img src="hd/holacalm-01.webp" alt=""><img src="hd/riascos-08.webp" alt=""><img src="hd/park5-01.webp" alt=""><img src="hd/dax-12.webp" alt=""></div>
   </div>
   <div>
-    <div class="lbl" data-en='About me'>Sobre mí</div>
-    <p class="big" data-en='I’m from Medellín and I’ve worked remotely with teams in the United States, Spain, France, Italy, Argentina and across LATAM. I move comfortably between strategy and detail: I can build the plan and also write the copy.'>Soy de Medellín y he trabajado en remoto con equipos de Estados Unidos, España, Francia, Italia, Argentina y LATAM. Me muevo cómoda entre la estrategia y el detalle: puedo armar el plan y también escribir el copy.</p>
-    <div class="facts">
-      <div data-en='<b>Education</b><span>International Business · Specialization in Marketing Management</span>'><b>Formación</b><span>Negocios Internacionales · Esp. Mercadeo Gerencial</span></div>
-      <div data-en='<b>Languages</b><span>Spanish (native) · English (B2)</span>'><b>Idiomas</b><span>Español nativo · Inglés B2</span></div>
-      <div data-en='<b>Availability</b><span>Immediate · UTC−5</span>'><b>Disponibilidad</b><span>Inmediata · UTC−5</span></div>
-    </div>
-    <div class="timeline">
-      <div class="row"><b>Globant</b><span>Content &amp; Social PM</span><em>2025 — 2026</em></div>
-      <div class="row"><b>DAX International</b><span>Social Media Specialist</span><em>2024 — 2026</em></div>
-      <div class="row"><b>Waco Digital Hub</b><span>Social Strategist &amp; Copywriter</span><em data-en='Agency'>Agencia</em></div>
-      <div class="row"><b>Madecentro · TuHome</b><span>Content Creation Leader</span><em>E‑commerce</em></div>
-    </div>
-    <div class="tools">
-      <span>Meta Business Suite</span><span>Meta Ads</span><span>TikTok</span><span>Shopify</span><span>Google Ads</span><span>Canva</span><span>CapCut</span><span>Figma</span><span>Claude</span><span>Gemini</span><span>Scrum</span><span>Design Thinking</span>
+    <div class="k"><b>08</b> · <span data-en="Me">Yo</span></div>
+    <h2 class="h2 pop" style="margin-top:2vh" data-en="Hi, I'm <em>Laura</em>.">Hola, soy <em>Laura</em>.</h2>
+    <div class="me-grid">
+      <div class="pop"><h4 data-en="Who">Quién</h4><p data-en="Digital marketing strategist and project manager from Medellín, Colombia. International Business graduate with a Specialization in Marketing Management. Almost 5 years in social, content and e-commerce.">Estratega de marketing digital y project manager de Medellín, Colombia. Profesional en Negocios Internacionales con Especialización en Mercadeo Gerencial. Casi 5 años en social media, contenido y e-commerce.</p></div>
+      <div class="pop"><h4 data-en="How I work with others">Cómo trabajo con otros</h4><p data-en="Discipline, adaptability and calm under pressure. I communicate clearly and take every project from idea to execution. I've worked remotely with teams from the US, Spain, France, Italy, Argentina and LATAM.">Disciplina, adaptación y calma bajo presión. Comunico con claridad y llevo cada proyecto de la idea a la ejecución. He trabajado en remoto con equipos de EE. UU., España, Francia, Italia, Argentina y LATAM.</p></div>
+      <div class="pop"><h4 data-en="Where I've been">Dónde he estado</h4><ul class="jobs"><li><b>Globant</b><span>Content & Social PM</span></li><li><b>DAX International</b><span>Social Media Specialist</span></li><li><b>Waco Digital Hub</b><span>Social Strategist & Copywriter</span></li><li><b>Madecentro · TuHome</b><span>Content Creation Leader</span></li></ul></div>
+      <div class="pop"><h4 data-en="Always learning">Siempre aprendiendo</h4><p data-en="AI with Gemini (Google) · AI for Business & Marketing · Scrum & Agile · IT Project Management · Design Thinking. Tools: Meta Business Suite, Meta Ads, Google Ads, Shopify, Canva, CapCut, Figma, Claude.">IA con Gemini (Google) · IA para negocios y mercadeo · Scrum y metodologías ágiles · IT Project Management · Design Thinking. Herramientas: Meta Business Suite, Meta Ads, Google Ads, Shopify, Canva, CapCut, Figma, Claude.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<footer class="contact" id="hablemos">
-  <div class="lbl" data-en='Contact'>Contacto</div>
-  <div class="ask" data-en='Let’s<wbr> talk<span class="q">!</span>'>¿Habla<wbr>mos<span class="q">?</span></div>
-  <div class="contact-row">
-    <p data-en='If your team needs to turn goals into plans, and plans into content that works, I’d love to hear from you. Ongoing or for a specific project.'>Si tu equipo necesita convertir objetivos en planes, y planes en contenido que funcione, me encantaría escucharte. De forma continua o en un proyecto puntual.</p>
-    <div>
-      <div class="actions">
-        <a class="btn" href="/cv-laura-jaramillo-es.pdf" download data-en='CV in Spanish <span class="ar">↓</span>'>Hoja de vida ES <span class="ar">↓</span></a>
-        <a class="btn" href="/cv-laura-jaramillo-en.pdf" download data-en='Resume in English <span class="ar">↓</span>'>Resume EN <span class="ar">↓</span></a>
-        <a class="btn light" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener">LinkedIn <span class="ar">↗</span></a>
-      </div>
-      <div class="mail" data-en='or email me: <a href="mailto:laurajaramilloz21@gmail.com">laurajaramilloz21@gmail.com</a>'>o escríbeme: <a href="mailto:laurajaramilloz21@gmail.com">laurajaramilloz21@gmail.com</a></div>
+<!-- ============ 11 HABLEMOS ============ -->
+<section class="panel" id="hablemos" data-title="Hablemos" data-title-en="Let's talk">
+  <div>
+    <div class="k"><b>09</b> · <span data-en="Let's talk">Hablemos</span></div>
+    <div class="big pop" style="margin-top:2vh" data-en="Shall we <em>talk?</em>">¿Habla<em>mos?</em></div>
+    <p class="lead pop" data-en="If you need someone who turns goals into plans and plans into results — in your team or on a specific project — let's start with a conversation.">Si necesitas a alguien que convierta objetivos en planes y planes en resultados, dentro de tu equipo o en un proyecto puntual, empecemos por una conversación.</p>
+    <div class="cta pop">
+      <button class="btn y cvbtn"><span data-en="Download resume">Descargar hoja de vida</span> <span class="ar">↓</span></button>
+      <a class="btn w" href="https://www.linkedin.com/in/laura-jaramillo-zapata/" target="_blank" rel="noopener"><span data-en="Go to my LinkedIn">Ir a mi LinkedIn</span> <span class="ar">↗</span></a>
+      <span class="cvl" id="cvl"><button class="on" data-cv="es">ES</button><button data-cv="en">EN</button></span>
     </div>
+    <div class="facts pop"><span data-en="Remote">Remoto</span><span>UTC−5</span><span data-en="Spanish native · English B2">Español nativo · Inglés B2</span><span data-en="Available now">Disponible ya</span></div>
   </div>
-  <div class="foot"><span>© 2026 Laura Jaramillo</span><span data-en='Made with care in Medellín ✦'>Hecho con cariño en Medellín ✦</span></div>
-  <div class="giant" id="giant">Laura Jaramillo</div>
-</footer>
+  <div class="bye pop">
+    <div class="disc"></div>
+    <div class="badge2" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="cb" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text font-size="18" font-weight="700" fill="#2E2433"><textPath href="#cb" textLength="486" lengthAdjust="spacing" data-en="AVAILABLE ✦ REMOTE ✦ AVAILABLE ✦ REMOTE ✦">DISPONIBLE ✦ REMOTO ✦ DISPONIBLE ✦ REMOTO ✦</textPath></text></svg><div class="core">✦</div></div>
+    <img class="ps x1" src="hd/holacalm-11.webp" alt=""><img class="ps x2" src="hd/riascos-05.webp" alt="">
+  </div>
+</section>
 
-<!-- MODAL -->
-<div class="modal" id="modal" aria-hidden="true">
-  <div class="veil" data-close></div>
-  <div class="panel" role="dialog" aria-modal="true" id="panel"></div>
 </div>
-<div class="cur" id="cur" data-en='View'>Ver</div>
+<svg class="thread" id="thread"><path class="base" id="thB"/><path id="thP"/></svg>
+</div></div>
+
+<div class="walker" id="walker" style="display:none"><span class="bubble" id="wb"></span></div>
+
+<div class="hud" id="hud"><span class="tt" id="hudT"></span><div class="bar"><i id="hudP"></i><div class="dots" id="dots"></div></div><div class="nav"><button id="hPrev" aria-label="Anterior">←</button><button id="hNext" aria-label="Siguiente">→</button></div></div>
+
+<div class="modal" id="modal"><div class="mbox"><button class="x" data-close>✕</button><div class="mtx" id="mtx"></div><div class="mim" id="mim"></div></div></div>
+<div class="modal lb" id="lb"><img class="lbi" id="lbi" alt=""></div>
 
 <script>
-const CASES=[
- {id:'dax',name:'DAX Home',ind:'Hogar · cocina, baño y revestimientos',tag:'360°',f:['social','pm','ecom'],c:'var(--azul)',wide:true,
-  media:{type:'stack',web:'hd/daxweb-01.webp',phone:'hd/dax-01.webp',cards:['hd/dax-12.webp']},hero:['hd/dax-01.webp','hd/dax-12.webp','img/dax-franq-post.webp'],
-  lead:'Acompañé a DAX en su paso de showroom a un ecosistema digital 360°: una sola voz en redes, web, blog y email, y el lanzamiento de su programa de franquicias.',
-  role:['Estrategia social orgánica','Contenido e‑commerce, blog y email','Branding','Coordinación creativa','Franquicias'],
-  reto:'Pasar de una marca de showroom a una presencia digital coherente en varios países, y lanzar un programa de franquicias sin perder la voz de marca.',
-  hice:'Planeé el contenido y el storytelling de redes, escribí para web, blog, catálogos y email, y coordiné al equipo creativo y a los stakeholders (comerciales, técnicos y showrooms) para el lanzamiento de franquicias.',
-  res:'Una marca más reconocible, educativa y comercial a la vez, con más conversación en redes y más tráfico orgánico hacia la web. La franquicia salió en web y redes según el cronograma.',
-  gal:['hd/daxweb-05.webp','hd/daxweb-07.webp','img/dax-web.webp','img/dax-franq-showroom.webp','img/dax-blog.webp','img/dax-email.webp'],link:['daxib.com','https://www.daxib.com']},
- {id:'azzurry',name:'Tiendas Azzurry',ind:'Calzado y accesorios de marcas originales',tag:'Mundial ⚽',f:['social'],c:'var(--rosa)',
-  media:{type:'stack',phone:'hd/azzurry-01.webp',cards:['hd/azzurry-12.webp']},hero:['hd/azzurry-01.webp','hd/azzurry-12.webp'],
-  lead:'Lideré la estrategia en Meta y TikTok para posicionar a Azzurry como el lugar de las marcas originales.',
-  role:['Meta + TikTok','Calendario de lanzamientos','Guiones y copy','Orgánico y pauta'],
-  reto:'Destacar como distribuidor de marcas originales en una categoría saturada de promociones.',
-  hice:'Armé un calendario alrededor de lanzamientos, temporadas de rebajas y fútbol, con contenido, copys, guiones y campañas orgánicas y de pauta.',
-  res:'Más reconocimiento de marca, conexión con nuevos clientes y más tráfico hacia el e‑commerce.',
-  gal:[]},
- {id:'laskin',name:'Laskin',ind:'Dermatología y cuidado de la piel',tag:'Aniversario',f:['social'],c:'var(--verde)',
-  media:{type:'stack',phone:'hd/laskin-07.webp',cards:['hd/laskin-01.webp']},hero:['hd/laskin-07.webp','hd/laskin-01.webp','hd/laskin-12.webp'],
-  lead:'Estrategia de contenido para una marca de dermatología que se presenta como “expertos cuidando tu piel”.',
-  role:['Estrategia de contenido','Copys y guiones','Conceptos creativos','Orgánico y pauta'],
-  reto:'Hablar de tratamientos clínicos con cercanía, y convertir la campaña de aniversario en ventas.',
-  hice:'Desarrollé copys, guiones y conceptos para campañas orgánicas y de pauta, alineados con los objetivos comerciales.',
-  res:'Una campaña de aniversario con buen desempeño comercial y más visibilidad de marca.',
-  gal:[],link:['laskin.com.co','https://laskin.com.co/']},
- {id:'conavi',name:'Globant × Bancolombia',ind:'Banca · campaña navideña Conavi',tag:'Navidad ✦',f:['pm'],c:'var(--amarillo)',wide:true,
-  media:{type:'browser',src:'img/conavi-landing.webp'},
-  lead:'Coordiné el proyecto digital de la campaña navideña de Conavi en el sitio de Bancolombia, entre equipos creativos, técnicos y de producción.',
-  role:['Project management','Stakeholders','Cronograma y KPIs','Landing'],
-  reto:'A mitad de campaña, la estrategia de entrega de las tarjetas de edición limitada no estaba funcionando y había que cambiarla sin mover la fecha.',
-  hice:'Alineé a stakeholders y equipos para replantear el mensaje y construir una nueva landing con información más clara, con seguimiento diario de entregables y cronograma.',
-  res:'La gente entendió que la tarjeta era gratis y pudo adquirirla más fácil. Equipos alineados e hitos entregados a tiempo.',
-  gal:['img/conavi-landing.webp','img/conavi-equipo.webp']},
- {id:'calm',name:'Hola Calm',ind:'Colchones y descanso',tag:'Lanzamiento',f:['content'],c:'var(--lila)',wide:true,
-  media:{type:'stack',phone:'hd/holacalm-04.webp',cards:['hd/holacalm-09.webp','hd/holacalm-11.webp','hd/holacalm-01.webp']},hero:['hd/holacalm-04.webp','hd/holacalm-07.webp','hd/holacalm-09.webp'],
-  lead:'Participé en el lanzamiento digital de Hola Calm en Colombia: una marca de colchones en caja que llegaba a un mercado nuevo.',
-  role:['Guiones de Reels','Copywriting','Contenido promocional','Contenido inspiracional'],
-  reto:'Entrar al mercado colombiano y construir reconocimiento desde cero.',
-  hice:'Escribí guiones para Reels, copys y contenido promocional e inspiracional para dar a conocer la marca.',
-  res:'Reconocimiento desde las primeras etapas y más interés por sus productos en Colombia.',
-  gal:['hd/holacalm-01.webp','hd/holacalm-11.webp'],link:['@holacalmco','https://www.instagram.com/holacalmco/']},
- {id:'riascos',name:'Dr. Alfonso Riascos',ind:'Cirugía plástica, estética y reconstructiva',tag:'Sin antes/después',f:['content'],c:'var(--rosa)',
-  media:{type:'stack',phone:'hd/riascos-01.webp',cards:['hd/riascos-05.webp']},hero:['hd/riascos-01.webp','hd/riascos-05.webp','hd/riascos-08.webp'],
-  lead:'Contenido para un cirujano que quería comunicar su experiencia sin recurrir al clásico antes y después.',
-  role:['Guiones','Copys','Carruseles','Línea editorial'],
-  reto:'Transmitir credibilidad y cercanía sin el formato que usa toda la categoría.',
-  hice:'Desarrollé guiones, copys y carruseles alineados con la visión del doctor.',
-  res:'Más credibilidad y cercanía con la audiencia, y una comunidad en crecimiento.',
-  gal:['hd/riascos-10.webp'],link:['@drriascos','https://www.instagram.com/drriascos/']},
- {id:'vatia',name:'Vatia',ind:'Energía para hogares y empresas',tag:'B2B + B2C',f:['content'],c:'var(--amarillo)',
-  media:{type:'phone',src:'img/ig-vatia-perfil.webp'},
-  lead:'Convertí información técnica del sector energético en contenido claro y atractivo para redes.',
-  role:['Copywriting','Piezas educativas','Casos de éxito','B2B'],
-  reto:'Hacer entendible un tema técnico para hogares y para empresas al mismo tiempo.',
-  hice:'Escribí copys, piezas informativas y educativas, y casos de éxito para ambos públicos.',
-  res:'Una marca más cercana a hogares y al mercado B2B, con más interés por sus soluciones.',
-  gal:['img/ig-vatia-grid.webp'],link:['vatia.com.co','https://www.vatia.com.co']},
- {id:'park5',name:'Park 5',ind:'Parqueadero de aeropuerto con traslados',tag:'Reels',f:['content'],c:'var(--verde)',
-  media:{type:'post',cards:['hd/park5-01.webp']},hero:['hd/park5-01.webp'],
-  lead:'Contenido para redes de Park 5, el parqueadero con traslados que se presenta como el mejor precio del aeropuerto.',
-  role:['Reels','Copywriting','Piezas informativas'],
-  reto:'Explicar un servicio práctico (tarifas, traslados, cómo llegar) de forma simple y cercana.',
-  hice:'Contenido para redes: reels con voceros, piezas informativas y campañas de temporada.',
-  res:'Una comunicación más clara del servicio y una marca con más personalidad.',
-  gal:[],link:['@park5parqueadero','https://www.instagram.com/park5parqueadero/']},
- {id:'miplante',name:'Miplante',ind:'Marketplace con pago en la factura de servicios',tag:'SEO',f:['ecom','content'],c:'var(--lila)',
-  media:{type:'browser',src:'img/miplante-web.webp'},
-  lead:'Estrategia de contenido para un marketplace que permite comprar y pagar en cuotas con la factura de servicios públicos.',
-  role:['SEO','Contenido educativo','Web + redes'],
-  reto:'Explicar un modelo de compra nuevo y ganar posicionamiento orgánico.',
-  hice:'Investigación de palabras clave, contenido educativo e integración del sitio con las redes sociales.',
-  res:'Más presencia orgánica y más alcance entre nuevos usuarios.',
-  gal:['img/miplante-web.webp','img/miplante-redes.webp']},
- {id:'tuhome',name:'TuHome',ind:'Mobiliario y decoración',tag:'Amazon',f:['ecom'],c:'var(--azul)',wide:true,
-  media:{type:'browser',src:'img/tuhome-web.webp'},
-  lead:'Lideré la creación de contenido y la optimización de fichas de producto para crecer en e‑commerce y marketplaces.',
-  role:['Contenido e‑commerce','SEO de producto','Copywriting','Marketplaces'],
-  reto:'Ganar visibilidad en marketplaces como Amazon con un catálogo amplio.',
-  hice:'Optimicé fichas de producto con estrategia de copy y SEO para atraer tráfico calificado.',
-  res:'Más visibilidad en marketplaces y crecimiento en ventas, valoraciones y reseñas.',
-  gal:['img/tuhome-web.webp','img/tuhome-producto.webp'],link:['tuhomefurniture.com','https://www.tuhomefurniture.com']},
- {id:'fm',name:'FM Furniture',ind:'Mobiliario y decoración',tag:'Blog',f:['ecom'],c:'var(--rosa)',
-  media:{type:'browser',src:'img/fm-web.webp'},
-  lead:'Contenido para e‑commerce y marketplaces, con blog pensado para acompañar el proceso de compra.',
-  role:['SEO de producto','Blog','E‑commerce'],
-  reto:'Fortalecer el canal digital y atraer tráfico orgánico.',
-  hice:'Combiné optimización de producto con contenido de blog orientado a la compra.',
-  res:'Más visibilidad en buscadores y plataformas, y más visitas orgánicas.',
-  gal:['img/fm-web.webp','img/fm-blog.webp'],link:['fm-furniture.com','https://www.fm-furniture.com']}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const H=document.documentElement;
+let LANG='es';try{const q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='es')LANG=q;else if(localStorage.getItem('lj-lang')==='en')LANG='en';else if(!localStorage.getItem('lj-lang')&&!(navigator.language||'').toLowerCase().startsWith('es'))LANG='en'}catch(e){}
+const t=(o)=>typeof o==='string'?o:o[LANG];
+
+/* ================= DATA ================= */
+const LOOP=[
+ {n:{es:'Entender',en:'Understand'},c:'var(--yellow)',q:{es:'¿Qué necesita el negocio y cómo sabremos que funcionó?',en:'What does the business need, and how will we know it worked?'},o:{es:'Brief claro y un KPI de éxito.',en:'A clear brief and one success KPI.'}},
+ {n:{es:'Priorizar',en:'Prioritize'},c:'var(--coral)',q:{es:'¿Qué mueve la aguja primero y qué puede esperar?',en:'What moves the needle first, and what can wait?'},o:{es:'Lista de prioridades acordada.',en:'An agreed priority list.'}},
+ {n:{es:'Planear',en:'Plan'},c:'var(--lilac)',q:{es:'¿Quién hace qué, para cuándo y con qué recursos?',en:'Who does what, by when, with what resources?'},o:{es:'Cronograma, hitos y responsables.',en:'Timeline, milestones and owners.'}},
+ {n:{es:'Alinear',en:'Align'},c:'var(--blue)',q:{es:'¿Todos entienden el plan y cómo se aprueba?',en:'Does everyone understand the plan and how it gets approved?'},o:{es:'Stakeholders y equipo en la misma página.',en:'Stakeholders and team on the same page.'}},
+ {n:{es:'Ejecutar',en:'Execute'},c:'var(--green)',q:{es:'¿Vamos a tiempo y con la calidad que la marca merece?',en:'Are we on time, with the quality the brand deserves?'},o:{es:'Entregables revisados y seguimiento semanal.',en:'Reviewed deliverables and weekly follow-up.'}},
+ {n:{es:'Medir',en:'Measure'},c:'var(--purple)',q:{es:'¿Qué repetimos, qué cambiamos y qué dejamos de hacer?',en:'What do we repeat, change or stop?'},o:{es:'Reporte de KPIs y aprendizajes.',en:'KPI report and learnings.'}},
+];
+const CASES={
+ dax:{title:{es:'De marca de showroom a ecosistema digital 360°',en:'From showroom brand to a 360° digital ecosystem'},sub:{es:'DAX Home · DAX International · Social Media Specialist · 2024–2026',en:'DAX Home · DAX International · Social Media Specialist · 2024–2026'},
+  reto:{es:'Una marca de remodelación del hogar (pisos, cocina y baño) que necesitaba una sola voz coherente en redes, web, email y lanzamientos, y además llevar al mercado un nuevo programa de franquicias.',en:'A home-improvement brand (tile, kitchen & bath) that needed one consistent voice across social, web, email and launches — and a new franchise program to take to market.'},
+  pense:{es:'Si la voz no está clara, cada canal dice algo distinto. Así que el orden fue: identidad y tono → pilares de contenido → calendario → canales. Las franquicias las traté como un proyecto aparte, con responsables, hitos y un solo tablero.',en:'If the voice isn’t clear, every channel says something different. So the order was: identity and tone → content pillars → calendar → channels. I treated the franchise launch as its own project, with owners, milestones and one board.'},
+  hice:{es:['Lideré la estrategia 360° de social media, contenido y branding.','Cuidé identidad visual, tono de voz y posicionamiento en todos los canales.','Gestioné campañas de principio a fin con el equipo creativo y los stakeholders.','Creé contenido para redes, e-commerce, blog, catálogos y email.','Gestioné el lanzamiento de franquicias: equipos creativo, técnico, comercial y de showroom, más investigación de mercado B2B.'],en:['Led the 360° social, content and branding strategy.','Protected visual identity, tone of voice and positioning across channels.','Ran campaigns end to end with the creative team and stakeholders.','Created content for social, e-commerce, blog, catalogs and email.','Managed the franchise launch: creative, tech, sales and showroom teams, plus B2B market research.']},
+  res:{es:['Marca más reconocible y coherente','Más conversación en redes','Más tráfico orgánico al sitio','Franquicia lanzada a tiempo'],en:['A more recognizable, consistent brand','More conversation on social','More organic traffic to the website','Franchise launched on schedule']},
+  prueba:{es:'Liderazgo, visión de marca y gestión de un lanzamiento entre varias áreas.',en:'Leadership, brand vision and managing a cross-team launch.'},
+  img:['hd/daxweb-01','hd/dax-01','hd/dax-12','hd/daxweb-05','hd/daxweb-07','dax-email','dax-blog','dax-franq-post','dax-franq-showroom']},
+ globant:{title:{es:'Cambiar el plan a mitad de campaña, sin mover la fecha',en:'Changing the plan mid-campaign, without moving the date'},sub:{es:'Globant · cliente: Bancolombia · Content & Social Project Manager',en:'Globant · client: Bancolombia · Content & Social Project Manager'},
+  reto:{es:'En la campaña navideña de Conavi, la estrategia de entrega de las tarjetas de edición limitada no funcionaba: la gente no entendía que eran gratis ni cómo adquirirlas. Y una campaña de temporada no da margen para aplazar.',en:'In the Conavi Christmas campaign, the delivery strategy for the limited-edition cards wasn’t working: people didn’t understand they were free or how to get them. And a seasonal campaign leaves no room to postpone.'},
+  pense:{es:'La fecha no se podía mover; el mensaje y el camino, sí. Lo importante era decidir rápido, reunir a las personas correctas y que todos supieran qué cambiaba y quién se hacía cargo.',en:'The date couldn’t move; the message and the path could. The key was deciding fast, getting the right people together and making sure everyone knew what changed and who owned it.'},
+  hice:{es:['Alineé a stakeholders con los equipos creativos, técnicos y de producción alrededor del nuevo plan.','Coordiné una nueva landing y nueva información para que la oferta fuera clara y obtener la tarjeta fuera fácil.','Hice seguimiento de cronogramas, calidad de entregables y KPIs hasta el lanzamiento.'],en:['Aligned stakeholders with creative, tech and production teams around the new plan.','Coordinated a new landing and new information so the offer was clear and getting the card was easy.','Tracked timelines, deliverable quality and KPIs through launch.']},
+  res:{es:['Mensaje más claro','Hitos entregados a tiempo','Equipos multidisciplinarios alineados'],en:['Clearer message','Milestones delivered on time','Multidisciplinary teams aligned']},
+  prueba:{es:'Gestión bajo presión, toma de decisiones y coordinación de stakeholders.',en:'Managing under pressure, decision-making and stakeholder coordination.'},
+  img:['conavi-landing','conavi-equipo']},
+ azzurry:{title:{es:'Campañas todo el año que llevan al carrito',en:'Year-round campaigns that lead to the cart'},sub:{es:'Tiendas Azzurry · Estrategia en Meta y TikTok · Waco Digital Hub',en:'Tiendas Azzurry · Meta & TikTok strategy · Waco Digital Hub'},
+  reto:{es:'Una tienda de calzado y accesorios de marcas originales que necesitaba destacar en una categoría saturada de ofertas y llevar tráfico a su e-commerce.',en:'A footwear and accessories store selling original brands that needed to stand out in a category full of offers and drive traffic to its e-commerce.'},
+  pense:{es:'La gente no busca “una tienda”: busca el lanzamiento, la promo o la temporada. Así que armé un calendario de campañas para todo el año alrededor de esos momentos, y cada pieza tenía un objetivo comercial claro.',en:'People don’t look for “a store”: they look for the launch, the deal or the season. So I built a year-round campaign calendar around those moments, and every piece had a clear commercial goal.'},
+  hice:{es:['Lideré la estrategia en Meta y TikTok.','Creé contenido, copys y guiones para campañas orgánicas y de pauta.','Armé un calendario de campañas para todo el año: lanzamientos, rebajas de temporada y fechas clave.'],en:['Led the Meta and TikTok strategy.','Created content, copy and scripts for organic and paid campaigns.','Built a year-round campaign calendar: launches, seasonal sales and key dates.']},
+  res:{es:['Más reconocimiento de marca','Nuevos clientes','Más tráfico al e-commerce'],en:['More brand awareness','New customers','More traffic to the online store']},
+  prueba:{es:'Dirección visual y de contenido con objetivo comercial.',en:'Visual and content direction with a commercial goal.'},
+  img:['hd/azzurry-01','hd/azzurry-12','ig-azzurry-grid']},
+ laskin:{title:{es:'Un aniversario convertido en motor de ventas',en:'An anniversary turned into a sales engine'},sub:{es:'Laskin · Dermatología y medicina estética · Mes de aniversario',en:'Laskin · Dermatology & aesthetic medicine · Anniversary month'},
+  reto:{es:'Convertir el mes de aniversario en un impulsor de ventas, con una inversión eficiente en pauta.',en:'Turn the anniversary month into a sales driver, with efficient ad investment.'},
+  pense:{es:'Cada canal con un rol claro: Meta para dar escala y Google para sumar resultados de alta eficiencia, con una distribución del presupuesto pensada para vender.',en:'Each channel with a clear role: Meta to bring scale and Google to add high-efficiency results, with a budget split built to sell.'},
+  hice:{es:['Estrategia de contenido, copys, guiones y conceptos creativos para la campaña de aniversario.','Campañas orgánicas y de pauta en Meta y Google enfocadas en promoción y conversión.'],en:['Content strategy, copy, scripts and creative concepts for the anniversary campaign.','Organic and paid campaigns on Meta and Google focused on promotion and conversion.']},
+  res:{es:['Ventas impulsadas con claridad por la pauta','ROAS alto y sostenido','Costo por resultado competitivo y en descenso','Depilación láser: principal motor de conversión'],en:['Ads clearly drove sales','High, sustained ROAS','Competitive, falling cost per result','Laser hair removal: main conversion driver']},
+  canales:{es:'Meta aportó escala y Google sumó resultados de alta eficiencia, con el costo unitario más bajo. Meta mantuvo una eficiencia acorde a su volumen de ventas.',en:'Meta brought scale and Google added high-efficiency results with the lowest unit cost. Meta kept an efficiency in line with its sales volume.'},
+  insight:{es:'Alta concentración de sesiones en Cali: una oportunidad para profundizar la demanda local y reforzar el retail.',en:'A high concentration of sessions in Cali: an opportunity to deepen local demand and strengthen retail.'},
+  prueba:{es:'Pensamiento comercial: contenido y pauta conectados con ventas, y lectura de datos para decidir el siguiente paso.',en:'Commercial thinking: content and ads connected to sales, and reading the data to decide the next step.'},
+  img:['hd/laskin-01','hd/laskin-07','hd/laskin-12','ig-laskin-grid']}
+};
+const IC={
+ tile:'<path d="M8 8 h14 v14 h-14 z M26 8 h14 v14 h-14 z M8 26 h14 v14 h-14 z M26 26 h14 v14 h-14 z"/>',
+ spark:'<path d="M24 6 C 25 17 31 23 42 24 C 31 25 25 31 24 42 C 23 31 17 25 6 24 C 17 23 23 17 24 6 Z" fill="#fff"/>',
+ shoe:'<path d="M6 30 C 6 22 10 16 14 16 C 18 22 24 24 30 25 C 38 26 42 28 42 33 L 42 36 L 6 36 Z" fill="#fff"/><path d="M6 32 h36 M18 20 l3 -3 M22 23 l3 -3"/>',
+ heart:'<path d="M24 40 C 10 30 6 22 8 16 C 10 10 18 8 24 15 C 30 8 38 10 40 16 C 42 22 38 30 24 40 Z" fill="#fff"/><path d="M14 22 h6 l3 -5 l4 10 l3 -5 h5"/>',
+ moon:'<path d="M30 8 C 20 10 14 18 15 27 C 16 36 25 42 34 40 C 26 36 22 28 24 20 C 25 15 28 11 30 8 Z" fill="#fff"/><path d="M34 12 h6 l-6 7 h6"/>',
+ bolt:'<path d="M27 5 L 11 27 L 23 27 L 19 43 L 37 19 L 25 19 Z" fill="#fff"/>',
+ plane:'<path d="M6 26 L 42 12 L 30 40 L 24 30 Z" fill="#fff"/><path d="M24 30 L 42 12"/>',
+ nodes:'<circle cx="12" cy="14" r="5" fill="#fff"/><circle cx="36" cy="14" r="5" fill="#fff"/><circle cx="24" cy="36" r="5" fill="#fff"/><path d="M16 17 L 21 32 M32 17 L 27 32 M17 14 h14"/>',
+ sofa:'<path d="M8 22 C 8 16 12 14 16 14 h16 C 36 14 40 16 40 22 v4 h-32 z" fill="#fff"/><path d="M5 24 h6 v10 h26 v-10 h6 v12 h-38 z M10 36 v4 M38 36 v4"/>',
+ lamp:'<path d="M14 8 h20 l6 14 h-32 z" fill="#fff"/><path d="M24 22 v16 M16 40 h16"/>',
+ bag:'<path d="M10 18 h28 l-3 24 h-22 z" fill="#fff"/><path d="M18 18 c0 -8 12 -8 12 0"/><path d="M24 36 c-6 -4 -4 -10 0 -12 c4 2 6 8 0 12 z M24 36 v-8"/>',
+};
+const BRANDS=[
+ {id:'dax',name:'DAX Home',ic:'tile',c:'var(--yellow)',x:4,y:6,cats:{es:'Social · Branding · E-commerce · PM',en:'Social · Branding · E-commerce · PM'},case:'dax'},
+ {id:'laskin',name:'Laskin',ic:'spark',c:'var(--lilac)',x:22,y:46,cats:{es:'Social · Contenido · Pauta',en:'Social · Content · Ads'},case:'laskin',
+  sector:{es:'Dermatología y medicina estética',en:'Dermatology & aesthetic medicine'},
+  d:{es:'Estrategias de contenido para redes, copys, guiones y conceptos creativos para campañas orgánicas y de pauta. Participé en la campaña de aniversario con contenido enfocado en promoción y conversión.',en:'Social content strategy, copy, scripts and creative concepts for organic and paid campaigns. I worked on the anniversary campaign with content focused on promotion and conversion.'},
+  m:{es:['Campaña de aniversario con ROAS alto'],en:['Anniversary campaign with high ROAS']},img:['ig-laskin-grid','ig-laskin-perfil'],links:[['Instagram','https://www.instagram.com/laskincolombia/'],['Web','https://laskin.com.co/']]},
+ {id:'azzurry',name:'Azzurry',ic:'shoe',c:'var(--blue)',x:38,y:4,cats:{es:'Social · E-commerce',en:'Social · E-commerce'},case:'azzurry'},
+ {id:'riascos',name:'Dr. Alfonso Riascos',ic:'heart',c:'#F7C6D0',x:52,y:50,cats:{es:'Contenido · Copy',en:'Content · Copy'},
+  sector:{es:'Cirugía plástica, estética y reconstructiva',en:'Plastic, aesthetic & reconstructive surgery'},
+  d:{es:'Guiones, copys y carruseles para comunicar su experiencia sin recurrir al clásico “antes y después”. Contenido educativo que transmite credibilidad y cercanía.',en:'Scripts, copy and carousels to communicate his expertise without the classic “before & after”. Educational content that builds credibility and closeness.'},
+  m:{es:['Crecimiento de la comunidad','Más alcance e interacción'],en:['Community growth','More reach and engagement']},img:['hd/riascos-01','hd/riascos-05','hd/riascos-08','hd/riascos-10'],links:[['Instagram','https://www.instagram.com/drriascos/']]},
+ {id:'holacalm',name:'Hola Calm',ic:'moon',c:'#BFD4FF',x:68,y:8,cats:{es:'Lanzamiento · Contenido',en:'Launch · Content'},
+  sector:{es:'Colchones y descanso · lanzamiento en Colombia',en:'Mattresses & sleep · Colombia launch'},
+  d:{es:'Participé en el lanzamiento digital de la marca en Colombia: guiones para Reels, copys y contenido promocional e inspiracional para darla a conocer.',en:'Part of the brand’s digital launch in Colombia: Reels scripts, copy and promotional + inspirational content to build awareness.'},
+  m:{es:['Entrada positiva al mercado colombiano','Más alcance, vistas y clics al sitio'],en:['Positive market entry in Colombia','More reach, views and website clicks']},img:['hd/holacalm-04','hd/holacalm-07','hd/holacalm-09','hd/holacalm-01','hd/holacalm-11'],links:[['Instagram','https://www.instagram.com/holacalmco/']]},
+ {id:'vatia',name:'Vatia Energía',ic:'bolt',c:'#E6F59A',x:84,y:44,cats:{es:'Contenido · B2B',en:'Content · B2B'},
+  sector:{es:'Energía para hogares y empresas',en:'Energy for homes and businesses'},
+  d:{es:'Convertí información técnica del sector energético en contenido claro y atractivo: copys, piezas educativas y casos de éxito para hogares y empresas.',en:'Turned technical energy-sector information into clear, engaging content: copy, educational pieces and success stories for homes and businesses.'},
+  m:{es:['Más interés de empresas','Más alcance e interacción'],en:['More interest from businesses','More reach and engagement']},img:['ig-vatia-grid','ig-vatia-perfil'],links:[['Instagram','https://www.instagram.com/vatia_energia/']]},
+ {id:'globant',name:'Globant',ic:'nodes',c:'#C9F0D5',x:10,y:78,cats:{es:'Project Management',en:'Project Management'},case:'globant'},
+ {id:'park5',name:'Park 5',ic:'plane',c:'#D6F0C2',x:30,y:80,cats:{es:'Social · Contenido',en:'Social · Content'},
+  sector:{es:'Parqueadero junto al aeropuerto de Cali',en:'Airport parking in Cali'},
+  d:{es:'Contenido para redes de un servicio local: tarifas, cómo llegar, beneficios y momentos de temporada, con un tono cercano y directo.',en:'Social content for a local service: pricing, how to get there, benefits and seasonal moments, with a close, direct tone.'},
+  m:{es:['Contenido pensado para conversión local'],en:['Content built for local conversion']},img:['hd/park5-01','ig-park5-grid'],links:[['Instagram','https://www.instagram.com/park5parqueadero/']]},
+ {id:'tuhome',name:'TuHome',ic:'sofa',c:'#FFD9C7',x:62,y:80,cats:{es:'E-commerce · SEO · Amazon',en:'E-commerce · SEO · Amazon'},
+  sector:{es:'Mobiliario y decoración · Madecentro',en:'Furniture & décor · Madecentro'},
+  d:{es:'Lideré la creación de contenido y la optimización SEO de productos para mejorar el posicionamiento orgánico, atraer tráfico calificado e impulsar la conversión, también en Amazon.',en:'Led content creation and product SEO to improve organic ranking, attract qualified traffic and drive conversion, including on Amazon.'},
+  m:{es:['Más ventas, valoraciones y reseñas','Más visibilidad en marketplaces'],en:['More sales, ratings and reviews','More marketplace visibility']},img:['tuhome-web','tuhome-producto'],links:[['Web','https://www.tuhomefurniture.com']]},
+ {id:'fm',name:'FM Furniture',ic:'lamp',c:'#FFE7A3',x:78,y:82,cats:{es:'E-commerce · SEO',en:'E-commerce · SEO'},
+  sector:{es:'Mobiliario y decoración',en:'Furniture & décor'},
+  d:{es:'Estrategia de contenido para e-commerce y marketplaces: SEO de productos y blog para atraer tráfico orgánico y acompañar la compra.',en:'Content strategy for e-commerce and marketplaces: product SEO and blog content to attract organic traffic and support the purchase.'},
+  m:{es:['Más tráfico orgánico','Más visibilidad y conversión'],en:['More organic traffic','More visibility and conversion']},img:['fm-web','fm-blog'],links:[['Web','https://www.fm-furniture.com']]},
+ {id:'miplante',name:'Miplante',ic:'bag',c:'#CDEBFF',x:93,y:12,cats:{es:'Marketplace · SEO',en:'Marketplace · SEO'},
+  sector:{es:'Marketplace con pago en la factura de servicios',en:'Marketplace paid through the utility bill'},
+  d:{es:'Estrategia de contenido basada en SEO, investigación de palabras clave y contenido educativo, integrando el sitio con las redes para ganar visibilidad.',en:'SEO-based content strategy, keyword research and educational content, connecting the website with social to gain visibility.'},
+  m:{es:['Web y redes integradas','Más visibilidad y tráfico orgánico'],en:['Web and social integrated','More visibility and organic traffic']},img:['miplante-web','miplante-redes'],links:[]},
 ];
 
-const EN={
- dax:{ind:'Home · kitchen, bath & surfaces',lead:'I helped DAX go from showroom to a 360° digital ecosystem: one voice across social, web, blog and email, plus the launch of its franchise program.',role:['Organic social strategy','E‑commerce, blog & email content','Branding','Creative coordination','Franchising'],reto:'Turn a showroom brand into a consistent digital presence across several countries, and launch a franchise program without losing the brand voice.',hice:'I planned social content and storytelling, wrote for web, blog, catalogs and email, and coordinated the creative team and stakeholders (sales, technical and showrooms) for the franchise launch.',res:'A brand that is more recognizable, educational and commercial at once, with more conversation on social and more organic traffic to the website. The franchise launched on web and social on schedule.'},
- conavi:{ind:'Banking · Conavi Christmas campaign',tag:'Christmas ✦',lead:'I coordinated the digital project for Conavi’s Christmas campaign on Bancolombia’s site, across creative, technical and production teams.',role:['Project management','Stakeholders','Timeline & KPIs','Landing page'],reto:'Mid‑campaign, the delivery strategy for the limited‑edition cards wasn’t working and had to change without moving the date.',hice:'I aligned stakeholders and teams to rethink the message and build a new landing page with clearer information, tracking deliverables and the timeline every day.',res:'People understood the card was free and could get it more easily. Teams aligned and milestones delivered on time.'},
- azzurry:{ind:'Original‑brand sneakers & accessories',tag:'World Cup ⚽',lead:'I led the Meta and TikTok strategy to position Azzurry as the place for original brands.',role:['Meta + TikTok','Launch calendar','Scripts & copy','Organic & paid'],reto:'Stand out as an original‑brand retailer in a category flooded with promotions.',hice:'I built a calendar around launches, sale seasons and football, with content, copy, scripts and organic and paid campaigns.',res:'More brand awareness, connection with new customers and more traffic to the online store.'},
- laskin:{ind:'Dermatology & skincare',tag:'Anniversary',lead:'Content strategy for a dermatology brand that presents itself as “experts caring for your skin”.',role:['Content strategy','Copy & scripts','Creative concepts','Organic & paid'],reto:'Talk about clinical treatments in a warm, approachable way, and turn the anniversary campaign into sales.',hice:'I developed copy, scripts and concepts for organic and paid campaigns aligned with business goals.',res:'An anniversary campaign with strong commercial performance and more brand visibility.'},
- calm:{ind:'Mattresses & sleep',tag:'Launch',lead:'I took part in Hola Calm’s digital launch in Colombia: a mattress‑in‑a‑box brand entering a new market.',role:['Reels scripts','Copywriting','Promotional content','Inspirational content'],reto:'Enter the Colombian market and build awareness from scratch.',hice:'I wrote Reels scripts, copy and promotional and inspirational content to introduce the brand.',res:'Recognition from the early stages and growing interest in its products in Colombia.'},
- riascos:{ind:'Plastic, aesthetic & reconstructive surgery',tag:'No before/after',lead:'Content for a surgeon who wanted to communicate his expertise without the classic before‑and‑after.',role:['Scripts','Copy','Carousels','Editorial line'],reto:'Convey credibility and closeness without the format the whole category uses.',hice:'I developed scripts, copy and carousels aligned with the doctor’s vision.',res:'More credibility and closeness with the audience, and a growing community.'},
- vatia:{ind:'Energy for homes & businesses',lead:'I turned technical energy‑sector information into clear, engaging social content.',role:['Copywriting','Educational pieces','Success stories','B2B'],reto:'Make a technical topic understandable for homes and businesses at the same time.',hice:'I wrote copy, informational and educational pieces, and success stories for both audiences.',res:'A brand closer to households and the B2B market, with more interest in its solutions.'},
- park5:{ind:'Airport parking with shuttle',lead:'Social content for Park 5, the parking lot with shuttles that bills itself as the best price at the airport.',role:['Reels','Copywriting','Informational pieces'],reto:'Explain a practical service (rates, shuttles, how to get there) in a simple, friendly way.',hice:'Social content: Reels with spokespeople, informational pieces and seasonal campaigns.',res:'Clearer communication of the service and a brand with more personality.'},
- miplante:{ind:'Marketplace paid through your utility bill',lead:'Content strategy for a marketplace where you buy and pay in installments through your utility bill.',role:['SEO','Educational content','Web + social'],reto:'Explain a new way of buying and gain organic ranking.',hice:'Keyword research, educational content and connecting the website with social media.',res:'More organic presence and wider reach among new users.'},
- tuhome:{ind:'Furniture & décor',lead:'I led content creation and product listing optimization to grow in e‑commerce and marketplaces.',role:['E‑commerce content','Product SEO','Copywriting','Marketplaces'],reto:'Gain visibility on marketplaces like Amazon with a large catalog.',hice:'I optimized product listings with a copy and SEO strategy to attract qualified traffic.',res:'More marketplace visibility and growth in sales, ratings and reviews.'},
- fm:{ind:'Furniture & décor',lead:'Content for e‑commerce and marketplaces, with a blog built to support the buying journey.',role:['Product SEO','Blog','E‑commerce'],reto:'Strengthen the digital channel and attract organic traffic.',hice:'I combined product optimization with purchase‑oriented blog content.',res:'More visibility on search engines and platforms, and more organic visits.'}
-};
-let LANG='es';
-try{const q=new URLSearchParams(location.search).get('lang');const st=localStorage.getItem('lj-lang');LANG=q||st||((navigator.language||'').toLowerCase().startsWith('es')?'es':'en');if(LANG!=='en')LANG='es'}catch(e){}
-const T=(c,k)=>(LANG==='en'&&EN[c.id]&&EN[c.id][k])||c[k];
-const UI={es:{reto:'El reto',hice:'Qué hice',res:'Resultado',next:'Siguiente',close:'Cerrar',site:'Sitio de',content:'Contenido de'},en:{reto:'The challenge',hice:'What I did',res:'Outcome',next:'Next',close:'Close',site:'Website of',content:'Content by'}};
+/* ================= i18n ================= */
+function setLang(l){
+  LANG=l;H.lang=l;
+  $$('[data-en]').forEach(el=>{if(el.dataset.es===undefined)el.dataset.es=el.innerHTML;el.innerHTML=l==='en'?el.dataset.en:el.dataset.es});
+  $$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  cvLang=l;$$('#cvl button').forEach(b=>b.classList.toggle('on',b.dataset.cv===cvLang));
+  buildLoop();buildWall();buildDots();setLoop(loopI);hud();
+  try{localStorage.setItem('lj-lang',l)}catch(e){}
+}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 
-/* split hero words */
-document.querySelectorAll('[data-split]').forEach((el,li)=>{
-  const t=el.textContent;el.textContent='';
-  [...t].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;s.style.animationDelay=(li*.25+i*.055+.1)+'s';el.appendChild(s)});
-});
-
-/* stickers */
-const ST=[['Social media','var(--rosa)',-8,55,28,'Social media'],['IA ✦','var(--paper)',12,71,25,'AI ✦'],['Project Manager','var(--lila)',-4,59,40,'Project Manager'],['Contenido','var(--amarillo)',6,3,52,'Content'],['Growth','var(--verde)',9,9,61,'Growth'],['Copy & storytelling','var(--azul)',-6,2,70,'Copy & storytelling']];
-const sb=document.getElementById('stickers');
-ST.forEach(([t,c,r,x,y,en],i)=>{const d=document.createElement('div');d.className='st';d.textContent=t;d.dataset.en=en;d.style.background=c;d.style.setProperty('--rot',r+'deg');d.style.transform=`rotate(${r}deg)`;d.style.left=x+'%';d.style.top=y+'%';d.style.animationDelay=(1.3+i*.12)+'s';sb.appendChild(d);drag(d)});
-function drag(el){let sx,sy,ox,oy;el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);sx=e.clientX;sy=e.clientY;ox=el.offsetLeft;oy=el.offsetTop;el.style.zIndex=5;el.style.animation='none';el.style.transform=`rotate(${parseFloat(el.style.getPropertyValue('--rot'))*-1}deg) scale(1.08)`;
-  const mv=ev=>{el.style.left=ox+ev.clientX-sx+'px';el.style.top=oy+ev.clientY-sy+'px'};
-  const up=()=>{el.style.transform=`rotate(${el.style.getPropertyValue('--rot')})`;el.removeEventListener('pointermove',mv);el.removeEventListener('pointerup',up)};
-  el.addEventListener('pointermove',mv);el.addEventListener('pointerup',up)})}
-
-/* marquees */
-const all=['dax-00','dax-01','dax-02','dax-10','dax-11','dax-12','dax-20','dax-21','dax-22','holacalm-00','holacalm-02','holacalm-10','holacalm-11','holacalm-12','holacalm-20','holacalm-21','laskin-00','laskin-02','laskin-10','laskin-11','laskin-12','laskin-20','azzurry-00','azzurry-01','azzurry-02','park5-00','park5-01','park5-02','park5-11','park5-12','riascos-00','riascos-02','riascos-10','riascos-11','riascos-12','riascos-20','vatia-00','vatia-01','vatia-02','vatia-10','vatia-12','vatia-21'];
-const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=(i*7+3)%(i+1);[a[i],a[j]]=[a[j],a[i]]}return a};
-function fill(id,list){const t=document.getElementById(id);const h=list.map(n=>`<img src="hd/${n}.webp" alt="" loading="lazy"${n.includes('web')?' class="wd"':''}>`).join('');t.innerHTML=h+h}
-fill('t1',['dax-01','holacalm-09','laskin-01','riascos-05','daxweb-05','azzurry-12','park5-01','holacalm-11','riascos-08','dax-12']);
-fill('t2',['laskin-07','holacalm-01','riascos-10','azzurry-01','daxweb-01','holacalm-04','riascos-01','holacalm-07','laskin-01','daxweb-07']);
-const IND={es:['Hogar','Dermatología','Moda deportiva','Descanso','Energía','Salud','Banca','Movilidad','Marketplaces'],en:['Home','Dermatology','Sportswear','Sleep','Energy','Health','Banking','Mobility','Marketplaces']};
-function renderInd(){const it=IND[LANG].map(w=>`<span>${w}</span><span class="s">✦</span>`).join('');document.getElementById('t3').innerHTML=it+it}
-
-/* statement words */
-const stmt=document.getElementById('stmt');const STMT={es:stmt.textContent,en:stmt.dataset.en};stmt.removeAttribute('data-en');let words=[];
-function renderStmt(){stmt.innerHTML=STMT[LANG].split(/(\[[^\]]+\])|\s+/).filter(Boolean).map(w=>{
-  const m=w.match(/^\[(.+)\|(c\d)\]$/);return m?`<span class="w hl ${m[2]}">${m[1]}</span>`:`<span class="w">${w}</span>`}).join(' ');
-  words=[...stmt.querySelectorAll('.w')]}
-function paint(){const r=stmt.getBoundingClientRect();const vh=innerHeight;const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<n))}
-
-/* cards */
-const grid=document.getElementById('grid');let cards=[];
-function renderCards(){grid.innerHTML=CASES.map((c,i)=>{
-  const m=c.media;
-  if(m.type==='stack'||m.type==='post'){
-    const web=m.web?`<div class="webbg"><div class="bar"><i></i><i></i><i></i></div><img src="${m.web}" alt="${UI[LANG].site} ${c.name}" loading="lazy"></div>`:'';
-    const ph=m.phone?`<div class="phone full"><img src="${m.phone}" alt="${UI[LANG].content} ${c.name}" loading="lazy"></div>`:'';
-    const cs=m.type==='post'?`<img class="post solo" src="${m.cards[0]}" alt="" loading="lazy">`:(m.cards||[]).map((x,k)=>`<img class="post p${k+1}" src="${x}" alt="" loading="lazy">`).join('');
-    return `<article class="card${c.wide?' wide':''}" data-i="${i}" data-f="${c.f.join(' ')}" tabindex="0">
-    <div class="media${m.web?' hasweb':''}" style="background:${c.c}"><span class="tag">${T(c,'tag')}</span>${web}${ph}${cs}</div>
-    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${T(c,'ind')}</p></div></article>`}
-  const inner=m.type==='phone'?`<div class="phone"><div class="scr"><img src="${m.src}" alt="Instagram ${c.name}" loading="lazy">${c.gal[0].includes('grid')?`<img src="${c.gal[0]}" alt="" loading="lazy">`:''}</div></div>${m.second?`<div class="phone second"><div class="scr"><img src="${m.second}" alt="" loading="lazy"></div></div>`:''}`
-   :`<div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="${m.src}" alt="${UI[LANG].site} ${c.name}" loading="lazy"></div>`;
-  return `<article class="card${c.wide?' wide':''}" data-i="${i}" data-f="${c.f.join(' ')}" tabindex="0">
-    <div class="media" style="background:${c.c}"><span class="tag">${T(c,'tag')}</span>${inner}</div>
-    <div class="meta"><h3>${c.name} <span class="go">↗</span></h3><p>${T(c,'ind')}</p></div></article>`}).join('');
-cards=[...grid.querySelectorAll('.card')];
-const f=(document.querySelector('.chip.on')||{}).dataset?.f||'all';
-cards.forEach((c,i)=>{if(f!=='all'&&!c.dataset.f.includes(f))c.classList.add('hidden');c.style.transitionDelay=(i%3)*.08+'s';if(typeof io!=='undefined')io.observe(c)})}
-document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
-  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;
-  cards.forEach(c=>{const show=f==='all'||c.dataset.f.includes(f);c.classList.toggle('hidden',!show);if(show){c.classList.remove('in');requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('in')))}})});
-
-/* reveal */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-
-document.querySelectorAll('.step').forEach((s,i)=>{s.style.transitionDelay=i*.07+'s';io.observe(s)});
-
-/* modal */
-const modal=document.getElementById('modal'),panel=document.getElementById('panel');let cur=-1;
-function openCase(i,keep){cur=i;const c=CASES[i];const nx=CASES[(i+1)%CASES.length];
-  const heroImgs=c.hero||(c.media.type==='phone'?[c.media.src,c.gal[0]]:[c.gal[0]]);const galImgs=c.hero?c.gal:c.gal.slice(1);
-  const u=UI[LANG];
-  panel.innerHTML=`<button class="close" data-close aria-label="${u.close}">✕</button>
-  <div class="p-top"><div class="kicker">${T(c,'ind')}</div><h2>${c.name}</h2><p class="lead">${T(c,'lead')}</p>
-   <div class="p-tags">${T(c,'role').map(r=>`<span>${r}</span>`).join('')}</div></div>
-  <div class="p-hero" style="background:${c.c}">${heroImgs.map(s=>`<img src="${s}" alt="">`).join('')}</div>
-  <div class="p-body"><div><h5>${u.reto}</h5><p>${T(c,'reto')}</p></div><div><h5>${u.hice}</h5><p>${T(c,'hice')}</p></div><div><h5>${u.res}</h5><p>${T(c,'res')}</p></div></div>
-  ${galImgs.length?`<div class="p-gal">${galImgs.map(s=>`<img src="${s}" alt="" loading="lazy">`).join('')}</div>`:''}
-  <div class="p-foot">${c.link?`<a class="btn light" href="${c.link[1]}" target="_blank" rel="noopener">${c.link[0]} <span class="ar">↗</span></a>`:'<span></span>'}
-   <button class="next" data-next>${u.next}: ${nx.name} <span>→</span></button></div>`;
-  if(!keep)panel.scrollTop=0;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function closeCase(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-grid.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openCase(+c.dataset.i)});
-grid.addEventListener('keydown',e=>{if(e.key==='Enter'){const c=e.target.closest('.card');if(c)openCase(+c.dataset.i)}});
-modal.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeCase();if(e.target.closest('[data-next]'))openCase((cur+1)%CASES.length)});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeCase()});
-
-/* cursor */
-const cu=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
-if(matchMedia('(pointer:fine)').matches){
-  addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
-  (function loop(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;cu.style.left=cx+'px';cu.style.top=cy+'px';requestAnimationFrame(loop)})();
-  grid.addEventListener('pointerover',e=>{cu.classList.toggle('on',!!e.target.closest('.card'))});
-  grid.addEventListener('pointerleave',()=>cu.classList.remove('on'));
+/* ================= horizontal engine ================= */
+const track=$('#track'),hs=$('#hs'),PANELS=$$('.panel');
+let maxX=0,cur=0,tgt=0,vel=0,mobile=false;
+function layout(){
+  mobile=innerWidth<=820;
+  if(mobile){hs.style.height='';track.style.transform='';return}
+  const w=track.scrollWidth;maxX=w-innerWidth;hs.style.height=(maxX+innerHeight)+'px';
+  buildThread(w);
+}
+function buildThread(w){
+  const th=$('#thread');th.setAttribute('width',w);th.style.width=w+'px';th.setAttribute('viewBox',`0 0 ${w} 60`);
+  let d='M0 30';const seg=180;for(let x=seg;x<=w;x+=seg){const y=(Math.round(x/seg)%2)?12:48;d+=` Q ${x-seg/2} ${y} ${x} 30`}
+  $('#thB').setAttribute('d',d);const p=$('#thP');p.setAttribute('d',d);
+  const L=p.getTotalLength();p.style.strokeDasharray=L;p.dataset.len=L;
+}
+addEventListener('resize',()=>{layout();measureDraw()});
+addEventListener('wheel',e=>{if(mobile||$('.modal.open'))return;if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();scrollBy(0,e.deltaX)}},{passive:false});
+function panelX(i){return PANELS[i].offsetLeft}
+function goTo(i){i=Math.max(0,Math.min(PANELS.length-1,i));
+  if(mobile){PANELS[i].scrollIntoView({behavior:'smooth'});return}
+  scrollTo({top:Math.min(panelX(i),maxX),behavior:'smooth'})}
+function idx(){if(mobile){let k=0;PANELS.forEach((p,i)=>{if(p.getBoundingClientRect().top<innerHeight*.5)k=i});return k}
+  return Math.min(PANELS.length-1,Math.round(cur/innerWidth))}
+let lastI=-1,walkT=0;
+function frame(){
+  if(!mobile){tgt=Math.min(scrollY,maxX);const prev=cur;cur+=(tgt-cur)*.1;if(Math.abs(tgt-cur)<.3)cur=tgt;vel=cur-prev;
+    track.style.transform=`translate3d(${-cur}px,0,0)`;
+    const p=$('#thP');if(p.dataset.len){const L=+p.dataset.len;p.style.strokeDashoffset=L-(L*((cur+innerWidth*.5)/(maxX+innerWidth)))}
+    const w=$('#walker');if(Math.abs(vel)>.6){w.classList.add('walking');w.classList.toggle('flip',vel<0);walkT=performance.now()}else if(performance.now()-walkT>150)w.classList.remove('walking');
+    PANELS.forEach(pn=>{const r=pn.offsetLeft-cur;if(r<innerWidth*.72&&r>-innerWidth*.9)pn.classList.add('in')});
+    $('#arcs').style.transform=`translateX(${cur*.25}px)`;
+  }else{PANELS.forEach(pn=>{if(pn.getBoundingClientRect().top<innerHeight*.8)pn.classList.add('in')})}
+  const i=idx();if(i!==lastI){lastI=i;hud();talk(i)}
+  const past=(mobile?scrollY:cur)>innerWidth*.4;$('#brand').classList.toggle('show',past);$('#menu').classList.toggle('mini',past);
+  requestAnimationFrame(frame);
 }
 
-/* giant footer letters */
-const g=document.getElementById('giant');g.innerHTML=[...g.textContent].map(ch=>ch===' '?'&nbsp;':`<span>${ch}</span>`).join('');
+/* ================= HUD ================= */
+function buildDots(){$('#dots').innerHTML=PANELS.map((p,i)=>`<button style="left:${i/(PANELS.length-1)*100}%" data-i="${i}" title="${LANG==='en'?p.dataset.titleEn:p.dataset.title}"></button>`).join('');$$('#dots button').forEach(b=>b.onclick=()=>goTo(+b.dataset.i))}
+function hud(){const i=Math.max(0,lastI),p=PANELS[i];$('#hudT').textContent=`${String(i+1).padStart(2,'0')} / ${PANELS.length} · ${LANG==='en'?p.dataset.titleEn:p.dataset.title}`;
+  $('#hudP').style.width=(i/(PANELS.length-1)*100)+'%';$$('#dots button').forEach((b,k)=>b.classList.toggle('on',k===i))}
+$('#hPrev').onclick=()=>goTo(idx()-1);$('#hNext').onclick=()=>goTo(idx()+1);
+$$('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goTo(PANELS.findIndex(p=>p.id===a.dataset.go))}));
 
-/* nav hide on scroll + blobs parallax */
-let ly=0;const nav=document.getElementById('nav');const blobs=document.querySelectorAll('#blobs > *');
-addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('hide',y>ly&&y>300);ly=y;paint();
-  blobs.forEach((b,i)=>{b.style.transform=`translateY(${Math.sin(y/300+i)*10}px)`})},{passive:true});
-/* language */
-const langBox=document.getElementById('lang');
-function applyLang(l){LANG=l;try{localStorage.setItem('lj-lang',l)}catch(e){}
-  document.documentElement.lang=l;
-  document.querySelectorAll('[data-en]').forEach(el=>{if(el.dataset.es===undefined)el.dataset.es=el.classList.contains('st')?el.textContent:el.innerHTML;
-    const v=l==='en'?el.dataset.en:el.dataset.es;if(el.classList.contains('st'))el.textContent=v;else el.innerHTML=v});
-  langBox.querySelectorAll('button').forEach(b=>{b.classList.toggle('on',b.dataset.l===l);b.setAttribute('aria-pressed',b.dataset.l===l)});
-  renderStmt();renderInd();renderCards();cards.forEach(c=>c.classList.add('in'));paint();
-  if(modal.classList.contains('open'))openCase(cur,true)}
-langBox.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.dataset.l!==LANG)applyLang(b.dataset.l)});
-renderStmt();renderInd();renderCards();
-if(LANG==='en')applyLang('en');else langBox.querySelector('[data-l="es"]').classList.add('on');
-paint();
+/* walker speech */
+const TALK={es:['','¡Vamos!','Este es mi sistema','Esto aporto','Mis documentos favoritos','Así arranco','Mira esto','Caso 1','Caso 2','Caso 3','Caso 4','¡Hola, marcas!','Esa soy yo','¿Hablamos?'],en:['','Let’s go!','This is my system','What I bring','My favorite docs','How I start','Look at this','Case 1','Case 2','Case 3','Case 4','Hi, brands!','That’s me','Shall we talk?']};
+let tTO;function talk(i){const w=$('#walker'),s=TALK[LANG][i];if(!s){w.classList.remove('talk');return}$('#wb').textContent=s;w.classList.add('talk');clearTimeout(tTO);tTO=setTimeout(()=>w.classList.remove('talk'),2200)}
+
+/* ================= keys & present ================= */
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){$$('.modal.open').forEach(m=>m.classList.remove('open'));if(H.classList.contains('present'))present(false);return}
+  if($('.modal.open'))return;
+  if(['ArrowRight','PageDown'].includes(e.key)||(e.key===' '&&H.classList.contains('present'))||(e.key==='ArrowDown'&&H.classList.contains('present'))){e.preventDefault();goTo(idx()+1)}
+  if(['ArrowLeft','PageUp'].includes(e.key)||(e.key==='ArrowUp'&&H.classList.contains('present'))){e.preventDefault();goTo(idx()-1)}
+});
+function present(on){H.classList.toggle('present',on);
+  if(on){$('#ptip').classList.add('show');setTimeout(()=>$('#ptip').classList.remove('show'),3200);try{H.requestFullscreen&&H.requestFullscreen().catch(()=>{})}catch(e){}setTimeout(()=>goTo(idx()),300)}
+  else{try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}}}
+$('#presentBtn').onclick=()=>present(!H.classList.contains('present'));
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)H.classList.remove('present');setTimeout(()=>{layout();goTo(lastI)},200)});
+
+/* ================= hero ================= */
+(function(){let i=0;setInterval(()=>{const s=$$('#rot span');s[i].classList.remove('on');s[i].classList.add('out');const p=s[i];setTimeout(()=>p.classList.remove('out'),600);i=(i+1)%s.length;s[i].classList.add('on')},2400)})();
+/* eyes follow */
+addEventListener('pointermove',e=>{
+  const sv=$('#avatar svg');if(!sv)return;const r=sv.getBoundingClientRect();if(!r.width)return;
+  ['#avatar .puL','#avatar .puR'].forEach(q=>{const el=$(q);if(!el)return;const w=el.parentNode.previousElementSibling.getBoundingClientRect();const ex=w.left+w.width/2,ey=w.top+w.height/2;const a=Math.atan2(e.clientY-ey,e.clientX-ex);const d=Math.min(7,Math.hypot(e.clientX-ex,e.clientY-ey)/40);el.setAttribute('transform',`translate(${(Math.cos(a)*d*.6).toFixed(2)} ${(Math.sin(a)*d*.6).toFixed(2)})`)});
+  const ax=(e.clientX/innerWidth-.5),ay=(e.clientY/innerHeight-.5);
+  $('.a1').style.transform=`translate(${ax*-26}px,${ay*-18}px) rotate(${ax*14}deg)`;$('.a2').style.transform=`translate(${ax*22}px,${ay*16}px) rotate(${ax*-18}deg)`;$('.a3').style.transform=`translate(${ax*-14}px,${ay*20}px) rotate(${ay*22}deg)`;
+});
+/* scribble trail */
+(function(){const c=$('#scribble'),x=c.getContext('2d');let pts=[];
+  function rs(){const r=c.parentElement.getBoundingClientRect();c.width=r.width*devicePixelRatio;c.height=r.height*devicePixelRatio;x.scale(devicePixelRatio,devicePixelRatio)}rs();addEventListener('resize',rs);
+  $('#hola').addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();pts.push({x:e.clientX-r.left,y:e.clientY-r.top,t:performance.now()})});
+  (function loop(){const now=performance.now();pts=pts.filter(p=>now-p.t<900);x.clearRect(0,0,c.width,c.height);x.lineCap='round';x.lineJoin='round';
+    for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];const k=1-(now-b.t)/900;x.strokeStyle=`rgba(122,79,214,${k*.55})`;x.lineWidth=2+k*5;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+    requestAnimationFrame(loop)})();
+})();
+/* boil: hand-drawn wobble */
+setInterval(()=>{const tb=$('#turb');tb&&tb.setAttribute('seed',1+Math.floor(Math.random()*4))},140);
+
+/* ================= loop ================= */
+let loopI=0,loopAuto=true;
+function buildLoop(){
+  const g=$('#nodes');const R=222,C=300;
+  g.innerHTML=LOOP.map((n,i)=>{const a=-Math.PI/2+i*(Math.PI*2/LOOP.length);const x=C+R*Math.cos(a),y=C+R*Math.sin(a);
+    const lx=C+(R+66)*Math.cos(a),ly=C+(R+66)*Math.sin(a);
+    return `<g class="node" data-i="${i}" style="--c:${n.c}"><circle class="c" cx="${x}" cy="${y}" r="36"/><text x="${x}" y="${y}">${String(i+1).padStart(2,'0')}</text><text class="lb" x="${lx}" y="${ly}">${t(n.n)}</text></g>`}).join('');
+  $$('.node').forEach(n=>{n.addEventListener('mouseenter',()=>{loopAuto=false;setLoop(+n.dataset.i)});n.addEventListener('click',()=>{loopAuto=false;setLoop(+n.dataset.i)})});
+}
+function setLoop(i){loopI=i;$$('.node').forEach((n,k)=>n.classList.toggle('on',k===i));const lc=$('#lc');lc.style.opacity=0;setTimeout(()=>{$('#lq').textContent=t(LOOP[i].q);$('#lo').textContent=t(LOOP[i].o);lc.style.opacity=1},180)}
+setInterval(()=>{if(loopAuto)setLoop((loopI+1)%LOOP.length)},3200);
+$('#loop').addEventListener('mouseleave',()=>loopAuto=true);
+
+/* ================= wall ================= */
+function buildWall(){
+  $('#wall').innerHTML=BRANDS.map((b,i)=>`<div class="stk-b" data-id="${b.id}" style="left:${b.x*.9}%;top:${b.y*.82}%;--c:${b.c}"><div class="blob" style="animation-delay:${-i*.7}s"><svg viewBox="0 0 48 48" class="doodle" style="stroke-width:2.6">${IC[b.ic]}</svg></div><span>${b.name}</span></div>`).join('');
+  $$('.stk-b').forEach(s=>{
+    s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();const dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);s.style.transform=`translate(${dx*.25}px,${dy*.25}px)`});
+    s.addEventListener('mouseleave',()=>s.style.transform='');
+    s.addEventListener('click',()=>{const b=BRANDS.find(x=>x.id===s.dataset.id);b.case?openCase(b.case):openBrand(b)});
+  });
+}
+
+/* ================= modals ================= */
+function imgs(list,two){const m=$('#mim');m.className='mim'+(two?' two':'');m.innerHTML=list.map(i=>`<img src="${i.startsWith('hd/')?i:'img/'+i}.webp" alt="" loading="lazy">`).join('');m.querySelectorAll('img').forEach(im=>im.onclick=()=>{$('#lbi').src=im.src;$('#lb').classList.add('open')})}
+function openCase(k){const c=CASES[k];
+  $('#mtx').innerHTML=`<span class="k"><b>${LANG==='en'?'Case':'Caso'}</b></span><h3>${t(c.title)}</h3><div class="sub">${t(c.sub)}</div>
+  <div class="sec"><b>${LANG==='en'?'Challenge':'El reto'}</b><p>${t(c.reto)}</p></div>
+  <div class="sec"><b>${LANG==='en'?'How I thought about it':'Cómo lo pensé'}</b><p>${t(c.pense)}</p></div>
+  <div class="sec"><b>${LANG==='en'?'What I did':'Lo que hice'}</b><ul>${t(c.hice).map(x=>`<li>${x}</li>`).join('')}</ul></div>
+  <div class="sec"><b>${LANG==='en'?'Result':'Resultado'}</b><div class="chips">${t(c.res).map(x=>`<span class="m">${x}</span>`).join('')}</div></div>
+  ${c.canales?`<div class="sec"><b>${LANG==='en'?'Investment by channel':'Inversión por canal'}</b><p>${t(c.canales)}</p></div>`:''}
+  ${c.insight?`<div class="sec"><b>${LANG==='en'?'Regional insight':'Insight regional'}</b><p>${t(c.insight)}</p></div>`:''}
+  <div class="sec"><b>${LANG==='en'?'What it proves':'Lo que demuestra'}</b><p>${t(c.prueba)}</p></div>`;
+  imgs(c.img,k==='azzurry'||k==='laskin');$('#modal').classList.add('open')}
+function openBrand(b){
+  $('#mtx').innerHTML=`<span class="k"><b>${t(b.cats)}</b></span><h3>${b.name}</h3><div class="sub">${t(b.sector)}</div>
+  <div class="sec"><p>${t(b.d)}</p></div><div class="sec"><b>${LANG==='en'?'Result':'Resultado'}</b><div class="chips">${t(b.m).map(x=>`<span class="m">${x}</span>`).join('')}</div></div>
+  ${b.links.length?`<div class="sec chips">${b.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener"><span>${n} ↗</span></a>`).join('')}</div>`:''}`;
+  imgs(b.img,b.img[0].startsWith('ig-')||b.img[0].startsWith('hd/'));$('#modal').classList.add('open')}
+$$('.opencase').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.case)));
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]'))m.classList.remove('open')}));
+$('#lb').addEventListener('click',()=>$('#lb').classList.remove('open'));
+
+/* ================= cursor ================= */
+(function(){const c=$('#cur'),tx=$('#curt');let x=-50,y=-50,cx=-50,cy=-50;
+  addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;const big=e.target.closest('.frame,.collage,.stk-b,.mim img,.gcol img');const ln=e.target.closest('a,button,.node,.avatar,.role,.doc,.pr');
+    c.classList.toggle('big',!!big);c.classList.toggle('link',!big&&!!ln);if(big)tx.textContent=e.target.closest('.mim img')?(LANG==='en'?'zoom':'ampliar'):(LANG==='en'?'open':'abrir')});
+  (function l(){cx+=(x-cx)*.25;cy+=(y-cy)*.25;c.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(l)})()})();
+
+/* ================= stroke lengths ================= */
+function measureDraw(){$$('.draw path').forEach(p=>{try{p.style.setProperty('--len',Math.ceil(p.getTotalLength()+2))}catch(e){}})}
+
+/* ================= CV ================= */
+let cvLang='es',DL=null;
+(async()=>{try{if(window.claude&&claude.use)DL=await claude.use('downloads')}catch(e){}})();
+$$('#cvl button').forEach(b=>b.onclick=()=>{cvLang=b.dataset.cv;$$('#cvl button').forEach(x=>x.classList.toggle('on',x===b))});
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2600)}
+$$('.cvbtn').forEach(b=>b.addEventListener('click',async()=>{
+  const l=b.closest('#hablemos')?cvLang:LANG;const name=`CV-Laura-Jaramillo-${l.toUpperCase()}.pdf`;
+  try{const blob=await(await fetch(`cv-laura-jaramillo-${l}.pdf`)).blob();
+    if(DL){await DL.save({filename:name,data:blob});toast(LANG==='en'?'Resume ready':'Hoja de vida lista')}
+    else{const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove()}
+  }catch(e){if(e&&e.code==='declined')return;toast(LANG==='en'?'Download not available here — find my resume on LinkedIn':'Descarga no disponible aquí: encuentra mi hoja de vida en LinkedIn')}
+}));
+
+/* ================= init ================= */
+buildLoop();buildWall();buildDots();setLoop(0);
+if(LANG==='en')setLang('en');
+document.fonts&&document.fonts.ready.then(()=>{layout();measureDraw()});
+layout();measureDraw();requestAnimationFrame(frame);
+/* ================= stickers + galería ================= */
+(function(){
+  const ST=[['Social media','Social media','var(--pink)',-8,2,30],['Project Manager','Project Manager','var(--lilac)',5,60,2],['Contenido','Content','var(--yellow)',7,70,74],['Growth','Growth','var(--green)',-6,4,80],['IA ✦','AI ✦','#fff',10,78,44]];
+  const box=document.getElementById('stickers');if(!box)return;
+  ST.forEach(([es,en,c,r,x,y],i)=>{const d=document.createElement('div');d.className='st';d.innerHTML=LANG==='en'?en:es;d.dataset.en=en;d.dataset.es=es;d.style.background=c;d.style.setProperty('--rot',r+'deg');d.style.transform=`rotate(${r}deg)`;d.style.left=x+'%';d.style.top=y+'%';d.style.animationDelay=(1+i*.12)+'s';box.appendChild(d);
+    let sx,sy,ox,oy;d.addEventListener('pointerdown',e=>{e.stopPropagation();d.setPointerCapture(e.pointerId);sx=e.clientX;sy=e.clientY;ox=d.offsetLeft;oy=d.offsetTop;d.style.animation='none';d.style.zIndex=6;
+      const mv=ev=>{d.style.left=ox+ev.clientX-sx+'px';d.style.top=oy+ev.clientY-sy+'px'};const up=()=>{d.removeEventListener('pointermove',mv);d.removeEventListener('pointerup',up)};
+      d.addEventListener('pointermove',mv);d.addEventListener('pointerup',up)})});
+  const G=[['holacalm-09','laskin-01','riascos-05','park5-01','azzurry-12'],['dax-12','holacalm-04','laskin-07','riascos-01','holacalm-07'],['riascos-10','holacalm-11','dax-01','riascos-08','holacalm-01']];
+  const gal=document.getElementById('gal');
+  gal.innerHTML=G.map((col,i)=>{const h=col.map(n=>`<img src="hd/${n}.webp" alt="" loading="lazy">`).join('');return `<div class="gcol${i===1?' d':''}">${h}${h}</div>`}).join('');
+  gal.querySelectorAll('img').forEach(im=>im.addEventListener('click',()=>{$('#lbi').src=im.src;$('#lb').classList.add('open')}));
+})();
 </script>
 </body>
 </html>
