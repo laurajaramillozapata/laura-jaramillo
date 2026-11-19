@@ -433,6 +433,17 @@ html.present .menu:hover{transform:none}
   .st{font-size:13px;padding:8px 13px}
 }
 /* sin ilustración */
+.mefoto{position:relative;width:min(88%,460px);aspect-ratio:4/5;margin:4% auto 0}
+.mefoto .pol{position:absolute;inset:6% 8% 4% 8%;background:#fff;padding:12px 12px 52px;border-radius:10px;box-shadow:0 30px 50px -22px rgba(46,36,51,.5);rotate:-3deg;z-index:2;transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
+.mefoto .pol img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.mefoto .pol figcaption{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-weight:700;font-size:clamp(15px,1.3vw,19px)}
+.mefoto:hover .pol{transform:rotate(4deg) scale(1.03)}
+.mefoto .bk{position:absolute;width:44%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:4px solid #fff;box-shadow:0 18px 30px -16px rgba(0,0,0,.4);z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.mefoto .b1{left:-12%;top:2%;rotate:-12deg}.mefoto .b2{right:-12%;bottom:6%;rotate:10deg}
+.mefoto:hover .b1{transform:translate(-10px,-6px)}.mefoto:hover .b2{transform:translate(10px,6px)}
+.mefoto .st{position:absolute;z-index:3;animation:none;cursor:default}
+.mefoto .s1{right:-6%;top:8%}.mefoto .s2{left:-4%;bottom:12%}
+@media (max-width:820px){.mefoto{width:78%}}
 #hola{overflow:hidden}
 .svhead{display:flex;justify-content:space-between;align-items:flex-end;gap:3vw;flex-wrap:wrap}
 .svhead .lead{max-width:420px;padding-bottom:1vh}
@@ -718,7 +729,12 @@ html.present .menu:hover{transform:none}
 <section class="panel" id="yo" data-title="Yo" data-title-en="Me">
   <div class="me-art pop">
     <div class="bg"></div>
-    <div class="mosaic"><img src="hd/holacalm-01.webp" alt=""><img src="hd/riascos-08.webp" alt=""><img src="hd/park5-01.webp" alt=""><img src="hd/dax-12.webp" alt=""></div>
+    <div class="mefoto">
+      <img class="bk b1" src="hd/holacalm-01.webp" alt=""><img class="bk b2" src="hd/riascos-08.webp" alt="">
+      <figure class="pol"><img src="img/laura.webp" alt="Laura Jaramillo"><figcaption data-en="Hi! That’s me ✦">¡Hola! Esa soy yo ✦</figcaption></figure>
+      <span class="st s1" style="background:var(--yellow);--rot:-6deg;transform:rotate(-6deg)">Medellín · <span data-en="Remote">Remoto</span></span>
+      <span class="st s2" style="background:var(--green);--rot:7deg;transform:rotate(7deg)" data-en="Open to new roles">Disponible</span>
+    </div>
   </div>
   <div>
     <div class="k"><b>08</b> · <span data-en="Me">Yo</span></div>
